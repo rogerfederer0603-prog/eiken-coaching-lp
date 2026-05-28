@@ -1,0 +1,1957 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>英検対策コーチ | 2級・準1級に特化した個別添削サービス</title>
+  <meta name="description" content="英検1級取得・TOEIC945点・全国50校舎以上を担当した塾講師による英検2級・準1級専門の添削・面接対策。48時間以内返却。オンライン完結・顔出し不要。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    /* ===========================
+       Reset & Base
+    =========================== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --navy: #0D2657;
+      --navy-dark: #081840;
+      --navy-mid: #142f6e;
+      --gold: #D4AF37;
+      --gold-light: #e8c84a;
+      --gold-dark: #b8941e;
+      --white: #ffffff;
+      --gray-100: #f8f9fc;
+      --gray-200: #eef0f5;
+      --gray-400: #9aa3b8;
+      --gray-600: #5a6378;
+      --gray-800: #2d3346;
+      --text: #1a1f2e;
+      --shadow-sm: 0 2px 8px rgba(13, 38, 87, 0.08);
+      --shadow-md: 0 4px 20px rgba(13, 38, 87, 0.12);
+      --shadow-lg: 0 8px 40px rgba(13, 38, 87, 0.18);
+      --radius: 12px;
+      --radius-lg: 20px;
+      --max-width: 720px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--text);
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ===========================
+       Layout
+    =========================== */
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    section {
+      padding: 64px 0;
+    }
+
+    /* ===========================
+       Fade-in Animation
+    =========================== */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ===========================
+       Section Heading
+    =========================== */
+    .section-label {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-size: 22px;
+      font-weight: 900;
+      line-height: 1.4;
+      color: var(--navy);
+      margin-bottom: 16px;
+    }
+
+    .section-title span {
+      color: var(--gold-dark);
+    }
+
+    .section-desc {
+      font-size: 15px;
+      color: var(--gray-600);
+      line-height: 1.8;
+    }
+
+    /* ===========================
+       CTA Buttons
+    =========================== */
+    .btn {
+      display: inline-block;
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 700;
+      font-size: 16px;
+      border-radius: 50px;
+      padding: 14px 32px;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+      border: none;
+      text-align: center;
+      line-height: 1.4;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn:active {
+      transform: translateY(0);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+      color: var(--navy-dark);
+      box-shadow: 0 4px 20px rgba(212, 175, 55, 0.45);
+    }
+
+    .btn-primary:hover {
+      box-shadow: 0 8px 32px rgba(212, 175, 55, 0.55);
+      background: linear-gradient(135deg, var(--gold-light) 0%, #f0d055 100%);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border: 2px solid rgba(255, 255, 255, 0.6);
+    }
+
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: var(--white);
+    }
+
+    .btn-navy {
+      background: var(--navy);
+      color: var(--white);
+      box-shadow: var(--shadow-md);
+    }
+
+    .btn-navy:hover {
+      background: var(--navy-mid);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .btn-full {
+      display: block;
+      width: 100%;
+    }
+
+    /* ===========================
+       Header
+    =========================== */
+    #header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(13, 38, 87, 0.97);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 56px;
+      padding: 0 20px;
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .logo {
+      font-size: 15px;
+      font-weight: 900;
+      color: var(--white);
+      letter-spacing: 0.04em;
+    }
+
+    .logo span {
+      color: var(--gold);
+    }
+
+    .header-cta {
+      font-size: 13px;
+      padding: 8px 18px;
+    }
+
+    /* ===========================
+       Hero / Firstview
+    =========================== */
+    #hero {
+      padding: 0;
+      background: linear-gradient(160deg, var(--navy-dark) 0%, var(--navy) 50%, #1a3a7a 100%);
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #hero::before {
+      content: '';
+      position: absolute;
+      top: -30%;
+      right: -20%;
+      width: 60vw;
+      height: 60vw;
+      max-width: 400px;
+      max-height: 400px;
+      background: radial-gradient(circle, rgba(212, 175, 55, 0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    #hero::after {
+      content: '';
+      position: absolute;
+      bottom: -20%;
+      left: -10%;
+      width: 50vw;
+      height: 50vw;
+      max-width: 300px;
+      max-height: 300px;
+      background: radial-gradient(circle, rgba(26, 58, 122, 0.6) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      padding: 100px 20px 72px;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(212, 175, 55, 0.15);
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      border-radius: 50px;
+      padding: 6px 14px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 0.05em;
+      margin-bottom: 28px;
+    }
+
+    .hero-badge-dot {
+      width: 6px;
+      height: 6px;
+      background: var(--gold);
+      border-radius: 50%;
+    }
+
+    .hero-title {
+      font-size: 26px;
+      font-weight: 900;
+      line-height: 1.45;
+      color: var(--white);
+      margin-bottom: 20px;
+      letter-spacing: -0.01em;
+    }
+
+    .hero-title .accent {
+      color: var(--gold);
+      position: relative;
+    }
+
+    .hero-subtitle {
+      font-size: 14px;
+      line-height: 1.85;
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 40px;
+      font-weight: 500;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .hero-note {
+      margin-top: 20px;
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.5);
+      text-align: center;
+    }
+
+    /* ===========================
+       Stats Strip
+    =========================== */
+    #stats {
+      padding: 40px 0;
+      background: var(--gray-100);
+      border-top: 1px solid var(--gray-200);
+      border-bottom: 1px solid var(--gray-200);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0;
+      text-align: center;
+    }
+
+    .stat-item {
+      padding: 16px 12px;
+      position: relative;
+    }
+
+    .stat-item + .stat-item::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 1px;
+      height: 50%;
+      background: var(--gray-200);
+    }
+
+    .stat-num {
+      font-size: 28px;
+      font-weight: 900;
+      color: var(--navy);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .stat-num sup {
+      font-size: 14px;
+    }
+
+    .stat-label {
+      font-size: 11px;
+      color: var(--gray-600);
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    /* ===========================
+       Pain Points
+    =========================== */
+    #pain {
+      background: var(--white);
+    }
+
+    .pain-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 32px;
+    }
+
+    .pain-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      background: var(--gray-100);
+      border-radius: var(--radius);
+      padding: 18px 20px;
+      border-left: 4px solid var(--navy);
+    }
+
+    .pain-icon {
+      flex-shrink: 0;
+      width: 24px;
+      height: 24px;
+      margin-top: 1px;
+    }
+
+    .pain-text {
+      font-size: 15px;
+      font-weight: 500;
+      line-height: 1.6;
+      color: var(--gray-800);
+    }
+
+    .pain-text strong {
+      color: var(--navy);
+    }
+
+    /* ===========================
+       Reasons
+    =========================== */
+    #reasons {
+      background: var(--navy);
+      position: relative;
+      overflow: hidden;
+    }
+
+    #reasons::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: -20%;
+      width: 60%;
+      height: 100%;
+      background: radial-gradient(ellipse at right, rgba(212, 175, 55, 0.06) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    #reasons .section-title {
+      color: var(--white);
+    }
+
+    #reasons .section-desc {
+      color: rgba(255, 255, 255, 0.65);
+    }
+
+    .reasons-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .reason-card {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      border-radius: var(--radius-lg);
+      padding: 28px 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .reason-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(180deg, var(--gold) 0%, var(--gold-dark) 100%);
+    }
+
+    .reason-num {
+      font-size: 42px;
+      font-weight: 900;
+      color: rgba(212, 175, 55, 0.15);
+      line-height: 1;
+      position: absolute;
+      top: 16px;
+      right: 20px;
+      font-style: italic;
+    }
+
+    .reason-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: var(--gold);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+
+    .reason-title {
+      font-size: 20px;
+      font-weight: 900;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+
+    .reason-title .highlight {
+      color: var(--gold);
+    }
+
+    .reason-desc {
+      font-size: 14px;
+      line-height: 1.8;
+      color: rgba(255, 255, 255, 0.75);
+    }
+
+    /* ===========================
+       Services / Pricing
+    =========================== */
+    #services {
+      background: var(--gray-100);
+    }
+
+    .service-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 36px;
+    }
+
+    .service-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+      border: 1px solid var(--gray-200);
+      transition: box-shadow 0.25s ease, transform 0.25s ease;
+    }
+
+    .service-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+    }
+
+    .service-card-header {
+      background: var(--navy);
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .service-card-header.popular {
+      background: linear-gradient(135deg, var(--navy-mid) 0%, #1e4a8a 100%);
+    }
+
+    .service-name {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--white);
+    }
+
+    .badge-popular {
+      font-size: 11px;
+      font-weight: 700;
+      background: var(--gold);
+      color: var(--navy-dark);
+      border-radius: 50px;
+      padding: 3px 10px;
+      letter-spacing: 0.04em;
+    }
+
+    .service-card-body {
+      padding: 20px;
+    }
+
+    .service-desc {
+      font-size: 13px;
+      color: var(--gray-600);
+      line-height: 1.7;
+      margin-bottom: 14px;
+    }
+
+    .price-row {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .price-tag {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--gray-600);
+    }
+
+    .price-amount {
+      font-size: 22px;
+      font-weight: 900;
+      color: var(--navy);
+    }
+
+    .price-amount .yen {
+      font-size: 16px;
+    }
+
+    .price-divider {
+      color: var(--gray-400);
+    }
+
+    .price-note {
+      font-size: 12px;
+      color: var(--gray-400);
+      margin-top: 4px;
+    }
+
+    .service-cta {
+      margin-top: 16px;
+      font-size: 14px;
+      padding: 11px 24px;
+    }
+
+    /* ===========================
+       Authority / Social Proof
+    =========================== */
+    #authority {
+      background: var(--white);
+    }
+
+    .authority-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 36px;
+    }
+
+    .authority-card {
+      background: var(--gray-100);
+      border-radius: var(--radius);
+      padding: 22px 18px;
+      text-align: center;
+      border: 1px solid var(--gray-200);
+    }
+
+    .authority-icon {
+      width: 40px;
+      height: 40px;
+      margin: 0 auto 10px;
+    }
+
+    .authority-num {
+      font-size: 26px;
+      font-weight: 900;
+      color: var(--navy);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .authority-label {
+      font-size: 12px;
+      color: var(--gray-600);
+      line-height: 1.5;
+      font-weight: 500;
+    }
+
+    .authority-banner {
+      margin-top: 32px;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+      border-radius: var(--radius-lg);
+      padding: 28px 24px;
+      text-align: center;
+      color: var(--white);
+    }
+
+    .authority-banner-title {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--gold);
+    }
+
+    .authority-banner-text {
+      font-size: 14px;
+      line-height: 1.8;
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 20px;
+    }
+
+    /* ===========================
+       FAQ
+    =========================== */
+    #faq {
+      background: var(--gray-100);
+    }
+
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-top: 36px;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .faq-item {
+      background: var(--white);
+      border-bottom: 1px solid var(--gray-200);
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-question {
+      width: 100%;
+      text-align: left;
+      padding: 20px;
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--navy);
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      line-height: 1.5;
+      transition: background 0.15s ease;
+    }
+
+    .faq-question:hover {
+      background: var(--gray-100);
+    }
+
+    .faq-q-mark {
+      flex-shrink: 0;
+      width: 22px;
+      height: 22px;
+      background: var(--navy);
+      color: var(--white);
+      border-radius: 50%;
+      font-size: 12px;
+      font-weight: 900;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1px;
+    }
+
+    .faq-arrow {
+      margin-left: auto;
+      flex-shrink: 0;
+      transition: transform 0.3s ease;
+      color: var(--gray-400);
+    }
+
+    .faq-item.open .faq-arrow {
+      transform: rotate(180deg);
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 0 20px 20px 54px;
+      font-size: 14px;
+      line-height: 1.85;
+      color: var(--gray-600);
+    }
+
+    .faq-item.open .faq-answer {
+      display: block;
+    }
+
+    /* ===========================
+       Final CTA
+    =========================== */
+    #final-cta {
+      background: linear-gradient(160deg, var(--navy-dark) 0%, var(--navy) 60%, #1a3a7a 100%);
+      text-align: center;
+      padding: 80px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #final-cta::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80vw;
+      height: 80vw;
+      max-width: 500px;
+      max-height: 500px;
+      background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .final-cta-inner {
+      position: relative;
+      z-index: 1;
+      padding: 0 20px;
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .final-cta-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .final-cta-title {
+      font-size: 24px;
+      font-weight: 900;
+      color: var(--white);
+      line-height: 1.5;
+      margin-bottom: 12px;
+    }
+
+    .final-cta-title .accent {
+      color: var(--gold);
+    }
+
+    .final-cta-sub {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.75);
+      line-height: 1.8;
+      margin-bottom: 36px;
+    }
+
+    .final-cta-btn {
+      font-size: 17px;
+      padding: 18px 40px;
+      width: 100%;
+      max-width: 360px;
+    }
+
+    .final-cta-note {
+      margin-top: 16px;
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.45);
+    }
+
+    /* ===========================
+       Footer
+    =========================== */
+    #footer {
+      background: var(--navy-dark);
+      padding: 32px 20px;
+      text-align: center;
+    }
+
+    .footer-logo {
+      font-size: 15px;
+      font-weight: 900;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+
+    .footer-logo span {
+      color: var(--gold);
+    }
+
+    .footer-tagline {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.45);
+      margin-bottom: 16px;
+    }
+
+    .footer-copy {
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.3);
+    }
+
+    /* ===========================
+       Scroll CTA (mobile sticky)
+    =========================== */
+    .sticky-cta {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 999;
+      padding: 12px 20px;
+      background: rgba(13, 24, 64, 0.97);
+      backdrop-filter: blur(6px);
+      border-top: 1px solid rgba(212, 175, 55, 0.25);
+      transform: translateY(100%);
+      transition: transform 0.4s ease;
+    }
+
+    .sticky-cta.visible {
+      transform: translateY(0);
+    }
+
+    .sticky-cta .btn {
+      display: block;
+      width: 100%;
+      font-size: 15px;
+      padding: 14px;
+    }
+
+    /* ===========================
+       Responsive (PC)
+    =========================== */
+    @media (min-width: 640px) {
+      .hero-title {
+        font-size: 32px;
+      }
+
+      .hero-buttons {
+        flex-direction: row;
+        justify-content: flex-start;
+      }
+
+      .section-title {
+        font-size: 26px;
+      }
+
+      .stats-grid {
+        gap: 0;
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .stat-num {
+        font-size: 34px;
+      }
+
+      .authority-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .sticky-cta {
+        display: none;
+      }
+    }
+
+    @media (min-width: 768px) {
+      section {
+        padding: 80px 0;
+      }
+
+      .hero-title {
+        font-size: 36px;
+      }
+
+      .final-cta-title {
+        font-size: 30px;
+      }
+    }
+
+    /* ===========================
+       Stripe / Payment
+    =========================== */
+    .payment-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin: 10px 0 14px;
+    }
+
+    .payment-badge {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 20px;
+      background: #eef0f5;
+      color: var(--gray-600);
+      letter-spacing: 0.02em;
+    }
+
+    .grade-btns {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .btn-grade {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 13px 18px;
+      border-radius: var(--radius);
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s, transform 0.15s;
+      text-decoration: none;
+      border: 2px solid var(--navy);
+      color: var(--navy);
+      background: white;
+    }
+
+    .btn-grade:hover {
+      background: var(--navy);
+      color: white;
+      transform: translateY(-1px);
+    }
+
+    .btn-grade .grade-price {
+      font-size: 15px;
+      font-weight: 900;
+    }
+
+    .btn-grade-single {
+      display: block;
+      width: 100%;
+      padding: 14px 20px;
+      border-radius: var(--radius);
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      text-align: center;
+      text-decoration: none;
+      background: var(--navy);
+      color: white;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .btn-grade-single:hover {
+      background: var(--navy-mid);
+      transform: translateY(-1px);
+    }
+
+    .payment-info-box {
+      background: var(--gray-100);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-lg);
+      padding: 28px 24px;
+      margin-top: 48px;
+    }
+
+    .payment-info-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 16px;
+    }
+
+    .payment-methods-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .payment-method-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      color: var(--gray-800);
+      font-weight: 500;
+    }
+
+    .payment-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: var(--navy);
+      color: white;
+      font-size: 9px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      text-align: center;
+      line-height: 1.2;
+    }
+
+    .konbini-flow {
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid var(--gray-200);
+    }
+
+    .konbini-flow-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+
+    .konbini-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .konbini-step {
+      display: flex;
+      gap: 10px;
+      font-size: 12px;
+      color: var(--gray-600);
+      align-items: flex-start;
+      line-height: 1.5;
+    }
+
+    .step-num {
+      width: 20px;
+      height: 20px;
+      background: var(--navy);
+      color: white;
+      border-radius: 50%;
+      font-size: 10px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* ===========================
+       添削例セクション
+    =========================== */
+    #sample {
+      background: var(--gray-100);
+    }
+
+    .sample-label {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold-dark);
+      background: rgba(212,175,55,0.12);
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 8px;
+    }
+
+    .sample-note {
+      font-size: 13px;
+      color: var(--gray-600);
+      margin-bottom: 32px;
+    }
+
+    .sample-box {
+      background: white;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+    }
+
+    .sample-tab-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .sample-tab {
+      padding: 14px 16px;
+      font-size: 13px;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .sample-tab.before {
+      background: #fff3f3;
+      color: #c0392b;
+      border-bottom: 3px solid #e74c3c;
+    }
+
+    .sample-tab.after {
+      background: #f0fff4;
+      color: #1a7a3c;
+      border-bottom: 3px solid #27ae60;
+    }
+
+    .sample-writing {
+      padding: 20px;
+      font-size: 14px;
+      line-height: 2;
+      color: var(--gray-800);
+      border-bottom: 1px solid var(--gray-200);
+    }
+
+    .sample-writing .err {
+      background: #ffe8e8;
+      text-decoration: line-through;
+      text-decoration-color: #e74c3c;
+      color: #c0392b;
+      padding: 0 2px;
+      border-radius: 3px;
+    }
+
+    .sample-writing .fix {
+      background: #e8f8ee;
+      color: #1a7a3c;
+      font-weight: 700;
+      padding: 0 2px;
+      border-radius: 3px;
+    }
+
+    .sample-comments {
+      padding: 20px;
+    }
+
+    .sample-comments-title {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: 0.05em;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+    }
+
+    .comment-item {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 12px;
+      align-items: flex-start;
+    }
+
+    .comment-tag {
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 20px;
+      white-space: nowrap;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .tag-red { background: #ffe8e8; color: #c0392b; }
+    .tag-orange { background: #fff3e0; color: #d35400; }
+    .tag-blue { background: #e8f0ff; color: #1a3a7a; }
+
+    .comment-text {
+      font-size: 13px;
+      color: var(--gray-800);
+      line-height: 1.6;
+    }
+
+    .sample-score-row {
+      display: flex;
+      gap: 8px;
+      padding: 16px 20px;
+      background: var(--gray-100);
+      flex-wrap: wrap;
+    }
+
+    .score-chip {
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      background: white;
+      border: 1px solid var(--gray-200);
+      color: var(--gray-800);
+    }
+
+    .score-chip span {
+      color: #e74c3c;
+      font-weight: 900;
+    }
+
+    .score-chip.after span {
+      color: #27ae60;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===========================
+       Header
+  =========================== -->
+  <header id="header">
+    <div class="header-inner">
+      <div class="logo">英検<span>対策</span>コーチ</div>
+      <a href="#services" class="btn btn-primary header-cta">料金・購入はこちら</a>
+    </div>
+  </header>
+
+
+  <!-- ===========================
+       Hero
+  =========================== -->
+  <section id="hero">
+    <div class="hero-inner">
+      <div class="hero-badge fade-in">
+        <span class="hero-badge-dot"></span>
+        英検2級・準1級 専門コーチング
+      </div>
+      <h1 class="hero-title fade-in">
+        英検2級・準1級、<br>
+        なぜ合格できないのか。<br>
+        答えは、<span class="accent">「添削の質」</span>にある。
+      </h1>
+      <p class="hero-subtitle fade-in">
+        英検1級取得・TOEIC 945点・全国50校舎以上を担当した塾講師が、<br>
+        受験に直結する本質的フィードバックを提供します。<br>
+        顔出し不要・オンライン完結。いつでも、どこからでも。
+      </p>
+      <div class="hero-buttons fade-in">
+        <a href="#services" class="btn btn-primary">添削を試してみる</a>
+        <a href="#services" class="btn btn-outline">サービス詳細を見る</a>
+      </div>
+      <p class="hero-note fade-in">Stripe決済対応 ｜ クレカ・コンビニ払い・Paidy</p>
+    </div>
+  </section>
+
+
+  <!-- ===========================
+       Stats Strip
+  =========================== -->
+  <section id="stats">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item fade-in">
+          <div class="stat-num">50<sup>+</sup></div>
+          <div class="stat-label">担当校舎数</div>
+        </div>
+        <div class="stat-item fade-in">
+          <div class="stat-num">100<sup>+</sup></div>
+          <div class="stat-label">指導してきた<br>生徒数</div>
+        </div>
+        <div class="stat-item fade-in">
+          <div class="stat-num">48h</div>
+          <div class="stat-label">以内に返却</div>
+        </div>
+        <div class="stat-item fade-in">
+          <div class="stat-num">2</div>
+          <div class="stat-label">対応級<br>（2級・準1級）</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===========================
+       Pain Points
+  =========================== -->
+  <section id="pain">
+    <div class="container">
+      <p class="section-label fade-in">こんな悩みはありませんか</p>
+      <h2 class="section-title fade-in">
+        「合格したいのに、<span>前に進めない</span>理由」が<br>あります。
+      </h2>
+      <p class="section-desc fade-in">
+        多くの受験生が、独学の限界ではなく「添削環境の不足」で止まっています。
+      </p>
+
+      <ul class="pain-list">
+        <li class="pain-item fade-in">
+          <svg class="pain-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" stroke="#0D2657" stroke-width="2"/>
+            <path d="M12 7v6M12 17h.01" stroke="#0D2657" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <p class="pain-text"><strong>英作文を添削してもらえる場所がない。</strong>模範解答と自分の答案の差が正直わからない。</p>
+        </li>
+        <li class="pain-item fade-in">
+          <svg class="pain-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" stroke="#0D2657" stroke-width="2"/>
+            <path d="M12 7v6M12 17h.01" stroke="#0D2657" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <p class="pain-text"><strong>塾の先生に添削を頼むのが気まずい。</strong>英検は受験の本筋じゃないから遠慮してしまう。</p>
+        </li>
+        <li class="pain-item fade-in">
+          <svg class="pain-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" stroke="#0D2657" stroke-width="2"/>
+            <path d="M12 7v6M12 17h.01" stroke="#0D2657" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <p class="pain-text"><strong>「この書き方で減点されるのか」が不明。</strong>フィードバックがないまま練習しても、同じミスを繰り返す。</p>
+        </li>
+        <li class="pain-item fade-in">
+          <svg class="pain-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" stroke="#0D2657" stroke-width="2"/>
+            <path d="M12 7v6M12 17h.01" stroke="#0D2657" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <p class="pain-text"><strong>面接（二次試験）の練習相手がいない。</strong>本番のロールプレイを試せる環境が整っていない。</p>
+        </li>
+        <li class="pain-item fade-in">
+          <svg class="pain-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" stroke="#0D2657" stroke-width="2"/>
+            <path d="M12 7v6M12 17h.01" stroke="#0D2657" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <p class="pain-text"><strong>英検と大学受験をどう両立すればいいか。</strong>受験スケジュール全体から逆算した戦略が立てられていない。</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+
+  <!-- ===========================
+       Reasons
+  =========================== -->
+  <section id="reasons">
+    <div class="container">
+      <p class="section-label fade-in">選ばれる3つの理由</p>
+      <h2 class="section-title fade-in">
+        「添削してもらった」で<br>終わらない理由。
+      </h2>
+      <p class="section-desc fade-in">
+        ○×をつけるだけの添削はしません。「なぜ減点か・どう直すか」を毎回具体的に書き、添削から受験相談まで同じ担当者が最後まで対応します。
+      </p>
+
+      <div class="reasons-grid">
+        <div class="reason-card fade-in">
+          <span class="reason-num">01</span>
+          <p class="reason-label">Speed</p>
+          <h3 class="reason-title"><span class="highlight">48時間以内</span>に返却</h3>
+          <p class="reason-desc">申込から原則48時間以内に添削済み答案を返却します。試験直前でも間に合う。繰り返し提出することで、短期間で急速に伸ばせます。</p>
+        </div>
+        <div class="reason-card fade-in">
+          <span class="reason-num">02</span>
+          <p class="reason-label">Depth</p>
+          <h3 class="reason-title"><span class="highlight">「なぜ減点か」</span>まで書く</h3>
+          <p class="reason-desc">○×をつけるだけの添削はしません。「なぜその書き方が減点されるのか」「どう書き直せばスコアが上がるか」を具体的に明記します。</p>
+        </div>
+        <div class="reason-card fade-in">
+          <span class="reason-num">03</span>
+          <p class="reason-label">Scope</p>
+          <h3 class="reason-title">添削から<span class="highlight">受験戦略</span>まで</h3>
+          <p class="reason-desc">ライティング添削・面接対策・受験コンサルを一人が担当。担当が変わるたびに説明し直す手間がなく、一気通貫で合格まで伴走します。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===========================
+       Services / Pricing
+  =========================== -->
+  <section id="services">
+    <div class="container">
+      <p class="section-label fade-in">サービスラインナップ</p>
+      <h2 class="section-title fade-in">
+        必要なものだけ、<br><span>必要な分だけ</span>選べる。
+      </h2>
+      <p class="section-desc fade-in">
+        単発から月額まで。まずは1回お試しいただけます。
+      </p>
+
+      <div class="service-cards">
+
+        <!-- Card 1: 添削単発 -->
+        <div class="service-card fade-in">
+          <div class="service-card-header">
+            <span class="service-name">ライティング添削（1回）</span>
+          </div>
+          <div class="service-card-body">
+            <p class="service-desc">英検2級・準1級のライティング問題（意見論述）を1答案分、徹底添削。減点箇所・改善案・高得点の書き方を明記して返却します。その答案に関する確認質問は2往復まで含みます。</p>
+            <div class="price-row">
+              <span class="price-tag">2級</span>
+              <span class="price-amount"><span class="yen">¥</span>1,200</span>
+              <span class="price-divider">/</span>
+              <span class="price-tag">準1級</span>
+              <span class="price-amount"><span class="yen">¥</span>1,800</span>
+            </div>
+            <p class="price-note">まずはお試し1回からどうぞ</p>
+            <div class="payment-badges">
+              <span class="payment-badge">クレカ</span>
+              <span class="payment-badge">コンビニ払い</span>
+              <span class="payment-badge">Paidy</span>
+            </div>
+            <div class="grade-btns">
+              <!-- Stripe Payment LinkのURLを href に設定してください -->
+              <a href="#stripe-tansaku-2kyu" class="btn-grade">
+                <span class="grade-label">2級を購入</span>
+                <span class="grade-price">¥1,200</span>
+              </a>
+              <a href="#stripe-tansaku-jun1" class="btn-grade">
+                <span class="grade-label">準1級を購入</span>
+                <span class="grade-price">¥1,800</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: 月額パック -->
+        <div class="service-card fade-in">
+          <div class="service-card-header popular">
+            <span class="service-name">月額添削パック（月4回）</span>
+            <span class="badge-popular">人気No.1</span>
+          </div>
+          <div class="service-card-body">
+            <p class="service-desc">月4回の添削を定額で。添削に関する質問は無制限、月2回まで勉強相談もLINEで対応します。試験前の1〜2ヶ月間のご利用がおすすめです。</p>
+            <div class="price-row">
+              <span class="price-tag">2級</span>
+              <span class="price-amount"><span class="yen">¥</span>3,800</span>
+              <span class="price-divider">/</span>
+              <span class="price-tag">準1級</span>
+              <span class="price-amount"><span class="yen">¥</span>5,500</span>
+            </div>
+            <p class="price-note">1回あたり950円〜の計算</p>
+            <div class="payment-badges">
+              <span class="payment-badge">クレカ</span>
+              <span class="payment-badge">コンビニ払い</span>
+              <span class="payment-badge">Paidy</span>
+            </div>
+            <div class="grade-btns">
+              <a href="#stripe-pack-2kyu" class="btn-grade">
+                <span class="grade-label">2級パックを購入</span>
+                <span class="grade-price">¥3,800</span>
+              </a>
+              <a href="#stripe-pack-jun1" class="btn-grade">
+                <span class="grade-label">準1級パックを購入</span>
+                <span class="grade-price">¥5,500</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: 面接対策 -->
+        <div class="service-card fade-in">
+          <div class="service-card-header">
+            <span class="service-name">面接対策（模擬面接）</span>
+          </div>
+          <div class="service-card-body">
+            <p class="service-desc">二次試験（面接）の模擬練習と講評。実際の試験形式に沿ったロールプレイ＋フィードバックで、本番に自信を持って臨めます。</p>
+            <p style="font-size:12px;color:#D4AF37;font-weight:700;margin-bottom:4px;">※ Zoom / Google Meet を使用します（顔出し任意）</p>
+            <div class="price-row">
+              <span class="price-tag">2級</span>
+              <span class="price-amount"><span class="yen">¥</span>4,800</span>
+              <span class="price-divider">/</span>
+              <span class="price-tag">準1級</span>
+              <span class="price-amount"><span class="yen">¥</span>6,800</span>
+            </div>
+            <p class="price-note">二次試験直前に特におすすめ</p>
+            <div class="payment-badges">
+              <span class="payment-badge">クレカ</span>
+              <span class="payment-badge">コンビニ払い</span>
+              <span class="payment-badge">Paidy</span>
+            </div>
+            <div class="grade-btns">
+              <a href="#stripe-mensetsu-2kyu" class="btn-grade">
+                <span class="grade-label">2級を購入</span>
+                <span class="grade-price">¥4,800</span>
+              </a>
+              <a href="#stripe-mensetsu-jun1" class="btn-grade">
+                <span class="grade-label">準1級を購入</span>
+                <span class="grade-price">¥6,800</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4: 受験コンサル -->
+        <div class="service-card fade-in">
+          <div class="service-card-header">
+            <span class="service-name">受験コンサルティング（60分）</span>
+          </div>
+          <div class="service-card-body">
+            <p class="service-desc">英検合格から逆算した学習計画を一緒に設計します。大学受験との両立、受験回数の選び方、弱点分野の優先度など、個別最適な戦略を提案します。</p>
+            <p style="font-size:12px;color:#D4AF37;font-weight:700;margin-bottom:4px;">※ Zoom / Google Meet を使用します（顔出し任意）</p>
+            <div class="price-row">
+              <span class="price-amount"><span class="yen">¥</span>12,000</span>
+            </div>
+            <p class="price-note">60分のオンライン個別セッション</p>
+            <div class="payment-badges">
+              <span class="payment-badge">クレカ</span>
+              <span class="payment-badge">コンビニ払い</span>
+              <span class="payment-badge">Paidy</span>
+            </div>
+            <!-- Stripe Payment LinkのURLを href に設定してください -->
+            <a href="#stripe-consul" class="btn-grade-single">今すぐ申し込む（¥12,000）</a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 支払い方法 -->
+      <div class="payment-info-box fade-in">
+        <p class="payment-info-title">ご利用いただける支払い方法</p>
+        <div class="payment-methods-grid">
+          <div class="payment-method-item">
+            <div class="payment-icon">CARD</div>
+            <span>クレジット・<br>デビットカード</span>
+          </div>
+          <div class="payment-method-item">
+            <div class="payment-icon">コンビニ</div>
+            <span>コンビニ払い<br>（現金OK）</span>
+          </div>
+          <div class="payment-method-item">
+            <div class="payment-icon">後払い</div>
+            <span>Paidy<br>（スマホ後払い）</span>
+          </div>
+          <div class="payment-method-item">
+            <div class="payment-icon">銀行</div>
+            <span>銀行振込</span>
+          </div>
+        </div>
+        <div class="konbini-flow">
+          <p class="konbini-flow-title">コンビニ払いの流れ（カードなしでもOK）</p>
+          <div class="konbini-steps">
+            <div class="konbini-step">
+              <span class="step-num">1</span>
+              <span>購入ボタンをタップ → Stripeの決済ページへ</span>
+            </div>
+            <div class="konbini-step">
+              <span class="step-num">2</span>
+              <span>メールアドレスを入力し「コンビニ払い」を選択</span>
+            </div>
+            <div class="konbini-step">
+              <span class="step-num">3</span>
+              <span>支払い番号コードがメールで届く</span>
+            </div>
+            <div class="konbini-step">
+              <span class="step-num">4</span>
+              <span>ローソン・ファミリマートなど全国のコンビニで支払い（3日以内）</span>
+            </div>
+            <div class="konbini-step">
+              <span class="step-num">5</span>
+              <span>支払い完了後、自動でLINE友達追加ページに移動します。そのまま追加してください。以降のやりとりはLINEで完結します</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ===========================
+       添削例
+  =========================== -->
+  <section id="sample">
+    <div class="container">
+      <span class="sample-label fade-in">実際の添削例</span>
+      <h2 class="section-title fade-in">こんなフィードバックが<br><span>届きます。</span></h2>
+      <p class="sample-note fade-in">英検2級 ライティング（意見論述）の実際の添削イメージです。</p>
+
+      <div class="sample-box fade-in">
+        <!-- 添削前 -->
+        <div class="sample-tab-row">
+          <div class="sample-tab before">添削前（生徒の答案）</div>
+          <div class="sample-tab after">添削後（修正ポイント）</div>
+        </div>
+
+        <div class="sample-writing">
+          I agree with the idea that high school students should study abroad.
+          First, they can improve <span class="err">English ability</span><span class="fix">their English skills</span>.
+          Studying in foreign country gives them many chance to speak English.
+          Second, they can learn <span class="err">different culture</span><span class="fix">different cultures</span>.
+          <span class="err">It is good experience</span><span class="fix">This will be a valuable experience</span> for their future.
+          For these reasons, I think high school students should study abroad.
+        </div>
+
+        <div class="sample-comments">
+          <p class="sample-comments-title">フィードバックコメント</p>
+
+          <div class="comment-item">
+            <span class="comment-tag tag-red">語彙・冠詞</span>
+            <p class="comment-text">「English ability」は不自然。「their English skills」または「their English proficiency」が自然な表現です。冠詞の脱落（a/the）も全体で3か所見られます。</p>
+          </div>
+
+          <div class="comment-item">
+            <span class="comment-tag tag-red">複数形</span>
+            <p class="comment-text">「different culture」→「different cultures」。文化は複数あるので必ず複数形にしましょう。これは減点されやすい典型的なミスです。</p>
+          </div>
+
+          <div class="comment-item">
+            <span class="comment-tag tag-orange">構成・展開</span>
+            <p class="comment-text">理由2つが各1文で終わっています。採点基準「内容」「構成」で大きく減点されます。各理由は2〜3文で具体例を加えて展開することが必須です。</p>
+          </div>
+
+          <div class="comment-item">
+            <span class="comment-tag tag-blue">全体評価</span>
+            <p class="comment-text">構成の型はできています。語彙の質と各理由の展開を改善すれば、大幅に得点が上がります。修正版の書き方を次のメッセージで送ります。</p>
+          </div>
+        </div>
+
+        <div class="sample-score-row">
+          <div class="score-chip">内容 <span>4/8点</span> → <span class="after" style="color:#27ae60">7/8点</span></div>
+          <div class="score-chip">構成 <span>3/8点</span> → <span class="after" style="color:#27ae60">6/8点</span></div>
+          <div class="score-chip">語彙 <span>4/8点</span> → <span class="after" style="color:#27ae60">7/8点</span></div>
+          <div class="score-chip">文法 <span>5/8点</span> → <span class="after" style="color:#27ae60">7/8点</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===========================
+       Authority
+  =========================== -->
+  <section id="authority">
+    <div class="container">
+      <p class="section-label fade-in">実績・権威性</p>
+      <h2 class="section-title fade-in">
+        なぜこのサービスに<br><span>信頼性があるのか。</span>
+      </h2>
+      <p class="section-desc fade-in">
+        数字と実績が、指導の質を証明します。
+      </p>
+
+      <div class="authority-grid">
+        <div class="authority-card fade-in">
+          <svg class="authority-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="40" height="40" rx="10" fill="#EEF0F5"/>
+            <path d="M20 8l3.09 6.26L30 15.27l-5 4.87 1.18 6.86L20 23.77l-6.18 3.23L15 20.14l-5-4.87 6.91-1.01L20 8z" stroke="#0D2657" stroke-width="1.8" stroke-linejoin="round"/>
+          </svg>
+          <div class="authority-num">50<sup style="font-size:13px">+</sup></div>
+          <div class="authority-label">担当校舎数<br>（塾講師歴）</div>
+        </div>
+        <div class="authority-card fade-in">
+          <svg class="authority-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="40" height="40" rx="10" fill="#EEF0F5"/>
+            <path d="M20 8l2.5 5 5.5.8-4 3.9.95 5.5L20 20.5l-4.95 2.7.95-5.5-4-3.9 5.5-.8L20 8z" stroke="#0D2657" stroke-width="1.8" stroke-linejoin="round"/>
+          </svg>
+          <div class="authority-num" style="font-size:28px;letter-spacing:-0.5px;">英検1級</div>
+          <div class="authority-label">取得済み<br>リスニング満点</div>
+        </div>
+        <div class="authority-card fade-in">
+          <svg class="authority-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="40" height="40" rx="10" fill="#EEF0F5"/>
+            <circle cx="20" cy="20" r="8" stroke="#0D2657" stroke-width="1.8"/>
+            <path d="M20 14v6l4 2" stroke="#0D2657" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+          <div class="authority-num">48h</div>
+          <div class="authority-label">以内に返却<br>（原則）</div>
+        </div>
+        <div class="authority-card fade-in">
+          <svg class="authority-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="40" height="40" rx="10" fill="#EEF0F5"/>
+            <path d="M10 20c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10S10 25.523 10 20z" stroke="#0D2657" stroke-width="1.8"/>
+            <path d="M15 20.5l3.5 3.5 6.5-7" stroke="#0D2657" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <div class="authority-num">945</div>
+          <div class="authority-label">TOEIC L/R<br>スコア</div>
+        </div>
+      </div>
+
+      <div class="authority-banner fade-in">
+        <p class="authority-banner-title">Stripe（国際決済基準）で安全にお支払いいただけます</p>
+        <p class="authority-banner-text">
+          決済はStripeの暗号化されたサーバーで処理されます。<br>
+          カード情報はこちらのサーバーには一切保存されません。
+        </p>
+        <a href="#services" class="btn btn-primary">料金・購入はこちら</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===========================
+       FAQ
+  =========================== -->
+  <section id="faq">
+    <div class="container">
+      <p class="section-label fade-in">よくある質問</p>
+      <h2 class="section-title fade-in">
+        申し込む前に<br><span>確認しておきたいこと。</span>
+      </h2>
+
+      <div class="faq-list fade-in">
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span class="faq-q-mark">Q</span>
+            <span>顔出しや対面は必要ですか？</span>
+            <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none">
+              <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            ライティング添削は顔出し不要です。答案の写真やテキストをLINEで送っていただくだけで完結します。面接対策（模擬面接）と受験コンサルティングはZoomを使用しますが、顔出しは任意です。カメラをオフにしたまま音声のみで受けることもできます。
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span class="faq-q-mark">Q</span>
+            <span>添削の返却はどれくらいかかりますか？</span>
+            <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none">
+              <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            原則として、ご提出いただいてから48時間以内に返却します。繁忙期や大型連休前後は若干の遅れが生じることがありますが、その際は事前にご案内します。
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span class="faq-q-mark">Q</span>
+            <span>何級まで対応していますか？</span>
+            <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none">
+              <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            現在は英検2級と準1級に特化してサービスを提供しています。「大学入学共通テスト利用」や「推薦入試で英検スコアを使う」高校生・大学生に特に適しています。1級・準2級については個別にご相談ください。
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span class="faq-q-mark">Q</span>
+            <span>添削の流れを教えてください。</span>
+            <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none">
+              <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            (1) 購入ボタンから決済 → (2) 決済完了後、自動でLINE友達追加ページに移動します → (3) LINEで答案の写真またはテキストを送付 → (4) 48時間以内に添削済み答案＋フィードバックをLINEで返却。その答案に関する確認質問は2往復まで無料でお受けします。より手厚いサポートが必要な方は月額パックがおすすめです。
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span class="faq-q-mark">Q</span>
+            <span>キャンセルはできますか？</span>
+            <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none">
+              <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            答案の受け取り前であればキャンセルが可能です。キャンセルご希望の場合は、<a href="https://lin.ee/xqIdbii" style="color:#c8a96e;text-decoration:underline;" target="_blank">LINEよりご連絡ください</a>。添削着手後のキャンセルは対応が難しい場合がありますので、あらかじめご了承ください。
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span class="faq-q-mark">Q</span>
+            <span>塾に通っていますが利用できますか？</span>
+            <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none">
+              <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            はい、もちろんです。多くのご利用者が「塾では英検の添削までは頼みにくい」という理由で本サービスを活用されています。塾の大学受験対策と並行してご利用いただくことを想定しています。
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span class="faq-q-mark">Q</span>
+            <span>面接対策のZoom・Google Meetに不安があります。</span>
+            <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none">
+              <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            完全1対1のセッションです。他の受講者と顔を合わせることは一切ありません。当日は講師との専用ルームに入るだけです。事前にZoomまたはGoogle Meetの接続テストを案内しますので、初めての方でも安心して受けられます。顔出しは任意で、音声のみでも問題ありません。
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===========================
+       Final CTA
+  =========================== -->
+  <section id="final-cta">
+    <div class="final-cta-inner">
+      <p class="final-cta-label fade-in">まずは1回、試してみてください</p>
+      <h2 class="final-cta-title fade-in">
+        「添削の質」が変われば、<br>
+        <span class="accent">スコアが変わります。</span>
+      </h2>
+      <p class="final-cta-sub fade-in">
+        英検2級なら1,200円。準1級なら1,800円。<br>
+        1回試して、フィードバックの差を実感してください。
+      </p>
+      <a href="#services" class="btn btn-primary final-cta-btn fade-in">料金・購入はこちら</a>
+      <p class="final-cta-note fade-in">Stripe決済対応 ｜ クレカ・コンビニ払い・Paidy・銀行振込</p>
+    </div>
+  </section>
+
+
+  <!-- ===========================
+       Footer
+  =========================== -->
+  <footer id="footer">
+    <div class="footer-logo">英検<span>対策</span>コーチ</div>
+    <p class="footer-tagline">全国50校舎以上を担当した塾講師による個別英検対策</p>
+    <p class="footer-copy">&copy; 2026 英検対策コーチ. All rights reserved.</p>
+  </footer>
+
+
+  <!-- ===========================
+       Sticky CTA (mobile)
+  =========================== -->
+  <div class="sticky-cta" id="stickyCta">
+    <a href="#services" class="btn btn-primary">今すぐ購入する</a>
+  </div>
+
+
+  <!-- ===========================
+       JavaScript
+  =========================== -->
+  <script>
+    // Fade-in on scroll
+    (function () {
+      var elements = document.querySelectorAll('.fade-in');
+
+      function checkVisibility() {
+        var scrollY = window.scrollY || window.pageYOffset;
+        var windowH = window.innerHeight;
+
+        elements.forEach(function (el) {
+          var rect = el.getBoundingClientRect();
+          if (rect.top < windowH * 0.92) {
+            el.classList.add('visible');
+          }
+        });
+      }
+
+      // Initial check
+      checkVisibility();
+      window.addEventListener('scroll', checkVisibility, { passive: true });
+      window.addEventListener('resize', checkVisibility, { passive: true });
+    })();
+
+
+    // Sticky CTA: show after scrolling past hero
+    (function () {
+      var stickyCta = document.getElementById('stickyCta');
+      var hero = document.getElementById('hero');
+
+      function checkSticky() {
+        if (!hero || !stickyCta) return;
+        var heroBottom = hero.getBoundingClientRect().bottom;
+        if (heroBottom < 0) {
+          stickyCta.classList.add('visible');
+        } else {
+          stickyCta.classList.remove('visible');
+        }
+      }
+
+      window.addEventListener('scroll', checkSticky, { passive: true });
+    })();
+
+
+    // FAQ accordion
+    function toggleFaq(btn) {
+      var item = btn.closest('.faq-item');
+      var isOpen = item.classList.contains('open');
+
+      // Close all
+      document.querySelectorAll('.faq-item.open').forEach(function (el) {
+        el.classList.remove('open');
+      });
+
+      // Toggle current
+      if (!isOpen) {
+        item.classList.add('open');
+      }
+    }
+  </script>
+
+</body>
+</html>

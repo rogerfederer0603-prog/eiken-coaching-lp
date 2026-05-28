@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>購入ありがとうございます | 英検コーチ</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #0D2657;
+      --gold: #c8a96e;
+      --white: #ffffff;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background: var(--navy);
+      color: var(--white);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    .card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(200,169,110,0.3);
+      border-radius: 16px;
+      padding: 40px 32px;
+      max-width: 480px;
+      width: 100%;
+      text-align: center;
+    }
+    .check-icon {
+      width: 64px;
+      height: 64px;
+      background: rgba(200,169,110,0.15);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+    }
+    .check-icon svg { width: 32px; height: 32px; }
+    h1 {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      line-height: 1.5;
+    }
+    .gold { color: var(--gold); }
+    .subtitle {
+      font-size: 14px;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.8;
+      margin-bottom: 32px;
+    }
+    .line-btn {
+      display: block;
+      background: #06C755;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 50px;
+      padding: 16px 24px;
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    .line-btn:hover { background: #05b34b; }
+    .line-btn svg { width: 24px; height: 24px; flex-shrink: 0; }
+    .note {
+      font-size: 12px;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.8;
+    }
+    .steps {
+      background: rgba(255,255,255,0.04);
+      border-radius: 12px;
+      padding: 20px;
+      margin: 24px 0;
+      text-align: left;
+    }
+    .steps-title {
+      font-size: 12px;
+      color: var(--gold);
+      font-weight: 700;
+      margin-bottom: 12px;
+      text-align: center;
+      letter-spacing: 0.05em;
+    }
+    .step {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      font-size: 13px;
+      line-height: 1.6;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 10px;
+    }
+    .step:last-child { margin-bottom: 0; }
+    .step-num {
+      background: var(--gold);
+      color: var(--navy);
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="check-icon">
+      <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M6 16l7 7 13-13" stroke="#c8a96e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+
+    <h1>購入ありがとうございます！<br><span class="gold">次のステップに進みましょう</span></h1>
+
+    <p class="subtitle">
+      決済が完了しました。<br>
+      下のボタンからLINEを友達追加してください。<br>
+      追加後、答案を送っていただければ対応開始します。
+    </p>
+
+    <a href="https://lin.ee/xqIdbii" class="line-btn" target="_blank">
+      <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2C6.477 2 2 6.038 2 11.011c0 3.443 2.158 6.46 5.408 8.165.207.11.297.37.21.587l-.616 1.607c-.1.261.156.507.411.396l3.594-1.57a.5.5 0 0 1 .325-.014c.214.055.433.103.658.143.322.057.651.086.98.086 5.523 0 10-4.038 10-9.012C22 6.038 17.523 2 12 2z"/>
+      </svg>
+      LINEで友達追加する
+    </a>
+
+    <div class="steps">
+      <p class="steps-title">📋 ここからの流れ</p>
+      <div class="step">
+        <span class="step-num">1</span>
+        <span>上のボタンからLINEを友達追加</span>
+      </div>
+      <div class="step">
+        <span class="step-num">2</span>
+        <span>LINEで答案（写真またはテキスト）を送信</span>
+      </div>
+      <div class="step">
+        <span class="step-num">3</span>
+        <span>48時間以内に添削済み答案＋フィードバックを返却</span>
+      </div>
+      <div class="step">
+        <span class="step-num">4</span>
+        <span>疑問点はそのままLINEで質問OK。追加費用なし</span>
+      </div>
+    </div>
+
+    <p class="note">
+      コンビニ払いの場合は支払い完了後に<br>
+      同じ手順でLINEを友達追加してください。<br>
+      ご不明な点はLINEよりお問い合わせください。
+    </p>
+  </div>
+</body>
+</html>
