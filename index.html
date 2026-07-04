@@ -1436,6 +1436,11 @@
       color: #27ae60;
     }
   </style>
+  <!-- Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7LTKWPSYGT"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-7LTKWPSYGT");</script>
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","xh6tkvd1uz");</script>
 </head>
 <body>
 
@@ -1461,19 +1466,17 @@
       </div>
       <h1 class="hero-title fade-in">
         英検2級・準1級、<br>
-        なぜ合格できないのか。<br>
-        答えは、<span class="accent">「添削の質」</span>にある。
+        合格を分けるのは<br>
+        <span class="accent">「添削の質」と「練習の量」</span>。
       </h1>
       <p class="hero-subtitle fade-in">
         英検1級取得・TOEIC 945点・全国50校舎以上を担当した塾講師が、<br>
-        受験に直結する本質的フィードバックを提供します。<br>
-        顔出し不要・オンライン完結。いつでも、どこからでも。
+        採点基準に沿った本質的フィードバックを一つひとつお届けします。
       </p>
       <div class="hero-buttons fade-in">
-        <a href="#services" class="btn btn-primary">添削を試してみる</a>
-        <a href="#services" class="btn btn-outline">サービス詳細を見る</a>
+        <a href="#services" class="btn btn-primary">添削サービスを見る</a>
       </div>
-      <p class="hero-note fade-in">Stripe決済対応 ｜ クレカ・コンビニ払い・Paidy</p>
+      <p class="hero-note fade-in">Stripe決済対応 ｜ クレカ・コンビニ払い・Paidy・PayPay</p>
     </div>
   </section>
 
@@ -1552,6 +1555,13 @@
             <circle cx="12" cy="12" r="10" stroke="#0D2657" stroke-width="2"/>
             <path d="M12 7v6M12 17h.01" stroke="#0D2657" stroke-width="2" stroke-linecap="round"/>
           </svg>
+          <p class="pain-text"><strong>練習したいけど、添削を頼むたびにコストがかかる。</strong>量をこなしたいのに、費用を考えると手が止まる。</p>
+        </li>
+        <li class="pain-item fade-in">
+          <svg class="pain-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" stroke="#0D2657" stroke-width="2"/>
+            <path d="M12 7v6M12 17h.01" stroke="#0D2657" stroke-width="2" stroke-linecap="round"/>
+          </svg>
           <p class="pain-text"><strong>英検と大学受験をどう両立すればいいか。</strong>受験スケジュール全体から逆算した戦略が立てられていない。</p>
         </li>
       </ul>
@@ -1606,38 +1616,50 @@
         申し込みから返却まで、<br><span>4ステップで完結。</span>
       </h2>
 
-      <div class="flow-steps">
-        <div class="flow-step fade-in">
-          <div class="flow-num">1</div>
-          <div class="flow-content">
-            <p class="flow-title">購入する（Stripe決済）</p>
-            <p class="flow-desc">下のサービス一覧から必要なものを選び、Stripeの決済ページで支払いを完了します。クレカ・コンビニ払い・Paidyに対応しています。</p>
+      <div style="display:grid;grid-template-columns:1fr;gap:40px;margin-top:8px;max-width:560px;margin-left:auto;margin-right:auto;" class="flow-grid-2col">
+
+        <div>
+          <div class="flow-steps">
+            <div class="flow-step fade-in">
+              <div class="flow-num">1</div>
+              <div class="flow-content">
+                <p class="flow-title">購入する（Stripe決済）</p>
+                <p class="flow-desc">サービス一覧から選び、Stripeで支払いを完了します。クレカ・コンビニ払い・Paidy・PayPayに対応。</p>
+              </div>
+            </div>
+            <div class="flow-step fade-in">
+              <div class="flow-num">2</div>
+              <div class="flow-content">
+                <p class="flow-title">LINEを友達追加する</p>
+                <p class="flow-desc">決済完了後、自動でLINE友達追加ページへ移動します。以降のやりとりはすべてLINEで完結。</p>
+                <span class="flow-tag">顔出し不要・1分で完了</span>
+              </div>
+            </div>
+            <div class="flow-step fade-in">
+              <div class="flow-num">3</div>
+              <div class="flow-content">
+                <p class="flow-title">答案を送る</p>
+                <p class="flow-desc">LINEに英作文の写真またはテキストを送るだけです。</p>
+              </div>
+            </div>
+            <div class="flow-step fade-in">
+              <div class="flow-num">4</div>
+              <div class="flow-content">
+                <p class="flow-title">48時間以内に添削返却</p>
+                <p class="flow-desc">減点箇所・改善案・高得点の書き方をすべてコメントして返却します。</p>
+                <span class="flow-tag">原則48時間以内</span>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="flow-step fade-in">
-          <div class="flow-num">2</div>
-          <div class="flow-content">
-            <p class="flow-title">LINEを友達追加する</p>
-            <p class="flow-desc">決済完了後、自動でLINE友達追加ページに移動します。そのまま追加してください。以降のやりとりはすべてLINEで完結します。</p>
-            <span class="flow-tag">顔出し不要・登録所要時間1分</span>
-          </div>
-        </div>
-        <div class="flow-step fade-in">
-          <div class="flow-num">3</div>
-          <div class="flow-content">
-            <p class="flow-title">答案を送る</p>
-            <p class="flow-desc">LINEに、英作文の写真またはテキストを送るだけです。どの問題を使ったか・何回目の提出かもお知らせください。</p>
-          </div>
-        </div>
-        <div class="flow-step fade-in">
-          <div class="flow-num">4</div>
-          <div class="flow-content">
-            <p class="flow-title">48時間以内に添削返却</p>
-            <p class="flow-desc">減点箇所・改善案・高得点の書き方をすべてコメントして返却します。その答案に関する確認質問は2往復まで含みます。</p>
-            <span class="flow-tag">原則48時間以内</span>
-          </div>
-        </div>
+
       </div>
+
+      <style>
+        @media (max-width: 700px) {
+          .flow-grid-2col { grid-template-columns: 1fr !important; }
+        }
+      </style>
     </div>
   </section>
 
@@ -1652,12 +1674,12 @@
         必要なものだけ、<br><span>必要な分だけ</span>選べる。
       </h2>
       <p class="section-desc fade-in">
-        単発から月額まで。まずは1回お試しいただけます。
+        添削1回から始められます。単発・月額・面接対策から、目的に合わせて選べます。
       </p>
 
-      <div class="service-cards">
+      <div class="service-cards" id="bot">
 
-        <!-- Card 1: 添削単発 -->
+        <!-- Card 2: 添削単発 -->
         <div class="service-card fade-in">
           <div class="service-card-header">
             <span class="service-name">ライティング添削（1回）</span>
@@ -1676,6 +1698,7 @@
               <span class="payment-badge">クレカ</span>
               <span class="payment-badge">コンビニ払い</span>
               <span class="payment-badge">Paidy</span>
+              <span class="payment-badge">PayPay</span>
             </div>
             <div class="grade-btns">
               <a href="https://buy.stripe.com/aFa28r7Uk1ik4d3gMk7AI00" class="btn-grade" target="_blank" rel="noopener">
@@ -1710,6 +1733,7 @@
               <span class="payment-badge">クレカ</span>
               <span class="payment-badge">コンビニ払い</span>
               <span class="payment-badge">Paidy</span>
+              <span class="payment-badge">PayPay</span>
             </div>
             <div class="grade-btns">
               <a href="https://buy.stripe.com/9B69ATfmM6CEaBr8fO7AI02" class="btn-grade" target="_blank" rel="noopener">
@@ -1744,6 +1768,7 @@
               <span class="payment-badge">クレカ</span>
               <span class="payment-badge">コンビニ払い</span>
               <span class="payment-badge">Paidy</span>
+              <span class="payment-badge">PayPay</span>
             </div>
             <div class="grade-btns">
               <a href="https://buy.stripe.com/bJe6oH7Ukd12cJzfIg7AI04" class="btn-grade" target="_blank" rel="noopener">
@@ -1758,7 +1783,7 @@
           </div>
         </div>
 
-        <!-- Card 4: 受験コンサル -->
+        <!-- Card 5: 受験コンサル -->
         <div class="service-card fade-in">
           <div class="service-card-header">
             <span class="service-name">受験コンサルティング（60分）</span>
@@ -1774,6 +1799,7 @@
               <span class="payment-badge">クレカ</span>
               <span class="payment-badge">コンビニ払い</span>
               <span class="payment-badge">Paidy</span>
+              <span class="payment-badge">PayPay</span>
             </div>
             <a href="https://buy.stripe.com/aFa6oHcaA0egbFv8fO7AI06" class="btn-grade-single" target="_blank" rel="noopener">今すぐ申し込む（¥12,000）</a>
           </div>
@@ -1796,6 +1822,10 @@
           <div class="payment-method-item">
             <div class="payment-icon">後払い</div>
             <span>Paidy<br>（スマホ後払い）</span>
+          </div>
+          <div class="payment-method-item">
+            <div class="payment-icon">PayPay</div>
+            <span>PayPay<br>（スマホ決済）</span>
           </div>
           <div class="payment-method-item">
             <div class="payment-icon">銀行</div>
@@ -2085,7 +2115,7 @@
         1回試して、フィードバックの差を実感してください。
       </p>
       <a href="#services" class="btn btn-primary final-cta-btn fade-in">料金・購入はこちら</a>
-      <p class="final-cta-note fade-in">Stripe決済対応 ｜ クレカ・コンビニ払い・Paidy・銀行振込</p>
+      <p class="final-cta-note fade-in">Stripe決済対応 ｜ クレカ・コンビニ払い・Paidy・PayPay・銀行振込</p>
     </div>
   </section>
 
