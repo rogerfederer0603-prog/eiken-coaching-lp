@@ -191,6 +191,11 @@
 
     .band-light { background: var(--gray-100); }
     .band-navy { background: var(--navy); color: var(--white); }
+    #redefine.band-navy {
+      background:
+        linear-gradient(rgba(10, 26, 58, 0.80), rgba(13, 38, 87, 0.86)),
+        url('assets/fv_bg.jpg') center 96% / cover no-repeat;
+    }
 
     /* 見出しまわり（型を固定しすぎない） */
     .eyebrow {
@@ -339,7 +344,9 @@
        1. FV
     ============================================================ */
     #hero {
-      background: var(--navy);
+      background:
+        linear-gradient(rgba(10, 26, 58, 0.72), rgba(13, 38, 87, 0.82)),
+        url('assets/fv_bg.jpg') center 78% / cover no-repeat;
       color: var(--white);
       padding: 40px 0 44px;
       border-bottom: 4px solid var(--gold);
