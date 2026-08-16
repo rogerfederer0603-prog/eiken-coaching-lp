@@ -1032,13 +1032,13 @@
       top: 26px;
     }
 
-    .konbini {
+    .paysteps {
       counter-reset: kb;
       list-style: none;
       padding: 0 0 14px;
     }
 
-    .konbini li {
+    .paysteps li {
       counter-increment: kb;
       font-size: 14px;
       line-height: 1.8;
@@ -1046,7 +1046,7 @@
       position: relative;
     }
 
-    .konbini li::before {
+    .paysteps li::before {
       content: counter(kb);
       position: absolute;
       left: 0;
@@ -1471,7 +1471,7 @@
         <span class="s-note">準1級は¥128,000。月2〜3名まで。<b>必要な人だけです。</b></span>
       </li>
     </ul>
-    <p class="start-pay">支払いはカード・コンビニ払い・PayPay・Paidy・銀行振込。<b>カードがなくても買えます。</b></p>
+    <p class="start-pay">支払いはカード・Apple Pay・PayPay。<b>カードがなくてもPayPayで買えます。</b></p>
     <p class="start-urgent">10月4日の一次まで日数がない方は、残りの日数だけ伴走する<a href="#chokuzen">一次直前パック（¥24,800〜）</a>もあります。</p>
     <a class="start-cta" href="#services">それぞれの中身を見る →</a>
   </div>
@@ -1646,20 +1646,17 @@
       <h3>支払い方法</h3>
       <div class="pay-methods">
         <span>クレジット・デビットカード</span>
-        <span>コンビニ払い</span>
-        <span>Paidy</span>
+        <span>Apple Pay</span>
         <span>PayPay</span>
-        <span>銀行振込</span>
       </div>
       <p>決済はStripeのページで行います。カード情報を当サイトで預かることはありません。</p>
 
       <details class="acc">
-        <summary>カードを持っていない場合（コンビニ払いの手順）</summary>
-        <ol class="konbini">
+        <summary>カードを持っていない場合（PayPayの手順）</summary>
+        <ol class="paysteps">
           <li>購入ボタンをタップして、Stripeの決済ページを開く</li>
-          <li>メールアドレスを入力し、支払い方法で「コンビニ払い」を選ぶ</li>
-          <li>支払い番号がメールで届く</li>
-          <li>ローソン・ファミリーマートなど全国のコンビニで支払う（3日以内）</li>
+          <li>メールアドレスを入力し、支払い方法で「PayPay」を選ぶ</li>
+          <li>PayPayで支払いを済ませる</li>
           <li>支払いが終わるとLINEの友だち追加ページに移動します。そのまま追加してください</li>
         </ol>
       </details>
@@ -1681,7 +1678,7 @@
       <dt>Q. 途中でやめられますか。</dt>
       <dd>単発と4回チケットは都度購入なので、続ける義務はありません。4回チケットの有効期限は購入から3ヶ月です。毎月払う契約ではありません。</dd>
       <dt>Q. クレジットカードを持っていません。</dt>
-      <dd>コンビニ払い・PayPay・Paidy・銀行振込が使えます。購入ボタンから進んで、支払い方法で「コンビニ払い」を選んでください。</dd>
+      <dd>PayPayが使えます。購入ボタンから進んで、決済ページで支払い方法に「PayPay」を選んでください。Apple Payも使えます。</dd>
     </dl>
     <p class="start-pay">向いていない方にも正直にお伝えします。自分のペースだけで気楽にやりたい方は、単発の添削やnoteのほうが合っています。</p>
   </div>
@@ -2075,7 +2072,7 @@
       <li class="reveal">
         <span class="n">1</span>
         <p class="t">購入する</p>
-        <p class="d">上のボタンからStripeの決済ページへ。カード・コンビニ払い・Paidy・PayPay・銀行振込に対応しています。</p>
+        <p class="d">上のボタンからStripeの決済ページへ。カード・Apple Pay・PayPayに対応しています。</p>
       </li>
       <li class="reveal">
         <span class="n">2</span>
