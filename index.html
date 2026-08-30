@@ -1404,6 +1404,22 @@
 
 <body>
 
+<!-- 転居にともなう返却停止のお知らせ（2026-08-29〜09-03）。
+     9/4以降は下のスクリプトが自動で非表示にするので、手で消す必要はない。
+     JSが動かなかった場合は表示が残る側に倒してある（誤った「2日以内」を出さないため）。 -->
+<div id="notice-move" style="background:#3a2f10;border-bottom:1px solid #D4AF37;color:#f0e6cc;font-size:14px;line-height:1.7;padding:12px 16px;text-align:center;">
+  <strong style="color:#e8c84a;">お知らせ</strong>：転居のため、<strong>9月3日まで</strong>は添削の返却をお休みしています。この間にいただいた答案は<strong>9月4日以降</strong>に順にお返しします。お申し込みはそのまま受け付けています。
+</div>
+<script>
+(function(){
+  var el = document.getElementById('notice-move');
+  if (!el) return;
+  var now = new Date();
+  // 2026-09-04 00:00（端末のローカル時刻）を過ぎたら消す
+  if (now >= new Date(2026, 8, 4)) { el.style.display = 'none'; }
+})();
+</script>
+
 <!-- ============================================================
      1. ファーストビュー
 ============================================================ -->
@@ -2205,6 +2221,7 @@
   <p>英検2級・準1級の合格コーチング（添削・面接・学習計画）</p>
   <p class="f-links">
     <a href="/tokushoho.html">特定商取引法に基づく表示</a>
+    <a href="/privacy.html">プライバシーポリシー</a>
     <a href="https://note.com/eikencoaching" target="_blank" rel="noopener">note</a>
     <a href="https://lin.ee/PmShWQY" target="_blank" rel="noopener">LINE</a>
   </p>
