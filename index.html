@@ -1382,6 +1382,12 @@
     .s-note  { font-size: 12.5px; line-height: 1.8; color: var(--gray-600); }
     .start-pay { font-size: 13.5px; line-height: 1.85; margin-top: 12px; }
     .start-urgent { font-size: 13.5px; line-height: 1.85; margin-top: 6px; }
+    .s-buys { display: grid; grid-template-columns: 1fr; gap: 8px; margin-top: auto; padding-top: 8px; }
+    .s-buys .btn-buy { min-height: 48px; padding: 10px 14px; font-size: 14px; }
+    .s-buys .btn-buy .buy-price { font-size: 14px; white-space: nowrap; }
+    .s-more { margin-top: auto; font-size: 13.5px; font-weight: 700; color: var(--navy); min-height: 44px; line-height: 44px; }
+    .hero-cta + .hero-person { margin: 24px 0 0; }
+    .hero-title a.u { color: inherit; }
     .start-cta { display: inline-block; margin-top: 10px; font-size: 14.5px; font-weight: 700; color: var(--navy); }
 
     .q2-list { margin-top: 6px; }
@@ -1415,7 +1421,7 @@
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-7LTKWPSYGT"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-7LTKWPSYGT");</script>
-  <script>document.addEventListener("click",function(e){var a=e.target.closest?e.target.closest('a[href*="lin.ee"]'):null;if(a&&typeof gtag==="function"){gtag("event","line_click",{link_url:a.href,transport_type:"beacon"});}});</script>
+  <script>document.addEventListener("click",function(e){var a=e.target.closest?e.target.closest('a[href*="lin.ee"]'):null;if(a&&typeof gtag==="function"){gtag("event","line_click",{link_url:a.href,transport_type:"beacon"});}var b=e.target.closest?e.target.closest('a[href*="buy.stripe.com"]'):null;if(b&&typeof gtag==="function"){gtag("event","buy_click",{link_url:b.href,button_pos:b.getAttribute("data-pos")||"body",transport_type:"beacon"});}});</script>
   <!-- Microsoft Clarity -->
   <script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","xh6tkvd1uz");</script>
 </head>
@@ -1434,7 +1440,7 @@
       英作文の直し方も、<br>
       面接の答え方も。<br>
       ひとりで決めなくていい。<br>
-      まずは1枚、<span class="u">¥2,500</span>から。
+      まずは1枚、<a class="u" href="#startsmall">¥2,500</a>から。
     </h1>
 
     <p class="hero-sub">
@@ -1442,6 +1448,16 @@
       答案は原則2日以内に、観点ごとの点数と書き直した答案例をつけて返します。準1級の添削は1枚¥3,500です。<br>
       <strong>1ヶ月でも、1ヶ月未満でも対応します。</strong>
     </p>
+
+    <div class="hero-cta">
+      <a class="btn btn-line" href="#startsmall">1枚¥2,500の添削を試す</a>
+      <a class="btn btn-outline-light" href="https://lin.ee/PmShWQY" target="_blank" rel="noopener">先にLINEで無料診断（今の級と目標を送るだけ）</a>
+      <p class="micro">友だち追加だけで合格スターターキット（PDF）も受け取れます。</p>
+      <div style="display:flex; gap:22px; justify-content:center; flex-wrap:wrap;">
+        <a class="hero-subcta" href="#services">単品メニューを見る →</a>
+        <a class="hero-subcta" href="#program">3ヶ月の合格伴走プログラムを見る →</a>
+      </div>
+    </div>
 
     <div class="hero-person">
       <img src="assets/coach.png?v=2" width="560" height="560" alt="英検対策コーチのイラスト" loading="eager" decoding="async">
@@ -1453,16 +1469,6 @@
         </p>
       </div>
     </div>
-
-    <div class="hero-cta">
-      <a class="btn btn-line" href="#startsmall">1枚¥2,500の添削を試す</a>
-      <a class="btn btn-outline-light" href="https://lin.ee/PmShWQY" target="_blank" rel="noopener">先にLINEで無料診断（今の級と目標を送るだけ）</a>
-      <p class="micro">友だち追加だけで合格スターターキット（PDF）も受け取れます。</p>
-      <div style="display:flex; gap:22px; justify-content:center; flex-wrap:wrap;">
-        <a class="hero-subcta" href="#services">単品メニューを見る →</a>
-        <a class="hero-subcta" href="#program">3ヶ月の合格伴走プログラムを見る →</a>
-      </div>
-    </div>
   </div>
 </header>
 
@@ -1472,26 +1478,35 @@
 ============================================================ -->
 <section id="startsmall" class="band-light">
   <div class="container">
-    <p class="start-lead"><b>3ヶ月のコースに申し込まなくても使えます。</b>まず1回だけ見てほしい人が、いちばん多いです。</p>
+    <p class="start-lead"><b>3ヶ月のコースに申し込まなくても使えます。</b>まず1回だけ見てほしい人が、いちばん多いです。<br>LINEで案内を受けた方は、下のボタンからそのまま買えます。</p>
     <ul class="start-grid">
       <li>
         <span class="s-name">まず1回だけ</span>
         <span class="s-price">¥2,500<small>／答案1本・2級</small></span>
         <span class="s-note">準1級は¥3,500。原則2日以内に返します。</span>
+        <span class="s-buys">
+          <a class="btn-buy" data-pos="top" href="https://buy.stripe.com/3cI00jcaA2mo5h7bs07AI0d" target="_blank" rel="noopener"><span>2級を購入</span><span class="buy-price">¥2,500</span></a>
+          <a class="btn-buy" data-pos="top" href="https://buy.stripe.com/bJe3cveiI3qs38Z53C7AI0e" target="_blank" rel="noopener"><span>準1級を購入</span><span class="buy-price">¥3,500</span></a>
+        </span>
       </li>
       <li>
         <span class="s-name">試験前の1〜2ヶ月</span>
         <span class="s-price">¥8,800<small>／4回チケット・2級</small></span>
         <span class="s-note">準1級は¥12,000。有効期限は3ヶ月。毎月払う契約ではありません。</span>
+        <span class="s-buys">
+          <a class="btn-buy" data-pos="top" href="https://buy.stripe.com/5kQ14n0rS9OQ9xn3Zy7AI0f" target="_blank" rel="noopener"><span>2級チケット</span><span class="buy-price">¥8,800</span></a>
+          <a class="btn-buy" data-pos="top" href="https://buy.stripe.com/8x25kD2A04uweRH1Rq7AI0g" target="_blank" rel="noopener"><span>準1級チケット</span><span class="buy-price">¥12,000</span></a>
+        </span>
       </li>
       <li>
         <span class="s-name">合格まで一緒にやる</span>
         <span class="s-price">¥98,000<small>／3ヶ月・2級</small></span>
         <span class="s-note">準1級は¥128,000。月2〜3名まで。<b>必要な人だけです。</b></span>
+        <a class="s-more" href="#program">3ヶ月の中身を見る →</a>
       </li>
     </ul>
     <p class="start-pay">支払いはカード・Apple Pay・PayPay。<b>カードがなくてもPayPayで買えます。</b></p>
-    <p class="start-urgent">10月4日の一次まで日数がない方は、残りの日数だけ伴走する<a href="#chokuzen">一次直前パック（¥16,800〜）</a>もあります。</p>
+    <p class="start-urgent">支払いが終わるとLINEの友だち追加ページに移ります。すでに友だちの方は、そのままLINEに答案を送ってください。</p>
     <a class="start-cta" href="#services">それぞれの中身を見る →</a>
   </div>
 </section>
