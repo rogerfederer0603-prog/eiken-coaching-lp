@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>英検2級・準1級の合格コーチング｜ライティング添削・面接対策｜英検対策コーチ</title>
-  <meta name="description" content="英検2級・準1級専門の合格コーチングです。ライティング添削・二次面接・3ヶ月の学習設計まで見ます。3ヶ月の合格伴走プログラム（2級98,000円）と、1回2,500円からの単品添削。答案は原則2日以内に返却、やりとりはLINEで完結します。">
+  <meta name="description" content="英検2級・準1級専門の合格コーチングです。ライティング添削・二次面接・3ヶ月の学習設計まで見ます。3ヶ月の合格伴走プログラム（2級98,000円）と、1回2,500円からの単品添削。英検1級は英作文・要約の添削（1回5,500円）に対応。答案は原則2日以内に返却、やりとりはLINEで完結します。">
   <link rel="canonical" href="https://eikencoaching.jp/">
 
   <!-- OGP -->
@@ -27,8 +27,8 @@
     "@type": "Service",
     "name": "英検対策コーチ",
     "url": "https://eikencoaching.jp/",
-    "description": "英検2級・準1級専門の合格コーチング。3ヶ月の合格伴走プログラム（現状診断・英作文の添削12回・学習面談7回 合計450分・模擬面接3回）と、単品のライティング添削、面接対策、受験コンサルティング。答案は原則2日以内に返却し、やりとりはLINEで完結します。",
-    "serviceType": "英検2級・準1級の合格コーチング（ライティング添削・面接対策・学習計画）",
+    "description": "英検2級・準1級専門の合格コーチング（英検1級は英作文・要約の添削に対応）。3ヶ月の合格伴走プログラム（現状診断・英作文の添削12回・学習面談7回 合計450分・模擬面接3回）と、単品のライティング添削、面接対策、受験コンサルティング。答案は原則2日以内に返却し、やりとりはLINEで完結します。",
+    "serviceType": "英検2級・準1級の合格コーチング（ライティング添削・面接対策・学習計画）と英検1級のライティング添削",
     "provider": {
       "@type": "Person",
       "name": "英検コーチ",
@@ -73,6 +73,14 @@
       },
       {
         "@type": "Offer",
+        "name": "ライティング添削 1回（英検1級）",
+        "price": "5500",
+        "priceCurrency": "JPY",
+        "url": "https://buy.stripe.com/4gMaEX2A07GI5h77bK7AI0l",
+        "availability": "https://schema.org/InStock"
+      },
+      {
+        "@type": "Offer",
         "name": "4回チケット 有効期限3ヶ月（英検2級）",
         "price": "8800",
         "priceCurrency": "JPY",
@@ -85,6 +93,14 @@
         "price": "12000",
         "priceCurrency": "JPY",
         "url": "https://buy.stripe.com/8x25kD2A04uweRH1Rq7AI0g",
+        "availability": "https://schema.org/InStock"
+      },
+      {
+        "@type": "Offer",
+        "name": "4回チケット 有効期限3ヶ月（英検1級）",
+        "price": "18000",
+        "priceCurrency": "JPY",
+        "url": "https://buy.stripe.com/7sY4gz7Ukd128tj0Nm7AI0m",
         "availability": "https://schema.org/InStock"
       },
       {
@@ -980,6 +996,9 @@
     }
 
     .plan-buys.single { grid-template-columns: 1fr; }
+    .plan-buys.three { grid-template-columns: repeat(3, 1fr); }
+    .plan-buys.three .btn-buy { flex-direction: column; align-items: flex-start; justify-content: center; gap: 2px; padding: 10px 16px; }
+    .plan-buys.three .btn-buy span { white-space: nowrap; }
 
     .pay-box {
       background: var(--white);
@@ -1344,7 +1363,8 @@
       h2 { font-size: 22px; }
       .redefine-box h2, .story-head h2 { font-size: 21px; }
       .worry-list { grid-template-columns: 1fr; }
-      .plan-buys { grid-template-columns: 1fr; }
+      .plan-buys, .plan-buys.three { grid-template-columns: 1fr; }
+      .plan-buys.three .btn-buy { flex-direction: row; align-items: center; justify-content: space-between; padding: 12px 20px; }
       .fit { grid-template-columns: 1fr; }
       .price-grid { grid-template-columns: 1fr; }
       .week li { grid-template-columns: 1fr; gap: 4px; }
@@ -1449,8 +1469,8 @@
     </h1>
 
     <p class="hero-sub">
-      英検2級・準1級の専門です。1回だけの添削、4回チケット、3ヶ月の伴走の3つから選べます。いきなり3ヶ月を申し込む必要はありません。<br>
-      答案は原則2日以内に、観点ごとの点数と書き直した答案例をつけて返します。準1級の添削は1枚¥3,500です。<br>
+      英検2級・準1級は、1回だけの添削、4回チケット、3ヶ月の伴走の3つから選べます。いきなり3ヶ月を申し込む必要はありません。<br>
+      答案は原則2日以内に、観点ごとの点数と書き直した答案例をつけて返します。準1級の添削は1枚¥3,500です。英検1級は英作文と要約の添削だけで、1枚¥5,500です。<br>
       <strong>1ヶ月でも、1ヶ月未満でも対応します。</strong>
     </p>
 
@@ -1488,19 +1508,21 @@
       <li>
         <span class="s-name">まず1回だけ</span>
         <span class="s-price">¥2,500<small>／答案1本・2級</small></span>
-        <span class="s-note">準1級は¥3,500。原則2日以内に返します。</span>
+        <span class="s-note">準1級は¥3,500、1級は¥5,500。原則2日以内に返します。</span>
         <span class="s-buys">
           <a class="btn-buy" data-pos="top" href="https://buy.stripe.com/3cI00jcaA2mo5h7bs07AI0d" target="_blank" rel="noopener"><span>2級を購入</span><span class="buy-price">¥2,500</span></a>
           <a class="btn-buy" data-pos="top" href="https://buy.stripe.com/bJe3cveiI3qs38Z53C7AI0e" target="_blank" rel="noopener"><span>準1級を購入</span><span class="buy-price">¥3,500</span></a>
+          <a class="btn-buy" data-pos="top" href="https://buy.stripe.com/4gMaEX2A07GI5h77bK7AI0l" target="_blank" rel="noopener"><span>1級を購入</span><span class="buy-price">¥5,500</span></a>
         </span>
       </li>
       <li>
         <span class="s-name">試験前の1〜2ヶ月</span>
         <span class="s-price">¥8,800<small>／4回チケット・2級</small></span>
-        <span class="s-note">準1級は¥12,000。有効期限は3ヶ月。毎月払う契約ではありません。</span>
+        <span class="s-note">準1級は¥12,000、1級は¥18,000。有効期限は3ヶ月。毎月払う契約ではありません。</span>
         <span class="s-buys">
           <a class="btn-buy" data-pos="top" href="https://buy.stripe.com/5kQ14n0rS9OQ9xn3Zy7AI0f" target="_blank" rel="noopener"><span>2級チケット</span><span class="buy-price">¥8,800</span></a>
           <a class="btn-buy" data-pos="top" href="https://buy.stripe.com/8x25kD2A04uweRH1Rq7AI0g" target="_blank" rel="noopener"><span>準1級チケット</span><span class="buy-price">¥12,000</span></a>
+          <a class="btn-buy" data-pos="top" href="https://buy.stripe.com/7sY4gz7Ukd128tj0Nm7AI0m" target="_blank" rel="noopener"><span>1級チケット</span><span class="buy-price">¥18,000</span></a>
         </span>
       </li>
       <li>
@@ -1607,7 +1629,7 @@
   <div class="container">
     <span class="eyebrow">単品メニュー</span>
     <h2>まず小さく試したい方へ</h2>
-    <p class="lead">3ヶ月のプログラムまでは決められない、という方はこちらから。必要なぶんだけ1回から使えます。対応しているのは英検2級・準1級で、購入後のやりとりはすべてLINEで完結します。</p>
+    <p class="lead">3ヶ月のプログラムまでは決められない、という方はこちらから。必要なぶんだけ1回から使えます。対応しているのは英検2級・準1級で、英検1級は英作文と要約の添削（1回・4回チケット）だけお受けしています。購入後のやりとりはすべてLINEで完結します。</p>
 
     <!-- 単発添削 -->
     <div class="plan reveal">
@@ -1619,12 +1641,15 @@
         英作文または要約の答案を1枚お送りください。観点ごとの採点、直した箇所とその理由、書き直した答案例をつけて、原則2日以内に返します。
       </p>
       <p class="plan-note">その答案に関する確認の質問は2往復までお受けします。</p>
-      <div class="plan-buys">
+      <div class="plan-buys three">
         <a class="btn-buy" href="https://buy.stripe.com/3cI00jcaA2mo5h7bs07AI0d" target="_blank" rel="noopener">
           <span>2級を購入</span><span class="buy-price">¥2,500</span>
         </a>
         <a class="btn-buy" href="https://buy.stripe.com/bJe3cveiI3qs38Z53C7AI0e" target="_blank" rel="noopener">
           <span>準1級を購入</span><span class="buy-price">¥3,500</span>
+        </a>
+        <a class="btn-buy" href="https://buy.stripe.com/4gMaEX2A07GI5h77bK7AI0l" target="_blank" rel="noopener">
+          <span>1級を購入</span><span class="buy-price">¥5,500</span>
         </a>
       </div>
     </div>
@@ -1639,12 +1664,15 @@
         添削4回分をまとめて。書く→直す→もう一度書く、を4回まわすと同じ減点が消えていきます。使う間隔は自由で、購入から3ヶ月以内に使い切ってください。
       </p>
       <p class="plan-note">毎月払う契約ではありません。自動更新もありません。添削に関する質問は回数の制限なし。あわせて2回まで、勉強の進め方の相談にもLINEで対応します。</p>
-      <div class="plan-buys">
+      <div class="plan-buys three">
         <a class="btn-buy" href="https://buy.stripe.com/5kQ14n0rS9OQ9xn3Zy7AI0f" target="_blank" rel="noopener">
           <span>2級チケット</span><span class="buy-price">¥8,800</span>
         </a>
         <a class="btn-buy" href="https://buy.stripe.com/8x25kD2A04uweRH1Rq7AI0g" target="_blank" rel="noopener">
           <span>準1級チケット</span><span class="buy-price">¥12,000</span>
+        </a>
+        <a class="btn-buy" href="https://buy.stripe.com/7sY4gz7Ukd128tj0Nm7AI0m" target="_blank" rel="noopener">
+          <span>1級チケット</span><span class="buy-price">¥18,000</span>
         </a>
       </div>
     </div>
@@ -1989,7 +2017,7 @@
       <b>期間は、初回面談日から12週間後の日か、二次試験日の翌日か、遅いほうまで</b>です（二次対策まで含むため、最長で約17週間になります）。開始日と終了日は契約書面に日付で記載します。<br>
       お受けできるのは<b>月2〜3名まで</b>です。ひとりで担当しているので、これ以上は見きれません。<br>
       <b>今月（10月）の受付は、残り2名です。</b>埋まり次第、翌月以降のご案内になります。<br><!-- 残り枠は毎月ここを更新 -->
-      対応しているのは英検2級・準1級です。1級は別途ご相談ください。
+      3ヶ月の伴走は英検2級・準1級が対象です。英検1級は、英作文と要約の添削（1回・4回チケット）でお受けしています。
     </p>
 
     <div class="prog-cta">
@@ -2190,7 +2218,7 @@
 
       <details>
         <summary>何級まで対応していますか。</summary>
-        <div class="a">英検2級と準1級に絞って対応しています。共通テストや推薦入試で英検のスコアを使う高校生・大学生の方が中心です。それ以外の級については個別にご相談ください。</div>
+        <div class="a">英検2級と準1級は、添削・面接対策・3ヶ月の伴走のすべてに対応しています。共通テストや推薦入試で英検のスコアを使う高校生・大学生の方が中心です。英検1級は、英作文（意見論述）と要約の添削だけをお受けしています（1回¥5,500・4回チケット¥18,000）。それ以外の級については個別にご相談ください。</div>
       </details>
 
       <details>
@@ -2247,7 +2275,7 @@
 ============================================================ -->
 <footer>
   <p class="f-logo">英検<span>対策</span>コーチ</p>
-  <p>英検2級・準1級の合格コーチング（添削・面接・学習計画）</p>
+  <p>英検2級・準1級の合格コーチング（添削・面接・学習計画）／英検1級のライティング添削</p>
   <p class="f-links">
     <a href="/tokushoho.html">特定商取引法に基づく表示</a>
     <a href="/privacy.html">プライバシーポリシー</a>
