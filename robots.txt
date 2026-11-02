@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /assets/starterkit_jun1kyu.pdf
+Disallow: /assets/starterkit_2kyu.pdf
+
+Sitemap: https://eikencoaching.jp/sitemap.xml

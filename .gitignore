@@ -1,0 +1,32 @@
+# 2026-08-21 セキュリティ監査で追加。公開リポジトリなので実データを絶対に載せない。
+.env
+.env.*
+!.env.example
+credentials*.json
+token*.json
+*service_account*
+*.pem
+*.p12
+tokens.json
+
+# 実データ（校舎・クライアント・営業リスト）
+*.csv
+*.xlsx
+output/
+operations/
+_backup_*/
+*.bak
+
+.DS_Store
+node_modules/
+__pycache__/
+
+# 公開しない作業ファイル
+color_*.html
+design_*.html
+thanks_bot.html
+*.bak_*
+_rebuild_brief.md
+_draft_legal/
+_draft_lp_kaishu/
+assets/fv_bg_test.jpg
