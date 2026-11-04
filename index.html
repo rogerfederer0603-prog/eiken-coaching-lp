@@ -25,7 +25,7 @@
   <meta name="twitter:description" content="英検の英作文添削と面接対策。準2級・準2級プラス・2級・準1級・1級の添削は1回2,000円から、原則2日以内に返却。2級・準1級は模擬面接と3ヶ月の合格伴走も。">
   <meta name="twitter:image" content="https://eikencoaching.jp/assets/og.jpg">
 
-  <!-- 構造化データ -->
+  <!-- 構造化データ（今のLPと同じ） -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -337,1291 +337,551 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap"></noscript>
-
-  <script>document.documentElement.className += ' js';</script>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;700;900&family=Klee+One:wght@600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;700;900&family=Klee+One:wght@600&display=swap"></noscript>
 
   <style>
-    /* ============================================================
-       Reset
-    ============================================================ */
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
+    /* 色：白い紙・罫線の青・赤ペン。申し込み（LINE）だけ緑 */
     :root {
-      --navy: #0D2657;
-      --navy-dark: #081840;
-      --navy-mid: #142f6e;
-      --gold: #D4AF37;
-      --gold-light: #e8c84a;
-      --gold-dark: #b8941e;
-      --white: #ffffff;
-      --gray-100: #f8f9fc;
-      --gray-200: #eef0f5;
-      --gray-300: #dfe3ec;
-      --gray-400: #9aa3b8;
-      --gray-600: #5a6378;
-      --gray-800: #2d3346;
-      --text: #1a1f2e;
-      --green: #1f7a4d;
-      --red: #b23b3b;
-      --shadow-sm: 0 2px 8px rgba(13, 38, 87, 0.08);
-      --shadow-md: 0 4px 20px rgba(13, 38, 87, 0.12);
-      --radius: 12px;
-      --radius-lg: 18px;
-      --max-width: 720px;
+      --paper: #ffffff;
+      --band: #f3f6f9;
+      --rule: #d5dee8;
+      --ink: #1d232b;
+      --sub: #56606b;
+      --blue: #2b5c8a;
+      --blue-deep: #1f4469;
+      --red: #c4392d;
+      --line: #06a84c;
+      --line-deep: #058f41;
+      --pen: 'Klee One', 'Zen Kaku Gothic New', cursive;
+      --en: Georgia, 'Times New Roman', serif;
+      --wrap: 760px;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
     body {
-      font-family: 'Noto Sans JP', sans-serif;
+      font-family: 'Zen Kaku Gothic New', 'Noto Sans JP', 'Hiragino Sans', sans-serif;
       font-size: 16px;
-      line-height: 1.8;
-      color: var(--text);
-      background: var(--white);
+      line-height: 1.85;
+      color: var(--ink);
+      background: var(--paper);
       -webkit-font-smoothing: antialiased;
-      word-break: normal;
       overflow-wrap: anywhere;
     }
 
-    img {
-      max-width: 100%;
-      height: auto;
-      display: block;
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: var(--blue); }
+    a:focus-visible, button:focus-visible, summary:focus-visible {
+      outline: 3px solid var(--blue);
+      outline-offset: 2px;
     }
+    b, strong { font-weight: 700; }
 
-    a { color: inherit; text-decoration: none; }
-
-    /* ============================================================
-       Layout
-    ============================================================ */
-    .container {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    section { padding: 60px 0; }
-
-    .band-light { background: var(--gray-100); }
-    .band-navy { background: var(--navy); color: var(--white); }
-    #redefine.band-navy {
-      background:
-        linear-gradient(rgba(10, 26, 58, 0.80), rgba(13, 38, 87, 0.86)),
-        url('assets/fv_bg.webp') center 96% / cover no-repeat;
-    }
-
-    /* 見出しまわり（型を固定しすぎない） */
-    .eyebrow {
-      display: inline-block;
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      color: var(--gold-dark);
-      border-bottom: 2px solid var(--gold);
-      padding-bottom: 3px;
-      margin-bottom: 16px;
-    }
-
-    .band-navy .eyebrow,
-    #free .eyebrow,
-    #last .eyebrow {
-      color: var(--gold-light);
-      border-bottom-color: var(--gold);
-    }
+    .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 20px; }
+    .wide { max-width: 1040px; }
+    .sec { padding: 64px 0; }
+    .sec.band { background: var(--band); }
+    section[id], div[id], p[id], h3[id] { scroll-margin-top: 72px; }
 
     h2 {
-      font-size: 25px;
+      font-size: 26px;
       line-height: 1.5;
       font-weight: 900;
-      letter-spacing: -0.01em;
-      margin-bottom: 18px;
+      letter-spacing: 0.01em;
+      margin-bottom: 14px;
     }
+    h3 { font-size: 19px; line-height: 1.6; font-weight: 700; }
+    .lead { color: var(--sub); margin-bottom: 28px; max-width: 38em; }
+    .small { font-size: 14px; line-height: 1.8; color: var(--sub); }
 
-    h3 {
-      font-size: 18px;
-      line-height: 1.6;
-      font-weight: 700;
-      margin-bottom: 10px;
-    }
-
-    .lead {
-      font-size: 15.5px;
-      color: var(--gray-600);
-      margin-bottom: 28px;
-    }
-
-    .band-navy .lead,
-    #free .lead,
-    #last .lead { color: rgba(255,255,255,0.86); }
-
-    /* ============================================================
-       Reveal（JSが無ければ最初から見える）
-    ============================================================ */
-    .js .reveal {
-      opacity: 0;
-      transform: translateY(16px);
-      transition: opacity 0.5s ease, transform 0.5s ease;
-    }
-
-    .js .reveal.shown {
-      opacity: 1;
-      transform: none;
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .js .reveal { opacity: 1; transform: none; transition: none; }
-      html { scroll-behavior: auto; }
-    }
-
-    /* ============================================================
-       Buttons
-    ============================================================ */
-    .btn {
-      display: inline-flex;
+    /* ボタン */
+    .btn-line {
+      display: flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
-      min-height: 56px;
-      padding: 14px 26px;
-      border-radius: 999px;
-      font-size: 16px;
+      gap: 10px;
+      width: 100%;
+      max-width: 440px;
+      min-height: 60px;
+      padding: 12px 22px;
+      border-radius: 8px;
+      background: var(--line);
+      color: #fff;
+      font-size: 17px;
       font-weight: 700;
       line-height: 1.4;
+      text-decoration: none;
       text-align: center;
-      border: 2px solid transparent;
-      cursor: pointer;
-      transition: transform 0.15s ease, background 0.15s ease, color 0.15s ease;
     }
+    .btn-line:hover { background: var(--line-deep); }
+    .btn-line small { display: block; font-size: 13px; font-weight: 400; }
+    .btn-line svg { flex-shrink: 0; }
 
-    .btn:active { transform: translateY(1px); }
-
-    .btn-line {
-      background: #06A84C;
-      color: #fff;
-      width: 100%;
-      max-width: 460px;
-      box-shadow: var(--shadow-sm);
-    }
-
-    .btn-line:hover { background: #058f41; }
-
-    .btn-outline-light {
-      background: transparent;
-      color: var(--white);
-      border-color: rgba(255,255,255,0.55);
-      min-height: 48px;
-      font-size: 15px;
-    }
-
-    .btn-outline-light:hover { border-color: var(--white); }
-
-
-
-    .btn-buy {
+    .buy {
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 10px;
-      min-height: 56px;
-      padding: 12px 20px;
-      border-radius: 10px;
-      background: var(--navy);
-      color: var(--white);
-      font-weight: 700;
+      min-height: 52px;
+      padding: 10px 16px;
+      border-radius: 6px;
+      background: var(--blue-deep);
+      color: #fff;
       font-size: 15px;
-      transition: background 0.15s ease;
+      font-weight: 700;
+      line-height: 1.4;
+      text-decoration: none;
+    }
+    .buy:hover { background: var(--blue); }
+    .buy .p { white-space: nowrap; font-size: 16px; }
+
+    .text-link {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      font-weight: 700;
+      color: var(--blue);
     }
 
-    .btn-buy:hover { background: var(--navy-mid); }
-    .btn-buy .buy-price { font-size: 15px; color: var(--gold-light); }
-
-    .micro {
-      font-size: 14px;
-      line-height: 1.7;
-      color: var(--gray-600);
-      margin-top: 10px;
+    /* ヘッダー */
+    .top {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background: rgba(255,255,255,0.96);
+      border-bottom: 1px solid var(--rule);
+    }
+    .top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 56px; }
+    .logo { font-weight: 900; font-size: 16px; color: var(--ink); text-decoration: none; white-space: nowrap; }
+    .top nav { display: flex; align-items: center; gap: 4px; }
+    .top nav a.n {
+      display: inline-flex; align-items: center; min-height: 44px; padding: 0 10px;
+      font-size: 14px; font-weight: 700; color: var(--sub); text-decoration: none; white-space: nowrap;
+    }
+    .top nav a.n:hover { color: var(--ink); }
+    .top .mini-line {
+      display: inline-flex; align-items: center; min-height: 40px; padding: 0 14px; margin-left: 6px;
+      border-radius: 6px; background: var(--line); color: #fff; font-size: 14px; font-weight: 700;
+      text-decoration: none; white-space: nowrap;
+    }
+    @media (max-width: 640px) {
+      .top nav a.n.pc { display: none; }
+      .top .wrap { padding: 0 12px; }
+      .logo { font-size: 15px; }
     }
 
-    .band-navy .micro,
-    #hero .micro,
-    #free .micro,
-    #last .micro { color: rgba(255,255,255,0.75); }
-
-    /* ============================================================
-       1. FV
-    ============================================================ */
-    #hero {
-      background:
-        linear-gradient(rgba(10, 26, 58, 0.72), rgba(13, 38, 87, 0.82)),
-        url('assets/fv_bg.webp') center 78% / cover no-repeat;
-      color: var(--white);
-      padding: 40px 0 44px;
-      border-bottom: 4px solid var(--gold);
-    }
-
+    /* 1. ファーストビュー */
+    #hero { padding: 44px 0 56px; border-bottom: 1px solid var(--rule); }
+    .hero-grid { display: grid; grid-template-columns: 1fr; gap: 36px; }
     .hero-badge {
       display: inline-block;
       font-size: 14px;
       font-weight: 700;
-      letter-spacing: 0.04em;
-      color: var(--navy-dark);
-      background: var(--gold);
-      border-radius: 3px;
-      padding: 4px 12px;
+      line-height: 1.6;
+      color: var(--blue-deep);
+      border-bottom: 2px solid var(--blue);
+      padding-bottom: 2px;
       margin-bottom: 20px;
     }
-
     .hero-title {
-      font-size: 29px;
-      line-height: 1.62;
+      word-break: keep-all;
+      font-size: 34px;
+      line-height: 1.5;
       font-weight: 900;
-      letter-spacing: -0.02em;
+      letter-spacing: 0.01em;
       margin-bottom: 18px;
     }
+    .hero-sub { font-size: 16px; line-height: 1.9; color: var(--sub); margin-bottom: 8px; }
+    .hero-sub strong { display: block; color: var(--ink); font-size: 17px; margin-top: 6px; }
+    .hero-cta { margin-top: 24px; }
+    .hero-links { display: flex; flex-wrap: wrap; gap: 0 18px; margin-top: 8px; }
+    .hero-person { display: flex; align-items: center; gap: 14px; margin-top: 22px; }
+    .hero-person img { width: 64px; height: 64px; border-radius: 50%; border: 1px solid var(--rule); background: #fff; flex-shrink: 0; }
+    .hero-person .nm { font-size: 14px; font-weight: 700; }
+    .hero-person .fx { font-size: 13.5px; line-height: 1.7; color: var(--sub); }
 
-    .hero-title .u {
-      border-bottom: 3px solid var(--gold);
-      padding-bottom: 2px;
-    }
-
-    .hero-sub {
-      font-size: 15.5px;
-      line-height: 1.85;
-      color: rgba(255,255,255,0.9);
-      margin-bottom: 22px;
-    }
-
-    .hero-person {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      padding: 14px 16px;
-      border: 1px solid rgba(255,255,255,0.22);
-      border-radius: var(--radius);
-      margin-bottom: 26px;
-    }
-
-    .hero-person img {
-      width: 74px;
-      height: 74px;
-      border-radius: 12px;
-      background: var(--white);
-      border: 2px solid var(--gold);
-      flex-shrink: 0;
-    }
-
-    .hero-person-name {
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--gold-light);
-      margin-bottom: 2px;
-    }
-
-    .hero-person-facts {
-      font-size: 13px;
-      line-height: 1.7;
-      color: rgba(255,255,255,0.88);
-    }
-
-    .hero-cta { text-align: center; }
-
-
-    /* ============================================================
-       2. 悩み
-    ============================================================ */
-    .worry-list {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-    }
-
-    .worry-item {
-      background: var(--white);
-      border: 1px solid var(--gray-300);
-      border-radius: var(--radius);
-      padding: 20px 18px;
-    }
-
-    .worry-item svg {
-      width: 28px;
-      height: 28px;
-      margin-bottom: 10px;
-      color: var(--navy);
-    }
-
-    .worry-item p {
-      font-size: 14.5px;
-      line-height: 1.75;
-      font-weight: 400;
-    }
-
-
-    /* ============================================================
-       3. 問題の再定義
-    ============================================================ */
-    #redefine { padding: 56px 0; }
-
-    .redefine-box {
-      border-left: 4px solid var(--gold);
-      padding-left: 20px;
-    }
-
-    .redefine-box h2 { font-size: 23px; margin-bottom: 16px; }
-
-    .redefine-box p {
-      font-size: 15.5px;
-      line-height: 1.95;
-      color: rgba(255,255,255,0.9);
-      margin-bottom: 14px;
-    }
-
-    .redefine-box p:last-child { margin-bottom: 0; }
-
-    /* ============================================================
-       4. 添削例
-    ============================================================ */
-    .sample-note {
-      font-size: 13px;
-      line-height: 1.8;
-      color: var(--gray-600);
-      background: var(--gray-200);
-      border-radius: 8px;
-      padding: 12px 14px;
-      margin-bottom: 26px;
-    }
-
-    .sample-step {
-      margin-bottom: 30px;
-    }
-
-    .sample-step-head {
-      display: flex;
-      align-items: baseline;
-      gap: 10px;
-      margin-bottom: 12px;
-    }
-
-    .sample-step-head .no {
-      font-size: 13px;
-      font-weight: 900;
-      color: var(--gold-dark);
-    }
-
-    .sample-step-head .ttl {
-      font-size: 16px;
-      font-weight: 700;
-    }
-
-    .answer-box {
-      font-family: "SFMono-Regular", "Menlo", "Consolas", monospace;
-      font-size: 13.5px;
-      line-height: 2;
-      background: var(--white);
-      border: 1px solid var(--gray-300);
-      border-radius: 8px;
-      padding: 16px;
-      color: var(--gray-800);
-    }
-
-    .answer-box.after {
-      border-color: rgba(31, 122, 77, 0.4);
-      background: #f5fbf7;
-    }
-
-    .word-count {
-      display: inline-block;
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--gray-600);
-      margin-top: 8px;
-    }
-
-    table.score {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 14.5px;
-      background: var(--white);
-    }
-
-    table.score th,
-    table.score td {
-      border: 1px solid var(--gray-300);
-      padding: 10px 12px;
-      text-align: left;
-    }
-
-    table.score th {
-      background: var(--navy);
-      color: var(--white);
-      font-weight: 700;
-      font-size: 13.5px;
-    }
-
-    table.score td.num {
-      text-align: right;
-      font-weight: 700;
-      width: 30%;
-    }
-
-    table.score tr.total td {
-      background: var(--gray-200);
-      font-weight: 900;
-    }
-
-    .fix-item {
-      background: var(--white);
-      border: 1px solid var(--gray-300);
-      border-radius: 8px;
-      padding: 16px;
-      margin-bottom: 14px;
-    }
-
-    .fix-before,
-    .fix-after {
-      font-size: 14px;
-      line-height: 1.8;
-      display: block;
-      padding-left: 22px;
+    /* 答案用紙（添削の見本）：ページの主役 */
+    .sheet {
       position: relative;
+      background-color: #fff;
+      background-image: repeating-linear-gradient(to bottom, transparent 0, transparent 35px, #dbe5f0 35px, #dbe5f0 36px);
+      background-position: 0 14px;
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      padding: 14px 20px 18px 40px;
+      box-shadow: 0 1px 0 var(--rule), 0 10px 24px rgba(31, 68, 105, 0.08);
     }
-
-    .fix-before {
-      color: var(--red);
-      text-decoration: line-through;
-      text-decoration-thickness: 1px;
-      margin-bottom: 8px;
-    }
-
-    .fix-after { color: var(--green); font-weight: 700; }
-
-    .fix-before::before,
-    .fix-after::before {
-      position: absolute;
-      left: 0;
-      top: 0;
-      font-size: 12px;
-      font-weight: 700;
-      text-decoration: none;
-    }
-
-    .fix-before::before { content: "×"; color: var(--red); }
-    .fix-after::before { content: "○"; color: var(--green); }
-
-    .fix-reason {
-      font-size: 14px;
-      line-height: 1.85;
-      color: var(--gray-600);
-      margin-top: 10px;
-      padding-top: 10px;
-      border-top: 1px dashed var(--gray-300);
-    }
-
-    .teacher-comment {
-      background: var(--navy);
-      color: var(--white);
-      border-radius: var(--radius);
-      padding: 18px 18px;
-      font-size: 14.5px;
-      line-height: 1.85;
-    }
-
-    .teacher-comment .label {
-      display: block;
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--gold-light);
-      margin-bottom: 6px;
-    }
-
-    /* ============================================================
-       5. 講師ストーリー
-    ============================================================ */
-    .story-head {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      margin-bottom: 22px;
-    }
-
-    .story-head img {
-      width: 108px;
-      height: 108px;
-      flex-shrink: 0;
-      object-fit: contain;
-    }
-
-    .story-head h2 { margin-bottom: 6px; font-size: 23px; }
-    .story-head .name { font-size: 13.5px; color: var(--gray-600); }
-
-    .story-body p {
-      font-size: 15.5px;
-      line-height: 2;
-      margin-bottom: 18px;
-    }
-
-    .scores {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-      margin: 26px 0 8px;
-    }
-
-    .score-fig {
-      background: var(--white);
-      border: 1px solid var(--gray-300);
-      border-radius: 8px;
-      padding: 10px;
-    }
-
-    .score-fig img {
-      width: 100%;
-      height: 200px;
-      object-fit: contain;
-      object-position: center;
-      background: var(--white);
-    }
-
-    .score-fig figcaption {
-      font-size: 13px;
-      line-height: 1.7;
-      color: var(--gray-600);
-      margin-top: 8px;
-      text-align: center;
-    }
-
-    .score-fig.pass { border-color: rgba(31,122,77,0.45); }
-    .score-fig.pass figcaption { color: var(--green); font-weight: 700; }
-
-    .story-facts {
-      list-style: none;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      margin-top: 26px;
-    }
-
-    .story-facts li {
-      font-size: 14px;
-      font-weight: 700;
-      line-height: 1.7;
-      padding: 13px 14px;
-      background: var(--cream, #FAF6EC);
-      border: 1px solid var(--gray-300);
-      border-left: 4px solid var(--gold);
-      border-radius: 8px;
-    }
-
-    @media (max-width: 560px) {
-      .story-facts { grid-template-columns: 1fr; }
-    }
-
-      font-size: 14px;
-      margin-top: 18px;
-    }
-
-      color: var(--navy);
-      font-weight: 700;
-      border-bottom: 2px solid var(--gold);
-      padding-bottom: 1px;
-    }
-
-    /* ============================================================
-       6. 3ヶ月 合格伴走プログラム
-    ============================================================ */
-    #program {
-      background: #fbf8ef;
-      border-top: 3px solid var(--gold);
-      border-bottom: 1px solid var(--gray-300);
-    }
-
-    .prog-lead {
-      font-size: 15.5px;
-      line-height: 1.95;
-      margin-bottom: 24px;
-    }
-
-    .prog-h3 {
-      font-size: 16.5px;
-      font-weight: 900;
-      line-height: 1.6;
-      margin: 34px 0 14px;
-      padding-left: 12px;
-      border-left: 4px solid var(--navy);
-    }
-
-    .inc-list {
-      list-style: none;
-      background: var(--white);
-      border: 1px solid var(--gray-300);
-      border-radius: var(--radius);
-      padding: 2px 18px;
-    }
-
-    .inc-list li {
-      position: relative;
-      padding: 15px 0 15px 28px;
-      border-bottom: 1px solid var(--gray-200);
-    }
-
-    .inc-list li:last-child { border-bottom: none; }
-
-    .inc-list li::before {
+    .sheet::before {
       content: "";
       position: absolute;
-      left: 2px;
-      top: 23px;
-      width: 13px;
-      height: 7px;
-      border-left: 3px solid var(--gold);
-      border-bottom: 3px solid var(--gold);
-      transform: rotate(-45deg);
+      top: 0; bottom: 0; left: 26px;
+      width: 1px;
+      background: rgba(196, 57, 45, 0.45);
+    }
+    .sheet-cap { font-size: 13px; font-weight: 700; color: var(--sub); line-height: 36px; }
+    .sheet .en {
+      font-family: var(--en);
+      font-size: 17px;
+      line-height: 36px;
+      color: #2a3038;
+    }
+    .sheet del {
+      text-decoration: line-through;
+      text-decoration-color: var(--red);
+      text-decoration-thickness: 2px;
+      color: #6b737c;
+    }
+    .sheet ins {
+      text-decoration: none;
+      font-family: var(--pen);
+      color: var(--red);
+      font-size: 18px;
+    }
+    .pen {
+      font-family: var(--pen);
+      color: var(--red);
+      font-size: 15.5px;
+      line-height: 36px;
+    }
+    .stamp {
+      float: right;
+      position: relative;
+      margin: 0 0 8px 12px;
+      width: 92px;
+      height: 92px;
+      border: 2.5px solid var(--red);
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: var(--red);
+      font-family: var(--pen);
+      line-height: 1.2;
+      transform: rotate(-8deg);
+      background: rgba(255,255,255,0.85);
+    }
+    .stamp b { font-size: 26px; font-weight: 600; }
+    .stamp span { font-size: 12px; }
+    .sheet-foot { font-size: 13px; line-height: 1.7; color: var(--sub); margin-top: 10px; }
+    .sheet-foot a { font-weight: 700; }
+
+    @media (min-width: 900px) {
+      .hero-grid { grid-template-columns: 1.05fr 1fr; gap: 48px; align-items: center; }
+      .hero-title { font-size: 38px; }
+    }
+    @media (max-width: 480px) {
+      .hero-title { font-size: 26px; }
+      .hero-badge { font-size: 13px; }
+      .sheet { padding-left: 34px; padding-right: 14px; }
+      .sheet::before { left: 22px; }
+      .stamp { width: 78px; height: 78px; }
+      .stamp b { font-size: 22px; }
+      .sheet .en { font-size: 16px; }
     }
 
-    .inc-list b { display: block; font-size: 15px; line-height: 1.7; }
-
-    .inc-list span {
-      display: block;
-      font-size: 14px;
-      line-height: 1.8;
-      color: var(--gray-600);
-      margin-top: 2px;
-    }
-
-    .week { list-style: none; }
-
-    .week li {
+    /* 入口（どれから始めるか） */
+    .doors { display: grid; grid-template-columns: 1fr; gap: 0; margin-top: 40px; border-top: 1px solid var(--rule); }
+    .door {
       display: grid;
-      grid-template-columns: 100px 1fr;
-      gap: 14px;
-      padding: 13px 0;
-      border-top: 1px dashed var(--gray-400);
+      grid-template-columns: 1fr auto;
+      gap: 4px 16px;
+      align-items: center;
+      padding: 16px 4px;
+      border-bottom: 1px solid var(--rule);
+      text-decoration: none;
+      color: var(--ink);
+    }
+    .door:hover { background: var(--band); }
+    .door .who { font-size: 13.5px; color: var(--sub); grid-column: 1 / -1; }
+    .door .what { font-size: 17px; font-weight: 700; line-height: 1.5; }
+    .door .pr { font-size: 15px; font-weight: 700; color: var(--blue-deep); white-space: nowrap; text-align: right; }
+    @media (min-width: 900px) {
+      .doors { grid-template-columns: repeat(4, 1fr); border-top: 0; gap: 14px; }
+      .door { grid-template-columns: 1fr; border: 1px solid var(--rule); border-radius: 6px; padding: 16px 18px; align-content: start; }
+      .door .pr { text-align: left; }
+    }
+    @media (max-width: 420px) {
+      .door { grid-template-columns: 1fr; }
+      .door .pr { text-align: left; }
     }
 
-    .week li:last-child { border-bottom: 1px dashed var(--gray-400); }
-
-    .week .when {
-      font-size: 13px;
-      font-weight: 700;
+    /* 2. 悩み */
+    .worry { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .worry li {
+      background: #fff;
+      border: 1px solid var(--rule);
+      border-radius: 6px;
+      padding: 16px 18px;
+      font-size: 15.5px;
       line-height: 1.75;
-      color: var(--gold-dark);
     }
+    .redefine { margin-top: 36px; padding-left: 18px; border-left: 3px solid var(--red); }
+    .redefine h3 { font-size: 21px; margin-bottom: 10px; }
+    .redefine p { margin-bottom: 10px; }
+    .redefine p:last-child { margin-bottom: 0; }
+    @media (max-width: 560px) { .worry { grid-template-columns: 1fr; } }
 
-    .week .what { font-size: 14.5px; line-height: 1.8; }
+    /* 3. できること（添削で返すもの） */
+    .returns { list-style: none; counter-reset: r; display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 36px; }
+    .returns li { border-top: 3px solid var(--blue); padding-top: 10px; }
+    .returns b { display: block; font-size: 16px; line-height: 1.5; }
+    .returns span { display: block; font-size: 14px; color: var(--sub); line-height: 1.7; margin-top: 4px; }
+    @media (max-width: 640px) { .returns { grid-template-columns: 1fr; } }
 
-    .fit { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .q { font-size: 14px; color: var(--sub); background: var(--band); border-radius: 4px; padding: 10px 14px; margin-bottom: 22px; }
+    .q .en { font-family: var(--en); color: var(--ink); }
+    .step { margin-bottom: 28px; }
+    .step-h { display: flex; gap: 10px; align-items: baseline; margin-bottom: 10px; }
+    .step-h .no { font-size: 13px; font-weight: 900; color: var(--blue); white-space: nowrap; }
+    .step-h .tt { font-size: 16px; font-weight: 700; }
+    .sheet.answer { padding-top: 10px; }
+    .sheet.answer .en { display: block; }
+    .wc { display: inline-block; font-size: 13px; font-weight: 700; color: var(--sub); margin-top: 8px; }
 
-    .fit > div {
-      background: var(--white);
-      border: 1px solid var(--gray-300);
-      border-radius: 10px;
-      padding: 16px;
-    }
+    table.score { width: 100%; max-width: 420px; border-collapse: collapse; font-size: 15px; background: #fff; }
+    table.score th, table.score td { border-bottom: 1px solid var(--rule); padding: 9px 12px; text-align: left; }
+    table.score th { font-size: 13.5px; color: var(--sub); font-weight: 700; border-bottom: 2px solid var(--ink); }
+    table.score td.num { text-align: right; font-family: var(--pen); color: var(--red); font-size: 18px; width: 40%; }
+    table.score tr.total td { font-weight: 900; border-bottom: 2px solid var(--ink); }
 
-    .fit .fit-t { font-size: 14.5px; font-weight: 700; margin-bottom: 6px; }
-    .fit .ok .fit-t { color: var(--green); }
-    .fit .ng .fit-t { color: var(--gray-600); }
-    .fit .fit-d { font-size: 14px; line-height: 1.8; color: var(--gray-800); }
+    .fix { background: #fff; border: 1px solid var(--rule); border-radius: 6px; padding: 14px 16px; margin-bottom: 12px; }
+    .fix .bf { display: block; font-family: var(--en); color: #6b737c; text-decoration: line-through; text-decoration-color: var(--red); text-decoration-thickness: 2px; }
+    .fix .af { display: block; font-family: var(--pen); color: var(--red); font-size: 17px; margin-top: 4px; }
+    .fix p { font-size: 14.5px; color: var(--sub); margin-top: 8px; padding-top: 8px; border-top: 1px dashed var(--rule); }
 
-    .promise {
-      background: var(--navy);
-      color: var(--white);
-      border-radius: var(--radius);
-      padding: 20px 18px;
-      margin-top: 22px;
-    }
-
-    .promise .label {
-      display: block;
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--gold-light);
-      margin-bottom: 6px;
-    }
-
-    .promise p { font-size: 14.8px; line-height: 1.9; }
-
-    .promise p + p {
-      margin-top: 10px;
-      font-size: 14px;
-      color: rgba(255,255,255,0.86);
-    }
-
-    .price-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-
-    .price-card {
-      background: var(--white);
-      border: 1px solid var(--gray-300);
-      border-radius: var(--radius-lg);
-      padding: 18px;
-    }
-
-    .price-card .grade {
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--navy);
-      margin-bottom: 4px;
-    }
-
-    .price-card .amount {
-      font-size: 27px;
-      font-weight: 900;
-      line-height: 1.35;
-      letter-spacing: -0.02em;
-    }
-
-    .price-card .amount small {
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--gray-600);
-      margin-left: 5px;
-    }
-
-    .price-card ul {
-      list-style: none;
-      border-top: 1px solid var(--gray-200);
-      margin-top: 12px;
-      padding-top: 10px;
-    }
-
-    .price-card li { font-size: 14px; line-height: 1.9; color: var(--gray-600); }
-    .price-card li b { color: var(--text); }
-
-    .limit-note {
-      margin-top: 16px;
-      font-size: 14px;
-      line-height: 1.9;
-      color: var(--gray-600);
-    }
-
-    .limit-note b { color: var(--navy); }
-
-    .prog-cta { text-align: center; margin-top: 28px; }
-    .prog-cta .btn { max-width: 460px; }
-
-    /* ============================================================
-       7. サービス（単品メニュー）
-    ============================================================ */
-    .plan {
-      background: var(--white);
-      border: 1px solid var(--gray-300);
-      border-radius: var(--radius-lg);
-      padding: 22px 20px;
-      margin-bottom: 18px;
-    }
-
-    .plan-top {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: baseline;
-      justify-content: space-between;
-      gap: 8px;
-      border-bottom: 1px solid var(--gray-200);
-      padding-bottom: 12px;
-      margin-bottom: 14px;
-    }
-
-    .plan-name { margin: 0; font-size: 18px; font-weight: 900; }
-
-    .plan-tag {
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--navy);
-      background: var(--gray-200);
-      border-radius: 3px;
-      padding: 3px 8px;
-    }
-
-    .plan-desc {
-      font-size: 14.5px;
-      line-height: 1.85;
-      color: var(--gray-800);
-      margin-bottom: 16px;
-    }
-
-    .plan-note {
-      font-size: 14px;
-      line-height: 1.8;
-      color: var(--gray-600);
-      margin-bottom: 16px;
-    }
-
-    .plan-buys {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-    }
-
-    .plan-buys.single { grid-template-columns: 1fr; }
-    .plan-buys.four { grid-template-columns: repeat(2, 1fr); }
-
-    .pay-box {
-      background: var(--white);
-      border: 1px solid var(--gray-300);
-      border-radius: var(--radius-lg);
-      padding: 20px;
-      margin-top: 26px;
-    }
-
-    .pay-box h3 { font-size: 16px; }
-
-    .pay-methods {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin: 12px 0 4px;
-    }
-
-    .pay-methods span {
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--navy);
-      border: 1px solid var(--gray-300);
-      border-radius: 999px;
-      padding: 6px 14px;
-    }
-
-    .pay-box p {
-      font-size: 14px;
-      line-height: 1.8;
-      color: var(--gray-600);
-    }
-
-    details.acc {
-      border-top: 1px solid var(--gray-200);
-      margin-top: 16px;
-      padding-top: 4px;
-    }
-
-    details.acc summary {
+    details.more { border-top: 1px solid var(--rule); margin: 6px 0 22px; }
+    details.more > summary {
       list-style: none;
       cursor: pointer;
-      font-size: 14.5px;
+      min-height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
       font-weight: 700;
-      color: var(--navy);
-      padding: 14px 28px 14px 0;
-      position: relative;
-      min-height: 44px;
+      color: var(--blue-deep);
+      padding: 12px 0;
+    }
+    details.more > summary::-webkit-details-marker { display: none; }
+    details.more > summary::after { content: "+"; font-size: 22px; font-weight: 400; color: var(--blue); }
+    details.more[open] > summary::after { content: "−"; }
+
+    .comment { border-left: 3px solid var(--red); background: #fff; padding: 14px 18px; border-radius: 0 6px 6px 0; }
+    .comment .lb { display: block; font-size: 13px; font-weight: 700; color: var(--red); margin-bottom: 4px; }
+    .comment p { font-size: 15px; line-height: 1.9; }
+
+    /* 4. 商品と料金 */
+    .offer { padding: 30px 0; border-top: 1px solid var(--rule); }
+    .offer:first-of-type { border-top: 0; padding-top: 6px; }
+    .offer-h { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 12px; margin-bottom: 10px; }
+    .offer-h h3 { font-size: 21px; }
+    .tag { font-size: 13px; font-weight: 700; color: var(--blue-deep); background: #e7eef6; border-radius: 3px; padding: 2px 8px; white-space: nowrap; }
+    .offer p.d { margin-bottom: 8px; }
+    .offer p.n { font-size: 14.5px; color: var(--sub); margin-bottom: 14px; }
+    .buys { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; max-width: 560px; }
+    .buys.one { grid-template-columns: 1fr; max-width: 360px; }
+    @media (max-width: 420px) { .buys { grid-template-columns: 1fr; } }
+
+    /* 添削の料金表 */
+    table.menu { width: 100%; border-collapse: collapse; margin: 6px 0 12px; }
+    table.menu th, table.menu td { border-bottom: 1px solid var(--rule); padding: 12px 10px; vertical-align: middle; text-align: left; }
+    table.menu thead th { font-size: 13.5px; color: var(--sub); font-weight: 700; border-bottom: 2px solid var(--ink); padding-top: 4px; padding-bottom: 8px; }
+    table.menu .g { font-size: 16px; font-weight: 700; white-space: nowrap; }
+    table.menu .c { font-size: 14px; color: var(--sub); line-height: 1.6; }
+    table.menu td.b { width: 25%; }
+    table.menu .buy { min-height: 48px; font-size: 14px; }
+    @media (max-width: 680px) {
+      table.menu thead { display: none; }
+      table.menu, table.menu tbody, table.menu tr, table.menu td, table.menu th { display: block; width: auto; }
+      table.menu tr { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 14px 0; border-bottom: 1px solid var(--rule); }
+      table.menu th, table.menu td { border: 0; padding: 0; }
+      table.menu th.g, table.menu td.c { grid-column: 1 / -1; }
+      table.menu td.b { width: auto; }
+      table.menu .buy { flex-direction: column; align-items: flex-start; justify-content: center; gap: 0; }
     }
 
-    details.acc summary::-webkit-details-marker { display: none; }
+    .niji-box { margin-top: 26px; border: 2px solid var(--blue); border-radius: 8px; padding: 22px 20px; background: #fff; }
+    .niji-box h3 { font-size: 20px; margin-bottom: 6px; }
+    .niji-when { font-weight: 700; color: var(--blue-deep); margin-bottom: 14px; }
 
-    details.acc summary::after {
+    .inc { list-style: none; border-top: 1px solid var(--rule); margin: 10px 0 18px; }
+    .inc li { padding: 12px 0 12px 26px; border-bottom: 1px solid var(--rule); position: relative; }
+    .inc li::before {
       content: "";
       position: absolute;
-      right: 6px;
-      top: 22px;
-      width: 9px;
-      height: 9px;
-      border-right: 2px solid var(--gray-400);
-      border-bottom: 2px solid var(--gray-400);
-      transform: rotate(45deg);
-      transition: transform 0.2s ease;
-    }
-
-    details.acc[open] summary::after {
-      transform: rotate(-135deg);
-      top: 26px;
-    }
-
-
-
-
-    /* ============================================================
-       7. 無料枠（LINE）
-    ============================================================ */
-    #free { background: var(--navy); color: var(--white); }
-
-    .free-list {
-      list-style: none;
-      margin: 4px 0 26px;
-    }
-
-    .free-list li {
-      position: relative;
-      padding: 14px 0 14px 34px;
-      font-size: 15.5px;
-      line-height: 1.85;
-      border-bottom: 1px solid rgba(255,255,255,0.16);
-    }
-
-    .free-list li:last-child { border-bottom: none; }
-
-    .free-list li::before {
-      content: "";
-      position: absolute;
-      left: 2px;
-      top: 22px;
-      width: 14px;
-      height: 8px;
-      border-left: 3px solid var(--gold);
-      border-bottom: 3px solid var(--gold);
+      left: 3px; top: 21px;
+      width: 12px; height: 7px;
+      border-left: 2px solid var(--red);
+      border-bottom: 2px solid var(--red);
       transform: rotate(-45deg);
     }
+    .inc b { display: block; font-size: 15.5px; line-height: 1.6; }
+    .inc span { display: block; font-size: 14.5px; line-height: 1.8; color: var(--sub); margin-top: 2px; }
+    .inc span b { display: inline; color: var(--ink); font-size: inherit; }
 
-    .free-list b {
-      display: block;
-      font-size: 15.5px;
-      color: var(--gold-light);
+    .prices { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 12px 0; }
+    .price { background: #fff; border: 1px solid var(--rule); border-radius: 6px; padding: 16px; }
+    .price .gr { font-size: 14px; font-weight: 700; color: var(--blue-deep); }
+    .price .am { font-size: 28px; font-weight: 900; line-height: 1.35; }
+    .price .am small { font-size: 14px; font-weight: 700; color: var(--sub); margin-left: 4px; }
+    .price ul { list-style: none; margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--rule); }
+    .price li { font-size: 14px; line-height: 1.85; color: var(--sub); }
+    .price li b { color: var(--ink); }
+    @media (max-width: 560px) { .prices { grid-template-columns: 1fr; } }
+
+    .note-box { background: var(--band); border-radius: 6px; padding: 16px 18px; margin-top: 14px; }
+    .note-box .lb { display: block; font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+    .note-box p { font-size: 14.5px; line-height: 1.85; }
+    .note-box p + p { margin-top: 8px; }
+    .limit { font-size: 14.5px; line-height: 1.9; color: var(--sub); margin: 12px 0; }
+    .limit b { color: var(--ink); }
+    .cta-in { margin-top: 20px; }
+    .cta-in .small { margin-top: 8px; max-width: 440px; }
+
+    .pay { margin-top: 30px; border-top: 2px solid var(--ink); padding-top: 18px; }
+    .pay h3 { font-size: 17px; margin-bottom: 8px; }
+    .pay-m { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
+    .pay-m span { font-size: 13.5px; font-weight: 700; border: 1px solid var(--rule); border-radius: 999px; padding: 4px 12px; background: #fff; }
+
+    /* 3ヶ月 */
+    #program .week { list-style: none; }
+    #program .week li { display: grid; grid-template-columns: 120px 1fr; gap: 12px; padding: 11px 0; border-bottom: 1px dashed var(--rule); }
+    #program .week .w { font-size: 13.5px; font-weight: 700; color: var(--blue); }
+    #program .week .t { font-size: 14.5px; }
+    .fit { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 10px 0; }
+    .fit div { border: 1px solid var(--rule); border-radius: 6px; padding: 14px 16px; background: #fff; }
+    .fit .ft { font-weight: 700; margin-bottom: 4px; }
+    .fit .ok .ft { color: #1f7a4d; }
+    .fit .ng .ft { color: var(--sub); }
+    .fit .fd { font-size: 14.5px; line-height: 1.8; }
+    .h-sub { font-size: 17px; margin: 30px 0 6px; padding-left: 10px; border-left: 3px solid var(--blue); }
+    @media (max-width: 560px) {
+      .fit { grid-template-columns: 1fr; }
+      #program .week li { grid-template-columns: 1fr; gap: 2px; }
     }
 
-    .free-list span {
-      font-size: 14px;
-      color: rgba(255,255,255,0.85);
+    /* 教材 */
+    .books { list-style: none; display: grid; gap: 12px; }
+    .books li { display: grid; grid-template-columns: 1fr; gap: 6px; border: 1px solid var(--rule); border-radius: 6px; padding: 16px 18px; background: #fff; }
+    .books b { font-size: 16.5px; line-height: 1.6; }
+    .books p { font-size: 14.5px; color: var(--sub); }
+    .bl { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+    .bl a {
+      display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 6px 16px;
+      border: 1px solid var(--blue-deep); border-radius: 6px; font-size: 14.5px; font-weight: 700; color: var(--blue-deep); text-decoration: none;
+    }
+    .bl a:hover { background: #e7eef6; }
+
+    /* 5. 進め方 */
+    .steps { list-style: none; display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .steps li { border-top: 3px solid var(--ink); padding-top: 10px; }
+    .steps .n { font-size: 13px; font-weight: 900; color: var(--blue); }
+    .steps .t { font-size: 16.5px; font-weight: 700; line-height: 1.5; margin: 2px 0 6px; }
+    .steps .d { font-size: 14.5px; line-height: 1.8; color: var(--sub); }
+    @media (max-width: 760px) { .steps { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 480px) { .steps { grid-template-columns: 1fr; } }
+
+    /* 6. 実績・人 */
+    .results { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 44px; }
+    .result { background: #fff; border: 1px solid var(--rule); border-top: 3px solid var(--red); border-radius: 0 0 6px 6px; padding: 16px 18px; }
+    .result .lb { display: block; font-size: 13px; font-weight: 700; color: var(--red); }
+    .result .hd { display: block; font-size: 17px; font-weight: 700; line-height: 1.6; margin-top: 4px; }
+    .result .sc { display: block; font-size: 14.5px; line-height: 1.8; margin-top: 6px; }
+    .result .nt { display: block; font-size: 13px; color: var(--sub); margin-top: 6px; }
+    @media (max-width: 640px) { .results { grid-template-columns: 1fr; } }
+
+    .story-h { display: flex; align-items: center; gap: 16px; margin-bottom: 18px; }
+    .story-h img { width: 96px; height: 96px; flex-shrink: 0; border-radius: 50%; border: 1px solid var(--rule); background: #fff; }
+    .story-h h3 { font-size: 22px; line-height: 1.5; }
+    .story-h .nm { font-size: 14px; color: var(--sub); }
+    .story p { margin-bottom: 16px; max-width: 40em; }
+    .scores { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 8px 0 20px; }
+    .scores figure { border: 1px solid var(--rule); border-radius: 6px; padding: 10px; background: #fff; }
+    .scores img { width: 100%; height: 210px; object-fit: contain; }
+    .scores figcaption { font-size: 13.5px; text-align: center; color: var(--sub); margin-top: 6px; }
+    .scores .pass figcaption { color: #1f7a4d; font-weight: 700; }
+    .facts { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 8px; }
+    .facts li { font-size: 14.5px; font-weight: 700; padding: 10px 14px; border-left: 3px solid var(--blue); background: var(--band); }
+    @media (max-width: 560px) {
+      .scores, .facts { grid-template-columns: 1fr; }
+      .scores img { height: auto; max-height: 420px; }
+      .story-h { flex-direction: column; align-items: flex-start; }
     }
 
-    .center { text-align: center; }
-
-    /* ============================================================
-       8. 流れ
-    ============================================================ */
-    .steps { list-style: none; }
-
-    .steps li {
-      position: relative;
-      padding: 0 0 26px 46px;
-      border-left: 2px solid var(--gray-300);
-      margin-left: 13px;
-    }
-
-    .steps li:last-child { border-left: 2px solid transparent; padding-bottom: 0; }
-
-    .steps .n {
-      position: absolute;
-      left: -14px;
-      top: 0;
-      width: 27px;
-      height: 27px;
-      border-radius: 50%;
-      background: var(--navy);
-      color: var(--white);
-      font-size: 13px;
-      font-weight: 700;
-      line-height: 27px;
-      text-align: center;
-    }
-
-    .steps .t {
-      font-size: 16px;
-      font-weight: 700;
-      margin-bottom: 4px;
-      line-height: 1.6;
-    }
-
-    .steps .d {
-      font-size: 14.5px;
-      line-height: 1.85;
-      color: var(--gray-600);
-    }
-
-    /* ============================================================
-       9. FAQ
-    ============================================================ */
-    .faq details {
-      background: var(--white);
-      border: 1px solid var(--gray-300);
-      border-radius: 10px;
-      margin-bottom: 10px;
-    }
-
+    /* 7. FAQ */
+    .faq details { border-bottom: 1px solid var(--rule); }
+    .faq details:first-child { border-top: 1px solid var(--rule); }
     .faq summary {
       list-style: none;
       cursor: pointer;
-      font-size: 15px;
-      font-weight: 700;
-      line-height: 1.7;
-      padding: 16px 42px 16px 44px;
       position: relative;
       min-height: 56px;
+      padding: 14px 36px 14px 34px;
+      font-weight: 700;
+      line-height: 1.7;
     }
-
     .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::before { content: "Q"; position: absolute; left: 4px; top: 14px; font-weight: 900; color: var(--blue); }
+    .faq summary::after { content: "+"; position: absolute; right: 6px; top: 10px; font-size: 22px; color: var(--blue); }
+    .faq details[open] summary::after { content: "−"; }
+    .faq .a { padding: 0 8px 18px 34px; font-size: 15px; line-height: 1.9; color: #333a42; }
+    .faq .a a { font-weight: 700; }
 
-    .faq summary::before {
-      content: "Q";
-      position: absolute;
-      left: 16px;
-      top: 16px;
-      width: 22px;
-      height: 22px;
-      border-radius: 50%;
-      background: var(--navy);
-      color: var(--white);
-      font-size: 12px;
-      font-weight: 700;
-      line-height: 22px;
-      text-align: center;
+    /* 8. 申し込み */
+    #free { background: var(--band); border-top: 1px solid var(--rule); }
+    .free-grid { display: grid; grid-template-columns: 1fr; gap: 26px; }
+    .kit { list-style: none; border-top: 1px solid var(--rule); }
+    .kit li { padding: 14px 0; border-bottom: 1px solid var(--rule); }
+    .kit b { display: block; font-size: 16px; line-height: 1.6; }
+    .kit span { display: block; font-size: 14.5px; color: var(--sub); margin-top: 2px; }
+    #last { text-align: left; }
+    #last h2 { font-size: 26px; }
+    #last .sub { color: var(--sub); margin-bottom: 20px; }
+    @media (min-width: 900px) { .free-grid { grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; } }
+
+    .sns { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+    .sns a {
+      display: inline-flex; align-items: center; min-height: 44px; padding: 4px 16px;
+      border: 1px solid var(--rule); border-radius: 999px; background: #fff; font-size: 14px; font-weight: 700; color: var(--ink); text-decoration: none;
     }
 
-    .faq summary::after {
-      content: "";
-      position: absolute;
-      right: 18px;
-      top: 24px;
-      width: 9px;
-      height: 9px;
-      border-right: 2px solid var(--gray-400);
-      border-bottom: 2px solid var(--gray-400);
-      transform: rotate(45deg);
-      transition: transform 0.2s ease;
-    }
+    /* フッター */
+    footer { border-top: 1px solid var(--rule); padding: 30px 0 110px; font-size: 13.5px; color: var(--sub); }
+    footer .f-logo { font-weight: 900; color: var(--ink); font-size: 16px; }
+    footer .f-links { display: flex; flex-wrap: wrap; gap: 0 14px; margin: 10px 0; }
+    footer .f-links a { display: inline-flex; align-items: center; min-height: 44px; color: var(--sub); }
+    footer .f-copy { margin-top: 6px; }
+    @media (min-width: 769px) { footer { padding-bottom: 40px; } }
 
-    .faq details[open] summary::after {
-      transform: rotate(-135deg);
-      top: 28px;
-    }
-
-    .faq .a {
-      font-size: 14.5px;
-      line-height: 1.9;
-      color: var(--gray-800);
-      padding: 0 18px 18px 44px;
-    }
-
-    .faq .a a {
-      color: var(--navy);
-      font-weight: 700;
-      border-bottom: 1px solid var(--gold);
-    }
-
-    /* ============================================================
-       10. 最終CTA
-    ============================================================ */
-    #last {
-      background: var(--navy-dark);
-      color: var(--white);
-      text-align: center;
-      padding: 56px 0 64px;
-    }
-
-    #last h2 { font-size: 24px; }
-
-    #last p.sub {
-      font-size: 15px;
-      line-height: 1.9;
-      color: rgba(255,255,255,0.85);
-      margin-bottom: 26px;
-    }
-
-    .last-sub-link {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 48px;
-      margin-top: 18px;
-      font-size: 14.5px;
-      color: var(--white);
-      border-bottom: 1px solid rgba(255,255,255,0.5);
-    }
-
-    /* ============================================================
-       11. Footer
-    ============================================================ */
-    footer {
-      background: var(--navy-dark);
-      color: rgba(255,255,255,0.72);
-      text-align: center;
-      padding: 34px 20px 110px;
-      border-top: 1px solid rgba(255,255,255,0.12);
-    }
-
-    .f-logo {
-      font-size: 17px;
-      font-weight: 900;
-      color: var(--white);
-      margin-bottom: 6px;
-    }
-
-    .f-logo span { color: var(--gold); }
-
-    footer p { font-size: 13px; line-height: 1.9; }
-
-    .f-links { margin: 12px 0 14px; }
-
-    .f-links a {
-      display: inline-block;
-      font-size: 13px;
-      padding: 8px 10px;
-      color: rgba(255,255,255,0.8);
-      text-decoration: underline;
-    }
-
-    .f-copy { font-size: 13px; color: rgba(255,255,255,0.5); margin-top: 8px; }
-
-    /* ============================================================
-       12. Sticky CTA
-    ============================================================ */
+    /* スマホの下に出る申し込みバー */
     .sticky {
       position: fixed;
-      left: 0;
-      right: 0;
-      bottom: 0;
+      left: 0; right: 0; bottom: 0;
       z-index: 50;
-      background: rgba(13, 38, 87, 0.97);
-      border-top: 1px solid rgba(255,255,255,0.14);
-      padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+      background: rgba(255,255,255,0.97);
+      border-top: 1px solid var(--rule);
+      padding: 8px 12px calc(8px + env(safe-area-inset-bottom));
       transform: translateY(110%);
       transition: transform 0.25s ease;
     }
-
     .sticky.on { transform: translateY(0); }
-
-    .sticky a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 52px;
-      border-radius: 999px;
-      background: var(--gold);
-      color: var(--navy-dark);
-      font-size: 15.5px;
-      font-weight: 700;
-    }
-
-    @media (min-width: 769px) {
-      .sticky { display: none; }
-      footer { padding-bottom: 40px; }
-    }
-
-    /* ============================================================
-       Responsive
-    ============================================================ */
-    @media (max-width: 560px) {
-      .hero-title { font-size: 25px; }
-      h2 { font-size: 22px; }
-      .redefine-box h2, .story-head h2 { font-size: 21px; }
-      .worry-list { grid-template-columns: 1fr; }
-      .fit { grid-template-columns: 1fr; }
-      .price-grid { grid-template-columns: 1fr; }
-      .week li { grid-template-columns: 1fr; gap: 4px; }
-      .scores { grid-template-columns: 1fr; }
-      .score-fig img { height: auto; max-height: 420px; }
-      .story-head { flex-direction: column; align-items: flex-start; }
-      .answer-box { font-size: 14px; }
-      .btn-buy { font-size: 14.5px; }
-    }
-
-    @media (min-width: 721px) {
-      section { padding: 76px 0; }
-      .hero-title { font-size: 33px; }
-    }
-
-    /* ============================================================
-       [改修案] 層1 料金3行サマリー / 層2 FAQ抜粋 / 固定CTA2本
-    ============================================================ */
-    .hero-cta .btn-outline-light { width: 100%; max-width: 460px; margin-top: 10px; }
-
-    .start-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; list-style: none; padding: 0; margin: 0; }
-    .start-grid li {
-      background: var(--white);
-      border: 1px solid var(--gray-300);
-      border-radius: var(--radius-lg);
-      padding: 14px;
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-    .s-name  { font-size: 14px; font-weight: 700; color: var(--gray-600); letter-spacing: .04em; }
-    .s-price { font-size: 25px; font-weight: 900; color: var(--text); line-height: 1.25; }
-    .s-price small { font-size: 13px; font-weight: 700; color: var(--gray-600); margin-left: 3px; white-space: nowrap; }
-    .s-note  { font-size: 14px; line-height: 1.8; color: var(--gray-600); }
-    .start-pay { font-size: 13.5px; line-height: 1.85; margin-top: 12px; }
-    .start-urgent { font-size: 14px; line-height: 1.85; margin-top: 6px; }
-    .start-result { margin-top: 16px; padding: 14px 16px; background: #fff; border: 1px solid rgba(15,37,71,.14); border-left: 4px solid var(--navy); border-radius: 8px; }
-    .start-result .r-label { display: block; font-size: 13px; font-weight: 700; color: var(--navy); letter-spacing: .04em; }
-    .start-result .r-head { display: block; margin-top: 4px; font-size: 16px; font-weight: 700; line-height: 1.6; }
-    .start-result .r-score { display: block; margin-top: 6px; font-size: 14px; line-height: 1.8; }
-    .start-result .r-note { display: block; margin-top: 6px; font-size: 13.5px; line-height: 1.7; }
-    .s-buys { display: grid; grid-template-columns: 1fr; gap: 8px; margin-top: auto; padding-top: 8px; }
-    .s-buys .btn-buy { min-height: 48px; padding: 10px 14px; font-size: 14px; }
-    .s-buys .btn-buy .buy-price { font-size: 14px; white-space: nowrap; }
-    .s-more { margin-top: auto; font-size: 13.5px; font-weight: 700; color: var(--navy); min-height: 44px; line-height: 44px; }
-    .hero-cta + .hero-person { margin: 24px 0 0; }
-    .hero-title a.u { color: inherit; }
-    .start-cta { display: inline-block; margin-top: 10px; font-size: 14.5px; font-weight: 700; color: var(--navy); }
-
-
-    /* 左上メニュー */
-    .menu-btn { position: fixed; top: 12px; left: 12px; z-index: 60; display: inline-flex; align-items: center; gap: 7px; min-height: 44px; padding: 0 14px; border: 0; border-radius: 999px; background: #fff; color: var(--navy-dark); font: inherit; font-size: 14px; font-weight: 700; box-shadow: var(--shadow-md); cursor: pointer; }
-    .menu-btn svg { display: block; }
-    .menu-panel { position: fixed; inset: 0 auto 0 0; z-index: 70; width: min(310px, 86vw); padding: 18px 0 28px; overflow-y: auto; background: #fff; color: var(--text); box-shadow: 0 0 30px rgba(8,24,64,.3); transform: translateX(-105%); visibility: hidden; transition: transform .2s ease, visibility .2s; }
-    .menu-panel.open { transform: none; visibility: visible; }
-    .menu-head { display: flex; align-items: center; justify-content: space-between; padding: 0 12px 10px 20px; font-weight: 900; color: var(--navy); }
-    .menu-close { width: 44px; height: 44px; border: 0; background: none; font-size: 24px; color: var(--navy); cursor: pointer; }
-    .menu-panel ul { list-style: none; margin: 0; padding: 0; }
-    .menu-panel li a { display: block; padding: 13px 20px; font-size: 15.5px; font-weight: 700; color: var(--text); border-top: 1px solid var(--gray-300); }
-    .menu-panel .menu-line { display: block; margin: 16px 20px 0; padding: 13px; border-radius: 10px; background: #06A84C; color: #fff; font-weight: 900; text-align: center; }
-    .menu-shade { position: fixed; inset: 0; z-index: 65; background: rgba(8,24,64,.45); opacity: 0; visibility: hidden; transition: opacity .2s; }
-    .menu-shade.open { opacity: 1; visibility: visible; }
-    #hero { padding-top: 76px; }
-    section[id], p[id] { scroll-margin-top: 16px; }
-    .hero-sub strong { display: block; margin-top: 8px; font-size: 18px; line-height: 1.6; color: var(--gold-light); }
-    /* LINEのバナーとスターターキット */
-    .line-banner { display: flex; align-items: center; justify-content: center; gap: 12px; width: 100%; max-width: 460px; min-height: 72px; margin: 0 auto; padding: 12px 18px; border-radius: 14px; background: #06A84C; color: #fff; box-shadow: var(--shadow-md); text-align: left; }
-    .line-banner:hover { background: #058f41; }
-    .line-banner b { display: block; font-size: 20px; line-height: 1.3; }
-    .line-banner small { display: block; font-size: 14px; font-weight: 700; }
-    .kit-card { display: block; max-width: 460px; margin: 10px auto 0; padding: 12px 16px; border-radius: 12px; background: #fff; color: var(--text); text-align: left; }
-    .kit-title { margin: 0; font-size: 13px; font-weight: 700; color: var(--navy); }
-    .kit-go { margin: 6px 0 0; font-size: 14px; font-weight: 900; color: var(--navy); }
-    .kit-name { margin: 2px 0 0; font-size: 17px; font-weight: 900; color: var(--navy-dark); }
-    .kit-body { margin: 2px 0 0; font-size: 13.5px; line-height: 1.7; color: var(--gray-600); }
-    @media (min-width: 721px) {
-      .line-banner, .kit-card, .hero-cta .btn-outline-light { max-width: none; }
-      .hero-title { text-align: left; }
-    }
-    .price-more { display: flex; align-items: center; justify-content: center; min-height: 52px; margin-top: 12px; padding: 10px 16px; border: 2px solid var(--navy); border-radius: 12px; background: #fff; font-size: 16px; font-weight: 900; color: var(--navy); }
-    #startsmall { padding-bottom: 16px; }
-    #worry { padding-top: 32px; }
-    .hero-niji { margin: 12px 0 0; font-size: 14px; font-weight: 700; }
-    .hero-niji a { display: inline-flex; align-items: center; min-height: 44px; color: var(--gold-light); text-decoration: underline; }
-    .start-cta { min-height: 44px; display: inline-flex; align-items: center; }
-    .f-links a { display: inline-flex; align-items: center; min-height: 44px; }
-    .note-link { display: flex; align-items: center; min-height: 44px; font-weight: 700; color: var(--navy); }
-    .grade-list { display: grid; gap: 8px; margin: 14px 0 18px; }
-    .grade-list div { padding: 10px 14px; border: 1px solid var(--gray-300); border-radius: 10px; background: #fff; }
-    .grade-list h3 { margin: 0; font-size: 15.5px; font-weight: 700; color: var(--navy); }
-    .grade-list p { margin: 2px 0 0; font-size: 14px; line-height: 1.7; color: var(--gray-600); }
-    .f-tm { font-size: 13px; color: rgba(255,255,255,0.75); }
-    /* 教材とSNS */
-    .mat-list { display: grid; gap: 12px; margin: 16px 0 0; padding: 0; list-style: none; }
-    .mat-list li { padding: 16px; border: 1px solid var(--gray-300); border-radius: var(--radius); background: #fff; }
-    .mat-list b { display: block; font-size: 16px; line-height: 1.6; color: var(--navy-dark); }
-    .mat-list p { margin: 4px 0 0; font-size: 14px; line-height: 1.8; color: var(--gray-600); }
-    .mat-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
-    .mat-links a, .sns-row a { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 8px 16px; border: 1px solid var(--navy); border-radius: 999px; font-size: 14px; font-weight: 700; color: var(--navy); }
-    .sns-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 16px; }
-    @media (max-width: 560px) { .sns-row { grid-template-columns: 1fr 1fr; } }
-
     .sticky-row { display: flex; gap: 8px; }
-    .sticky .sticky-sub {
-      flex: 0 0 40%;
-      background: transparent;
-      color: var(--gold);
-      border: 1px solid var(--gold);
-      font-size: 13.5px;
+    .sticky a {
+      display: flex; align-items: center; justify-content: center; min-height: 50px; border-radius: 8px;
+      font-size: 15px; font-weight: 700; text-decoration: none;
     }
-    .sticky .sticky-main { flex: 1; font-size: 14.5px; background: #06A84C; color: #fff; }
-
-    @media (max-width: 560px) {
-      .start-grid { grid-template-columns: 1fr; }
-      .s-price { font-size: 23px; }
-    }
-
+    .sticky .sticky-sub { flex: 0 0 38%; border: 1px solid var(--blue-deep); color: var(--blue-deep); background: #fff; }
+    .sticky .sticky-main { flex: 1; background: var(--line); color: #fff; }
+    @media (min-width: 769px) { .sticky { display: none; } }
+    @media (prefers-reduced-motion: reduce) { .sticky { transition: none; } }
   </style>
 
   <noscript>
-    <style>
-      .js .reveal { opacity: 1 !important; transform: none !important; }
-      .sticky { display: none !important; }
-    </style>
+    <style>.sticky { display: none !important; }</style>
   </noscript>
 
   <!-- Google tag (gtag.js) -->
@@ -1634,395 +894,136 @@
 
 <body>
 
+<div class="top">
+  <div class="wrap wide">
+    <a class="logo" href="#hero">英検対策コーチ</a>
+    <nav aria-label="ページ内メニュー">
+      <a class="n" href="#startsmall">料金</a>
+      <a class="n pc" href="#sample">添削の見本</a>
+      <a class="n pc" href="#coach">英検対策コーチについて</a>
+      <a class="n pc" href="#faq">よくある質問</a>
+      <a class="mini-line" href="https://lin.ee/PmShWQY" target="_blank" rel="noopener">LINEで無料診断</a>
+    </nav>
+  </div>
+</div>
 
-<!-- ============================================================
-     1. ファーストビュー
-============================================================ -->
-<button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="siteMenu">
-  <svg width="18" height="14" viewBox="0 0 18 14" aria-hidden="true"><path d="M0 1h18M0 7h18M0 13h18" stroke="currentColor" stroke-width="2"/></svg>メニュー
-</button>
-<div class="menu-shade" id="menuShade"></div>
-<nav class="menu-panel" id="siteMenu" aria-label="ページ内メニュー">
-  <div class="menu-head"><span>メニュー</span><button class="menu-close" id="menuClose" type="button" aria-label="閉じる">×</button></div>
-  <ul>
-    <li><a href="#startsmall">料金</a></li>
-    <li><a href="#services">添削・面接のメニュー</a></li>
-    <li><a href="#sample">添削の見本</a></li>
-    <li><a href="#coach">英検対策コーチについて</a></li>
-    <li><a href="#program">3ヶ月の合格伴走</a></li>
-    <li><a href="#niji">二次試験の直前パック</a></li>
-    <li><a href="#free">無料診断とスターターキット</a></li>
-    <li><a href="#flow">購入の流れ</a></li>
-    <li><a href="#materials">教材</a></li>
-    <li><a href="#follow">SNS・note</a></li>
-    <li><a href="#faq">よくある質問</a></li>
-  </ul>
-  <a class="menu-line" href="https://lin.ee/PmShWQY" target="_blank" rel="noopener">LINEで無料診断</a>
-</nav>
-
+<!-- 1. ファーストビュー：だれに・何を -->
 <header id="hero">
-  <div class="container">
-    <h1 class="hero-badge">英検の英作文添削と面接対策／添削は準2級〜1級に対応</h1>
-
-    <p class="hero-title">
-      英作文の直し方も、<br>
-      面接の答え方も。<br>
-      ひとりで決めなくていい。
-    </p>
-
-    <p class="hero-sub">
-      答案は原則2日以内に、点数と書き直しの例をつけて返します。<br>
-      <strong>残り期間が1ヶ月以上でも、1ヶ月未満でも対応します。</strong>
-    </p>
-
-    <div class="hero-cta">
-      <a class="line-banner" href="https://lin.ee/PmShWQY" target="_blank" rel="noopener">
-        <svg width="34" height="34" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.3.1.8.2.9.5.1.3 0 .6 0 .9l-.1.9c0 .3-.2 1 .9.6 1-.5 5.6-3.3 7.7-5.6 1.4-1.5 2.3-3.2 2.3-4.9 0-4.4-4.5-8-10-8Z"/></svg>
-        <span><b>LINEで無料診断</b><small>受ける級と試験日を送るだけ。スターターキットつき</small></span>
-      </a>
-      <p class="hero-niji"><a href="#niji">11/8・11/15の二次試験、直前の面接練習はこちら →</a></p>
-      <a class="kit-card" href="https://lin.ee/PmShWQY" target="_blank" rel="noopener">
-        <p class="kit-title">友だち追加で受け取れます</p>
-        <p class="kit-name">合格スターターキット（2級版・準1級版）</p>
-        <p class="kit-body">英作文の型、言い換え早見表、接続詞10選、書き終わりのチェックリスト</p>
-        <p class="kit-go">LINEで受け取る →</p>
-      </a>
-      <a class="btn btn-outline-light" href="#startsmall">料金を見る</a>
-    </div>
-
-    <div class="hero-person">
-      <img src="assets/coach.webp" width="560" height="560" alt="英検対策コーチのイラスト" loading="eager" decoding="async">
+  <div class="wrap wide">
+    <div class="hero-grid">
       <div>
-        <p class="hero-person-name">英検対策コーチ</p>
-        <p class="hero-person-facts">
-          英検1級合格（リスニング満点）・TOEIC L&amp;R 945・IELTS 7.0<br>
-          全国50校舎以上で英検指導／指導した生徒100名以上
+        <h1 class="hero-badge">英検の英作文添削と面接対策／添削は準2級〜1級に対応</h1>
+        <p class="hero-title">英作文の直し方も、<br>面接の答え方も。<br>ひとりで決めなくていい。</p>
+        <p class="hero-sub">
+          答案は原則2日以内に、点数と書き直しの例をつけて返します。
+          <strong>残り期間が1ヶ月以上でも、1ヶ月未満でも対応します。</strong>
         </p>
+        <div class="hero-cta">
+          <a class="btn-line" href="https://lin.ee/PmShWQY" target="_blank" rel="noopener">
+            <svg width="30" height="30" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.3.1.8.2.9.5.1.3 0 .6 0 .9l-.1.9c0 .3-.2 1 .9.6 1-.5 5.6-3.3 7.7-5.6 1.4-1.5 2.3-3.2 2.3-4.9 0-4.4-4.5-8-10-8Z"/></svg>
+            <span>LINEで無料診断<small>受ける級と試験日を送るだけ。スターターキットつき</small></span>
+          </a>
+          <div class="hero-links">
+            <a class="text-link" href="#startsmall">料金を見る</a>
+            <a class="text-link" href="#niji">11/8・11/15の二次試験、直前の面接練習はこちら</a>
+          </div>
+        </div>
+        <div class="hero-person">
+          <img src="assets/coach.webp" width="560" height="560" alt="英検対策コーチのイラスト" loading="eager" decoding="async">
+          <div>
+            <p class="nm">英検対策コーチ</p>
+            <p class="fx">英検1級合格（リスニング満点）・TOEIC L&amp;R 945・IELTS 7.0<br>全国50校舎以上で英検指導／指導した生徒100名以上</p>
+          </div>
+        </div>
       </div>
+
+      <figure>
+        <div class="sheet" aria-label="添削の見本（英検2級・英作文）の一部">
+          <div class="stamp" aria-hidden="true"><b>11点</b><span>16点満点</span></div>
+          <p class="sheet-cap">添削の見本（英検2級・英作文）</p>
+          <p class="en">For example, talking with people who <del>is</del> <ins>are</ins> older than them.</p>
+          <p class="pen">先行詞の people は複数なので、関係代名詞のあとの動詞は are です。</p>
+          <p class="en"><del>It is difficult to experience in school life.</del></p>
+          <p class="en"><ins>This is something they cannot easily experience in school life.</ins></p>
+        </div>
+        <figcaption class="sheet-foot">観点ごとの採点、直した箇所と理由、書き直した答案例をつけて返します。<a href="#sample">添削の見本を見る</a></figcaption>
+      </figure>
     </div>
+
+    <!-- 入口：いま必要なものから選ぶ（#niji を外すときは1枚目の文言も直す） -->
+    <nav class="doors" aria-label="メニューの入口">
+      <a class="door" href="#interview">
+        <span class="who">二次試験前に</span>
+        <span class="what">英検の面接対策（模擬面接 60分）</span>
+        <span class="pr">2級 ¥5,500／準1級 ¥6,800</span>
+      </a>
+      <a class="door" href="#services">
+        <span class="who">まず試す</span>
+        <span class="what">ライティング添削（1回）</span>
+        <span class="pr">準2級 ¥2,000〜1級 ¥5,500</span>
+      </a>
+      <a class="door" href="#program">
+        <span class="who">いちばん力を入れているメニュー</span>
+        <span class="what">3ヶ月の合格伴走</span>
+        <span class="pr">2級 ¥98,000／準1級 ¥128,000</span>
+      </a>
+      <a class="door" href="#materials">
+        <span class="who">自分で進めたい人へ</span>
+        <span class="what">英検の教材</span>
+        <span class="pr">Amazon・note</span>
+      </a>
+    </nav>
   </div>
 </header>
 
 
-<!-- ============================================================
-     [新設] 1-b. 料金の3行サマリー（層1）
-============================================================ -->
-<section id="startsmall" class="band-light">
-  <div class="container">
-    <h2>英検の添削・面接対策の料金</h2>
-    <ul class="start-grid">
-      <li>
-        <span class="s-name">添削1回</span>
-        <span class="s-price">¥2,500<small>／答案1本・2級</small></span>
-        <span class="s-note">原則2日以内に返します。</span>
-        <span class="s-buys">
-          <a class="btn-buy" data-pos="top" href="https://buy.stripe.com/9B64gza2sd126lb3Zy7AI0n" target="_blank" rel="noopener"><span>準2級を購入</span><span class="buy-price">¥2,000</span></a>
-          <a class="btn-buy" data-pos="top" href="https://buy.stripe.com/cNi9ATdeE9OQ10Rcw47AI0s" target="_blank" rel="noopener"><span>準2級プラスを購入</span><span class="buy-price">¥2,200</span></a>
-          <a class="btn-buy" data-pos="top" href="https://buy.stripe.com/3cI00jcaA2mo5h7bs07AI0d" target="_blank" rel="noopener"><span>2級を購入</span><span class="buy-price">¥2,500</span></a>
-          <a class="btn-buy" data-pos="top" href="https://buy.stripe.com/bJe3cveiI3qs38Z53C7AI0e" target="_blank" rel="noopener"><span>準1級を購入</span><span class="buy-price">¥3,500</span></a>
-          <a class="btn-buy" data-pos="top" href="https://buy.stripe.com/4gMaEX2A07GI5h77bK7AI0l" target="_blank" rel="noopener"><span>1級を購入</span><span class="buy-price">¥5,500</span></a>
-        </span>
-      </li>
-      <li>
-        <span class="s-name">添削4回チケット</span>
-        <span class="s-price">¥8,800<small>／4回チケット・2級</small></span>
-        <span class="s-buys">
-          <a class="btn-buy" data-pos="top" href="https://buy.stripe.com/00w28r8Yo8KM38Z1Rq7AI0o" target="_blank" rel="noopener"><span>準2級チケット</span><span class="buy-price">¥7,000</span></a>
-          <a class="btn-buy" data-pos="top" href="https://buy.stripe.com/8x2bJ1gqQ6CEaBrgMk7AI0t" target="_blank" rel="noopener"><span>準2級プラスチケット</span><span class="buy-price">¥7,700</span></a>
-          <a class="btn-buy" data-pos="top" href="https://buy.stripe.com/5kQ14n0rS9OQ9xn3Zy7AI0f" target="_blank" rel="noopener"><span>2級チケット</span><span class="buy-price">¥8,800</span></a>
-          <a class="btn-buy" data-pos="top" href="https://buy.stripe.com/8x25kD2A04uweRH1Rq7AI0g" target="_blank" rel="noopener"><span>準1級チケット</span><span class="buy-price">¥12,000</span></a>
-          <a class="btn-buy" data-pos="top" href="https://buy.stripe.com/7sY4gz7Ukd128tj0Nm7AI0m" target="_blank" rel="noopener"><span>1級チケット</span><span class="buy-price">¥18,000</span></a>
-        </span>
-      </li>
-      <li>
-        <span class="s-name">3ヶ月の合格伴走</span>
-        <span class="s-price">¥98,000<small>／3ヶ月・2級</small></span>
-        <span class="s-note">準1級は¥128,000。月2〜3名まで。</span>
-        <a class="s-more" href="#program">3ヶ月の中身を見る →</a>
-      </li>
-    </ul>
-    <a class="price-more" href="#services">面接などの料金はこちら →</a>
-    <div class="start-result">
-      <span class="r-label">合格実績（2026年）</span>
-      <span class="r-head">中学1年生の受講生が、英検準1級に合格しました。</span>
-      <span class="r-score">4回チケットで添削を受講。成績表の意見論述は、内容 4/4・構成 3/4・語彙 3/4・文法 2/4 でした。</span>
-      <span class="r-note">保護者の方の了承を得て掲載しています。</span>
-    </div>
-    <div class="start-result">
-      <span class="r-label">一次試験の合格実績（2026年）</span>
-      <span class="r-head">中学2年生の受講生が、英検2級の一次試験に合格しました。</span>
-      <span class="r-score">添削を受講。前回→今回のライティングは、要約 0/16 → 12/16・意見論述 10/16 → 12/16 でした。</span>
-      <span class="r-note">保護者の方の了承を得て掲載しています。</span>
-    </div>
-    <p class="start-pay">支払いはカード・Apple Pay・PayPay。<b>カードがなくてもPayPayで買えます。</b></p>
-    <p class="start-urgent">支払いが終わるとLINEの友だち追加ページに移ります。すでに友だちの方は、そのままLINEに答案を送ってください。</p>
-    <a class="start-cta" href="#services">添削・面接のメニューを詳しく見る →</a>
-  </div>
-</section>
-
-
-<!-- ============================================================
-     2. 悩み共感
-============================================================ -->
-<section id="worry" class="band-light">
-  <div class="container">
-    <span class="eyebrow">よく届く相談</span>
+<!-- 2. 悩み -->
+<section id="worry" class="sec band">
+  <div class="wrap">
     <h2>英作文と面接で、こんなことはありませんか。</h2>
+    <ul class="worry">
+      <li>書いてはいるけれど、添削してくれる人がいない。</li>
+      <li>点数は返ってくるのに、なぜ減点されたのか分からない。</li>
+      <li>面接の練習をしたいのに、相手がいない。</li>
+      <li>参考書は買った。でも何から、どの順でやればいいのか分からない。</li>
+    </ul>
 
-    <div class="worry-list">
-      <div class="worry-item reveal">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L8 18l-4 1 1-4z"/>
-          <path d="M14 6l4 4"/>
-        </svg>
-        <p>書いてはいるけれど、添削してくれる人がいない。</p>
-      </div>
-
-      <div class="worry-item reveal">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <circle cx="11" cy="11" r="6.5"/>
-          <path d="M15.8 15.8L21 21"/>
-          <path d="M9.6 9.2a1.6 1.6 0 0 1 3 .6c0 1.1-1.5 1.3-1.5 2.4"/>
-          <path d="M11.1 14.3h.01"/>
-        </svg>
-        <p>点数は返ってくるのに、なぜ減点されたのか分からない。</p>
-      </div>
-
-      <div class="worry-item reveal">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <rect x="9" y="2.5" width="6" height="11" rx="3"/>
-          <path d="M5.5 11a6.5 6.5 0 0 0 13 0"/>
-          <path d="M12 17.5V21"/>
-          <path d="M9 21h6"/>
-        </svg>
-        <p>面接の練習をしたいのに、相手がいない。</p>
-      </div>
-
-      <div class="worry-item reveal">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M12 2.5v19"/>
-          <path d="M12 4.5h6.5l2 3-2 3H12"/>
-          <path d="M12 13.5H5.5l-2 3 2 3H12"/>
-        </svg>
-        <p>参考書は買った。でも何から、どの順でやればいいのか分からない。</p>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-
-<!-- ============================================================
-     3. 問題の再定義
-============================================================ -->
-<section id="redefine" class="band-navy">
-  <div class="container">
-    <div class="redefine-box">
-      <h2>作文と面接は、自分で採点できない技能です。</h2>
-      <p>
-        英作文と面接は、何が正解なのかという基準が分かりません。
-      </p>
-      <p>
-        書いた本人には、減点された理由が見えません。だから、何度書いても手応えが変わらないのです。
-      </p>
-      <p>
-        足りないのは勉強時間ではありません。「ここが何点分の減点か」を、外から言ってもらう機会です。
-      </p>
+    <div class="redefine" id="redefine">
+      <h3>作文と面接は、自分で採点できない技能です。</h3>
+      <p>英作文と面接は、何が正解なのかという基準が分かりません。</p>
+      <p>書いた本人には、減点された理由が見えません。だから、何度書いても手応えが変わらないのです。</p>
+      <p>足りないのは勉強時間ではありません。「ここが何点分の減点か」を、外から言ってもらう機会です。</p>
     </div>
   </div>
 </section>
 
 
-<!-- ============================================================
-     7. 単品メニュー（既存Stripe）
-============================================================ -->
-<section id="services" class="band-light">
-  <div class="container">
-    <span class="eyebrow">メニュー</span>
-    <h2>英検の添削と面接対策のメニュー</h2>
-    <p class="lead">必要なぶんだけ1回から使えます。購入後の連絡はLINEで行います。</p>
-    <div class="grade-list">
-      <div><h3>英検準2級の添削</h3><p>Eメールと英作文（意見論述）</p></div>
-      <div><h3>英検準2級プラスの添削</h3><p>要約（25〜35語）と英作文（意見論述）</p></div>
-      <div><h3>英検2級の添削</h3><p>要約（45〜55語）と英作文（80〜100語）</p></div>
-      <div><h3>英検準1級の添削</h3><p>要約（60〜70語）と英作文（120〜150語）</p></div>
-      <div><h3>英検1級の添削</h3><p>要約（90〜110語）と英作文（意見論述）</p></div>
-    </div>
-
-    <!-- 単発添削 -->
-    <div class="plan reveal">
-      <div class="plan-top">
-        <h3 class="plan-name">ライティング添削（1回）</h3>
-        <span class="plan-tag">まず試す</span>
-      </div>
-      <p class="plan-desc">
-        英作文・要約・Eメールのどれか1問の答案を1枚お送りください。観点ごとの採点、直した箇所とその理由、書き直した答案例をつけて、原則2日以内に返します。
-      </p>
-      <p class="plan-note">その答案に関する確認の質問は2往復までお受けします。</p>
-      <div class="plan-buys four">
-        <a class="btn-buy" href="https://buy.stripe.com/9B64gza2sd126lb3Zy7AI0n" target="_blank" rel="noopener">
-          <span>準2級を購入</span><span class="buy-price">¥2,000</span>
-        </a>
-        <a class="btn-buy" href="https://buy.stripe.com/cNi9ATdeE9OQ10Rcw47AI0s" target="_blank" rel="noopener">
-          <span>準2級プラスを購入</span><span class="buy-price">¥2,200</span>
-        </a>
-        <a class="btn-buy" href="https://buy.stripe.com/3cI00jcaA2mo5h7bs07AI0d" target="_blank" rel="noopener">
-          <span>2級を購入</span><span class="buy-price">¥2,500</span>
-        </a>
-        <a class="btn-buy" href="https://buy.stripe.com/bJe3cveiI3qs38Z53C7AI0e" target="_blank" rel="noopener">
-          <span>準1級を購入</span><span class="buy-price">¥3,500</span>
-        </a>
-        <a class="btn-buy" href="https://buy.stripe.com/4gMaEX2A07GI5h77bK7AI0l" target="_blank" rel="noopener">
-          <span>1級を購入</span><span class="buy-price">¥5,500</span>
-        </a>
-      </div>
-    </div>
-
-    <!-- 4回チケット（旧・月額パック） -->
-    <div class="plan reveal">
-      <div class="plan-top">
-        <h3 class="plan-name">添削4回チケット（有効期限3ヶ月）</h3>
-        <span class="plan-tag">試験前の1〜2ヶ月に</span>
-      </div>
-      <p class="plan-desc">
-        添削4回分をまとめて。書く→直す→もう一度書く、を4回くり返すと同じ減点に気づきやすくなります。使う間隔は自由で、購入から3ヶ月以内に使い切ってください。
-      </p>
-      <p class="plan-note">毎月払う契約ではありません。自動更新もありません。添削に関する質問は回数の制限なし。あわせて2回まで、勉強の進め方の相談にもLINEで対応します。</p>
-      <div class="plan-buys four">
-        <a class="btn-buy" href="https://buy.stripe.com/00w28r8Yo8KM38Z1Rq7AI0o" target="_blank" rel="noopener">
-          <span>準2級チケット</span><span class="buy-price">¥7,000</span>
-        </a>
-        <a class="btn-buy" href="https://buy.stripe.com/8x2bJ1gqQ6CEaBrgMk7AI0t" target="_blank" rel="noopener">
-          <span>準2級プラスチケット</span><span class="buy-price">¥7,700</span>
-        </a>
-        <a class="btn-buy" href="https://buy.stripe.com/5kQ14n0rS9OQ9xn3Zy7AI0f" target="_blank" rel="noopener">
-          <span>2級チケット</span><span class="buy-price">¥8,800</span>
-        </a>
-        <a class="btn-buy" href="https://buy.stripe.com/8x25kD2A04uweRH1Rq7AI0g" target="_blank" rel="noopener">
-          <span>準1級チケット</span><span class="buy-price">¥12,000</span>
-        </a>
-        <a class="btn-buy" href="https://buy.stripe.com/7sY4gz7Ukd128tj0Nm7AI0m" target="_blank" rel="noopener">
-          <span>1級チケット</span><span class="buy-price">¥18,000</span>
-        </a>
-      </div>
-    </div>
-
-    <!-- 面接対策 -->
-    <div class="plan reveal">
-      <div class="plan-top">
-        <h3 class="plan-name">英検の面接対策（模擬面接 60分）</h3>
-        <span class="plan-tag">二次試験前に</span>
-      </div>
-      <p class="plan-desc">
-        二次試験と同じ流れで模擬面接を<b>1回60分</b>おこない、その場で講評します。答え方の型、詰まったときの言い直し方、質問の返し方まで練習します。
-      </p>
-      <p class="plan-note">Zoom または Google Meet を使います。完全に1対1で、顔出しは任意です。</p>
-      <div class="plan-buys">
-        <a class="btn-buy" href="https://buy.stripe.com/dRmaEXa2saSUgZPfIg7AI0i" target="_blank" rel="noopener">
-          <span>2級を購入</span><span class="buy-price">¥5,500</span>
-        </a>
-        <a class="btn-buy" href="https://buy.stripe.com/3cIbJ13E43qs4d3gMk7AI05" target="_blank" rel="noopener">
-          <span>準1級を購入</span><span class="buy-price">¥6,800</span>
-        </a>
-      </div>
-    </div>
-
-    <!-- コンサル -->
-    <div class="plan reveal">
-      <div class="plan-top">
-        <h3 class="plan-name">受験コンサルティング（60分）</h3>
-        <span class="plan-tag">計画づくり</span>
-      </div>
-      <p class="plan-desc">
-        いつの回で受けるか、そこから逆算して今週何をやるか。大学受験の勉強との配分や、弱い技能の優先順位を一緒に決めます。
-      </p>
-      <p class="plan-note">Zoom または Google Meet で60分。顔出しは任意です。</p>
-      <div class="plan-buys single">
-        <a class="btn-buy" href="https://buy.stripe.com/aFa6oHcaA0egbFv8fO7AI06" target="_blank" rel="noopener">
-          <span>60分の枠を申し込む</span><span class="buy-price">¥12,000</span>
-        </a>
-      </div>
-    </div>
-
-    <!-- 支払い方法（1箇所に集約） -->
-    <div class="pay-box reveal">
-      <h3>支払い方法</h3>
-      <div class="pay-methods">
-        <span>クレジット・デビットカード</span>
-        <span>Apple Pay</span>
-        <span>PayPay</span>
-      </div>
-      <p>決済はStripeのページで行います。カード情報を当サイトで預かることはありません。</p>
-
-    </div>
-  </div>
-</section>
-
-
-<!-- ============================================================
-     9. ご利用の流れ（単品）
-============================================================ -->
-<section id="flow">
-  <div class="container">
-    <span class="eyebrow">申し込みから返却まで</span>
-    <h2>やることは4つだけです。</h2>
-
-    <ol class="steps">
-      <li class="reveal">
-        <span class="n">1</span>
-        <p class="t">購入する</p>
-        <p class="d">上のボタンからStripeの決済ページへ。カード・Apple Pay・PayPayに対応しています。</p>
-      </li>
-      <li class="reveal">
-        <span class="n">2</span>
-        <p class="t">LINEを友だち追加する</p>
-        <p class="d">支払いが終わると友だち追加ページに移動します。以降の連絡はLINEで行います。</p>
-      </li>
-      <li class="reveal">
-        <span class="n">3</span>
-        <p class="t">答案を送る</p>
-        <p class="d">手書きの答案は写真で、打ち込んだものはテキストのまま送ってください。清書は不要です。</p>
-      </li>
-      <li class="reveal">
-        <span class="n">4</span>
-        <p class="t">原則2日以内に返却</p>
-        <p class="d">観点ごとの採点、直した箇所と理由、書き直した答案例をつけて返します。</p>
-      </li>
-    </ol>
-  </div>
-</section>
-
-
-<!-- ============================================================
-     4. 実際の添削例
-============================================================ -->
-<section id="sample" class="band-light">
-  <div class="container">
-    <span class="eyebrow">添削の中身を先に見てください</span>
+<!-- 3. できること：添削で返すもの＋見本 -->
+<section id="sample" class="sec">
+  <div class="wrap">
     <h2>添削の見本（英検2級・英作文）</h2>
-    <p class="sample-note">出題：Do you think it is good for high school students to have a part-time job?（意見論述・80〜100語）</p>
+    <p class="lead">添削の中身を先に見てください。</p>
 
-    <div class="sample-step reveal">
-      <div class="sample-step-head">
-        <span class="no">STEP 1</span>
-        <span class="ttl">答案（見本）</span>
+    <ol class="returns">
+      <li><b>観点ごとの採点</b><span>内容・構成・語彙・文法の4観点</span></li>
+      <li><b>直した箇所と理由</b><span>何点分の減点なのか、なぜそうなるのか</span></li>
+      <li><b>書き直した答案例</b><span>次に似た設問が来たらどう書くのか</span></li>
+    </ol>
+
+    <p class="q">出題：<span class="en">Do you think it is good for high school students to have a part-time job?</span>（意見論述・80〜100語）</p>
+
+    <div class="step">
+      <div class="step-h"><span class="no">STEP 1</span><span class="tt">答案（見本）</span></div>
+      <div class="sheet answer">
+        <p class="en">I think students should have a part-time job. I have two reasons. First, they can learn how important money is. If they work hard, they will get money and they can buy what they want to buy. Second, students can experience many things. For example, talking with people who is older than them. It is difficult to experience in school life. Because of these reasons, working is a good experience for students, so I think students should have a part-time job.</p>
       </div>
-      <div class="answer-box">
-        I think students should have a part-time job. I have two reasons. First, they can learn how important money is. If they work hard, they will get money and they can buy what they want to buy. Second, students can experience many things. For example, talking with people who is older than them. It is difficult to experience in school life. Because of these reasons, working is a good experience for students, so I think students should have a part-time job.
-      </div>
-      <span class="word-count">81語</span>
+      <span class="wc">81語</span>
     </div>
 
-    <div class="sample-step reveal">
-      <div class="sample-step-head">
-        <span class="no">STEP 2</span>
-        <span class="ttl">観点ごとの採点</span>
-      </div>
+    <div class="step">
+      <div class="step-h"><span class="no">STEP 2</span><span class="tt">観点ごとの採点</span></div>
       <table class="score">
-        <tr>
-          <th scope="col">観点</th>
-          <th scope="col" style="text-align:right;">素点</th>
-        </tr>
+        <tr><th scope="col">観点</th><th scope="col" style="text-align:right;">素点</th></tr>
         <tr><td>内容</td><td class="num">3/4</td></tr>
         <tr><td>構成</td><td class="num">3/4</td></tr>
         <tr><td>語彙</td><td class="num">3/4</td></tr>
@@ -2031,120 +1032,239 @@
       </table>
     </div>
 
-    <details class="acc">
+    <details class="more">
       <summary>直した箇所と、書き直した答案を見る</summary>
-<div class="sample-step">
-      <div class="sample-step-head">
-        <span class="no">STEP 3</span>
-        <span class="ttl">直した箇所と、その理由（抜粋2件）</span>
+      <div class="step">
+        <div class="step-h"><span class="no">STEP 3</span><span class="tt">直した箇所と、その理由（抜粋2件）</span></div>
+        <div class="fix">
+          <span class="bf">talking with people who is older than them</span>
+          <span class="af">talking with people who are older than them</span>
+          <p>先行詞の people は複数なので、関係代名詞のあとの動詞は are です。</p>
+        </div>
+        <div class="fix">
+          <span class="bf">It is difficult to experience in school life.</span>
+          <span class="af">This is something they cannot easily experience in school life.</span>
+          <p>この It が何を指すのか、読み手には伝わりません。さらに experience の目的語も抜けています。前の文の内容を This で受けて、something を目的語に立てると意味が通ります。</p>
+        </div>
       </div>
-
-      <div class="fix-item">
-        <span class="fix-before">talking with people who is older than them</span>
-        <span class="fix-after">talking with people who are older than them</span>
-        <p class="fix-reason">先行詞の people は複数なので、関係代名詞のあとの動詞は are です。</p>
+      <div class="step">
+        <div class="step-h"><span class="no">STEP 4</span><span class="tt">書き直した答案</span></div>
+        <div class="sheet answer">
+          <p class="en">I think it is good for students to have a part-time job. I have two reasons. First, students can learn how important money is. When they earn money by themselves, they start to think carefully before they spend it. Second, a part-time job gives students chances to talk with different kinds of people, such as customers and older workers. This is something they cannot easily experience in school life. For these two reasons, I think having a part-time job is a good experience for students.</p>
+        </div>
+        <span class="wc">85語</span>
       </div>
-
-      <div class="fix-item">
-        <span class="fix-before">It is difficult to experience in school life.</span>
-        <span class="fix-after">This is something they cannot easily experience in school life.</span>
-        <p class="fix-reason">この It が何を指すのか、読み手には伝わりません。さらに experience の目的語も抜けています。前の文の内容を This で受けて、something を目的語に立てると意味が通ります。</p>
-      </div>
-    </div>
-
-    <div class="sample-step">
-      <div class="sample-step-head">
-        <span class="no">STEP 4</span>
-        <span class="ttl">書き直した答案</span>
-      </div>
-      <div class="answer-box after">
-        I think it is good for students to have a part-time job. I have two reasons. First, students can learn how important money is. When they earn money by themselves, they start to think carefully before they spend it. Second, a part-time job gives students chances to talk with different kinds of people, such as customers and older workers. This is something they cannot easily experience in school life. For these two reasons, I think having a part-time job is a good experience for students.
-      </div>
-      <span class="word-count">85語</span>
-    </div>
     </details>
 
-    <div class="teacher-comment reveal">
-      <span class="label">コメントの見本</span>
-      文法2点の失点は、どちらも「書いた直後に一度読み返せば気づける」種類のミスです。提出前に30秒だけ音読する習慣をつけましょう。文法の点を上げやすくなります。内容面では、2つ目の理由が「many things」のまま終わっているのがもったいない点です。For example で例を出したら、「それが自分にとって何になるのか」まで1文足すと、内容の点も伸ばせます。次回は同じテーマで、この2点だけ意識して書き直してみてください。
+    <div class="comment">
+      <span class="lb">コメントの見本</span>
+      <p>文法2点の失点は、どちらも「書いた直後に一度読み返せば気づける」種類のミスです。提出前に30秒だけ音読する習慣をつけましょう。文法の点を上げやすくなります。内容面では、2つ目の理由が「many things」のまま終わっているのがもったいない点です。For example で例を出したら、「それが自分にとって何になるのか」まで1文足すと、内容の点も伸ばせます。次回は同じテーマで、この2点だけ意識して書き直してみてください。</p>
     </div>
   </div>
 </section>
 
 
+<!-- 4. 商品と料金 -->
+<section id="startsmall" class="sec band">
+  <div class="wrap">
+    <h2>英検の添削・面接対策の料金</h2>
+    <p class="lead">必要なぶんだけ1回から使えます。購入後の連絡はLINEで行います。</p>
+
+    <!-- 面接（単発） -->
+    <div class="offer" id="interview">
+      <div class="offer-h">
+        <h3>英検の面接対策（模擬面接 60分）</h3>
+        <span class="tag">二次試験前に</span>
+      </div>
+      <p class="d">二次試験と同じ流れで模擬面接を<b>1回60分</b>おこない、その場で講評します。答え方の型、詰まったときの言い直し方、質問の返し方まで練習します。</p>
+      <p class="n">Zoom または Google Meet を使います。完全に1対1で、顔出しは任意です。</p>
+      <div class="buys">
+        <a class="buy" href="https://buy.stripe.com/dRmaEXa2saSUgZPfIg7AI0i" target="_blank" rel="noopener"><span>2級を購入</span><span class="p">¥5,500</span></a>
+        <a class="buy" href="https://buy.stripe.com/3cIbJ13E43qs4d3gMk7AI05" target="_blank" rel="noopener"><span>準1級を購入</span><span class="p">¥6,800</span></a>
+      </div>
+
 <!-- ============================================================
-     5. 講師ストーリー
+     二次直前2週間パック（2026年度第2回・二次11/8・11/15）
+     外すときは hero のリンク（#niji）と、入口1枚目の文言も直す
+     niji-pack-start / niji-pack-end で囲んである。
+     11/13の受付終了時は、この目印でブロックごと外す。
 ============================================================ -->
-<section id="coach">
-  <div class="container">
-    <span class="eyebrow">英検対策コーチについて</span>
-    <div class="story-head">
-      <img src="assets/coach.webp" width="560" height="560" alt="英検対策コーチのイラスト" loading="lazy" decoding="async">
-      <div>
-        <h2>私も、落ちた側からはじめました。</h2>
-        <p class="name">英検対策コーチ</p>
+<!-- niji-pack-start -->
+      <div class="niji-box" id="niji">
+        <h3>英検二次試験の直前パック</h3>
+        <p class="niji-when">11/8・11/15の二次試験</p>
+        <p>二次試験はA日程が11月8日、B日程が11月15日です。<br>試験までの期間だけ、一緒に練習するパックです。</p>
+
+        <ul class="inc">
+          <li>
+            <b>模擬面接 60分 × 2回（Zoom）</b>
+            <span>入室から退室まで、本番と同じ流れで止めずに通します。そのあとで詰まった箇所を巻き戻して、言い方を作り直します。使うのは過去問と、当方で作成した模擬カードです。模擬カードは級ごとに5セット用意しています。1回目と2回目は別のセットを使います。</span>
+          </li>
+          <li>
+            <b>面接フレーズ集</b>
+            <span>答えの出だし、言葉に詰まったときの言い換え、意見を組み立てる順番をまとめてお渡しします。暗記するためのものではなく、黙る時間を減らすためのものです。</span>
+          </li>
+          <li>
+            <b>期間中のLINE相談</b>
+            <span>お申し込みから試験の前日まで、回数の上限は設けていません。返信は原則24時間以内です。深夜にいただいた分は翌朝になります。</span>
+          </li>
+        </ul>
+
+        <div class="prices">
+          <div class="price">
+            <p class="gr">英検2級 二次直前2週間パック</p>
+            <p class="am">¥9,800<small>／模擬面接2回</small></p>
+            <ul>
+              <li>税込・一括のみ</li>
+              <li>お申し込みは11月13日まで（A日程の方は11月6日まで）</li>
+            </ul>
+          </div>
+          <div class="price">
+            <p class="gr">英検準1級 二次直前2週間パック</p>
+            <p class="am">¥12,800<small>／模擬面接2回</small></p>
+            <ul>
+              <li>税込・一括のみ</li>
+              <li>お申し込みは11月13日まで（A日程の方は11月6日まで）</li>
+            </ul>
+          </div>
+        </div>
+
+        <p class="limit">
+          面接対策の単品は1回 英検2級 ¥5,500／準1級 ¥6,800 です。このパックは単品2回より<b>2級で¥1,200、準1級で¥800安く</b>、そこに面接フレーズ集と期間中のLINE相談が付きます。<br>
+          お受けできるのは<b>2名まで</b>です。60分の模擬面接をお一人2回、二次までに日程を入れられるのが、この人数までだからです。
+        </p>
+
+        <div class="note-box">
+          <span class="lb">先にお伝えしておきます</span>
+          <p>受験日はA日程が11月8日、B日程が11月15日です。満21歳以上（2005年4月1日以前生まれ）の方がA日程、満20歳以下（2005年4月2日以降生まれ）の方がB日程になります。ご自身の日程は受験票でご確認ください。</p>
+          <p>模擬面接では、過去問と当方が作成した模擬カードを使います。次の本番に出る問題をお渡しするものではありません。</p>
+          <p>合格を保証するものではありません。試験までに決められるのは、答え方の型と、詰まったときの切り抜け方と、入室から退室までの段取りです。一次試験（筆記・リスニング）の対策は含みません。</p>
+        </div>
+
+        <div class="cta-in">
+          <a class="btn-line" href="https://lin.ee/PmShWQY" target="_blank" rel="noopener">LINEで申し込む・相談する</a>
+          <p class="small">今の状況をうかがって、このパックが必要ないと判断すればそうお伝えします。お申し込みはLINEでご相談いただいたあと、個別に決済リンクをお送りします。</p>
+        </div>
+      </div>
+<!-- niji-pack-end -->
+    </div>
+
+    <!-- 添削（1回・4回チケット） -->
+    <div class="offer" id="services">
+      <div class="offer-h">
+        <h3>英検の添削（1回・4回チケット）</h3>
+        <span class="tag">まず試す</span>
+      </div>
+      <p class="d">英作文・要約・Eメールのどれか1問の答案を1枚お送りください。観点ごとの採点、直した箇所とその理由、書き直した答案例をつけて、原則2日以内に返します。</p>
+
+      <table class="menu">
+        <thead>
+          <tr>
+            <th scope="col">級</th>
+            <th scope="col">添削する問題</th>
+            <th scope="col">1回</th>
+            <th scope="col">4回チケット（有効期限3ヶ月）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row" class="g">英検準2級</th>
+            <td class="c">Eメールと英作文（意見論述）</td>
+            <td class="b"><a class="buy" href="https://buy.stripe.com/9B64gza2sd126lb3Zy7AI0n" target="_blank" rel="noopener" aria-label="準2級の添削1回を購入 ¥2,000"><span>1回を購入</span><span class="p">¥2,000</span></a></td>
+            <td class="b"><a class="buy" href="https://buy.stripe.com/00w28r8Yo8KM38Z1Rq7AI0o" target="_blank" rel="noopener" aria-label="準2級の4回チケットを購入 ¥7,000"><span>4回チケット</span><span class="p">¥7,000</span></a></td>
+          </tr>
+          <tr>
+            <th scope="row" class="g">英検準2級プラス</th>
+            <td class="c">要約（25〜35語）と英作文（意見論述）</td>
+            <td class="b"><a class="buy" href="https://buy.stripe.com/cNi9ATdeE9OQ10Rcw47AI0s" target="_blank" rel="noopener" aria-label="準2級プラスの添削1回を購入 ¥2,200"><span>1回を購入</span><span class="p">¥2,200</span></a></td>
+            <td class="b"><a class="buy" href="https://buy.stripe.com/8x2bJ1gqQ6CEaBrgMk7AI0t" target="_blank" rel="noopener" aria-label="準2級プラスの4回チケットを購入 ¥7,700"><span>4回チケット</span><span class="p">¥7,700</span></a></td>
+          </tr>
+          <tr>
+            <th scope="row" class="g">英検2級</th>
+            <td class="c">要約（45〜55語）と英作文（80〜100語）</td>
+            <td class="b"><a class="buy" href="https://buy.stripe.com/3cI00jcaA2mo5h7bs07AI0d" target="_blank" rel="noopener" aria-label="2級の添削1回を購入 ¥2,500"><span>1回を購入</span><span class="p">¥2,500</span></a></td>
+            <td class="b"><a class="buy" href="https://buy.stripe.com/5kQ14n0rS9OQ9xn3Zy7AI0f" target="_blank" rel="noopener" aria-label="2級の4回チケットを購入 ¥8,800"><span>4回チケット</span><span class="p">¥8,800</span></a></td>
+          </tr>
+          <tr>
+            <th scope="row" class="g">英検準1級</th>
+            <td class="c">要約（60〜70語）と英作文（120〜150語）</td>
+            <td class="b"><a class="buy" href="https://buy.stripe.com/bJe3cveiI3qs38Z53C7AI0e" target="_blank" rel="noopener" aria-label="準1級の添削1回を購入 ¥3,500"><span>1回を購入</span><span class="p">¥3,500</span></a></td>
+            <td class="b"><a class="buy" href="https://buy.stripe.com/8x25kD2A04uweRH1Rq7AI0g" target="_blank" rel="noopener" aria-label="準1級の4回チケットを購入 ¥12,000"><span>4回チケット</span><span class="p">¥12,000</span></a></td>
+          </tr>
+          <tr>
+            <th scope="row" class="g">英検1級</th>
+            <td class="c">要約（90〜110語）と英作文（意見論述）</td>
+            <td class="b"><a class="buy" href="https://buy.stripe.com/4gMaEX2A07GI5h77bK7AI0l" target="_blank" rel="noopener" aria-label="1級の添削1回を購入 ¥5,500"><span>1回を購入</span><span class="p">¥5,500</span></a></td>
+            <td class="b"><a class="buy" href="https://buy.stripe.com/7sY4gz7Ukd128tj0Nm7AI0m" target="_blank" rel="noopener" aria-label="1級の4回チケットを購入 ¥18,000"><span>4回チケット</span><span class="p">¥18,000</span></a></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="n"><b>1回：</b>その答案に関する確認の質問は2往復までお受けします。</p>
+      <p class="n"><b>4回チケット（試験前の1〜2ヶ月に）：</b>添削4回分をまとめて。書く→直す→もう一度書く、を4回くり返すと同じ減点に気づきやすくなります。使う間隔は自由で、購入から3ヶ月以内に使い切ってください。毎月払う契約ではありません。自動更新もありません。添削に関する質問は回数の制限なし。あわせて2回まで、勉強の進め方の相談にもLINEで対応します。</p>
+    </div>
+
+    <!-- 受験コンサル -->
+    <div class="offer" id="consult">
+      <div class="offer-h">
+        <h3>受験コンサルティング（60分）</h3>
+        <span class="tag">計画づくり</span>
+      </div>
+      <p class="d">いつの回で受けるか、そこから逆算して今週何をやるか。大学受験の勉強との配分や、弱い技能の優先順位を一緒に決めます。</p>
+      <p class="n">Zoom または Google Meet で60分。顔出しは任意です。</p>
+      <div class="buys one">
+        <a class="buy" href="https://buy.stripe.com/aFa6oHcaA0egbFv8fO7AI06" target="_blank" rel="noopener"><span>60分の枠を申し込む</span><span class="p">¥12,000</span></a>
       </div>
     </div>
 
-    <div class="story-body">
-      <p>
-        高校生のころ、模試の偏差値は42でした。英語は特に苦手で、長文を読んでも二段落目で何の話か分からなくなる。それでも<strong>現役で早稲田大学に入りました</strong>。やったことは単純で、間違えた問題を「なぜ間違えたか」まで毎回分解して、同じ理由で二度落とさないようにしただけです。
-      </p>
-      <p>
-        その後、塾の仕事に就きました。<strong>全国50校舎以上で英検指導に関わり、これまでに100名以上の生徒を担当しています</strong>。教える側になってから気づいたのは、英作文でつまずく生徒はほぼ全員、同じ場所で同じ引かれ方をしているということでした。
-      </p>
-      <p>
-        自分でも英検1級を受けました。<strong>一次で落ちました。CSE 1948</strong>。合格ラインまであと少し、という点数です。こたえたのは点数そのものより、スコア表を見ても次に何を直せばいいのか自分では分からなかったことでした。採点の理由が見えないと、次の一手が決まりません。
-      </p>
-      <p>
-        そこで、自分の答案を人に見てもらい、書き方を作り直しました。<strong>次の受験で CSE 2030、一次合格です</strong>。発表の日、先に結果を確認して「受かった」と送ってくれたのは、当時指導してくれた人でした。実物が次の2枚です。落ちたときのスコアと、合格を知らせてくれたLINEです。
-      </p>
+    <div class="pay">
+      <h3>支払い方法</h3>
+      <div class="pay-m"><span>クレジット・デビットカード</span><span>Apple Pay</span><span>PayPay</span></div>
+      <p class="small">決済はStripeのページで行います。カード情報を当サイトで預かることはありません。</p>
+      <p class="small">支払いはカード・Apple Pay・PayPay。<b>カードがなくてもPayPayで買えます。</b></p>
+      <p class="small">支払いが終わるとLINEの友だち追加ページに移ります。すでに友だちの方は、そのままLINEに答案を送ってください。</p>
     </div>
-
-    <div class="scores">
-      <figure class="score-fig reveal">
-        <img src="assets/eiken1_1948_crop.jpg" width="900" height="447" alt="英検1級一次試験のスコア（CSE 1948・不合格時）の実物" loading="lazy" decoding="async">
-        <figcaption>一次 不合格／CSE 1948</figcaption>
-      </figure>
-      <figure class="score-fig pass reveal">
-        <img src="assets/eiken1_2030_crop.jpg" width="421" height="489" alt="合格発表の日に当時の指導者から届いたLINE（英検1級一次 CSE 2030・合格）" loading="lazy" decoding="async">
-        <figcaption>一次 合格／CSE 2030（指導してくれた人からのLINE）</figcaption>
-      </figure>
-    </div>
-
-    <div class="story-body" style="margin-top:22px;">
-      <p>
-        だから添削では「ここが間違い」で終わらせません。何点分の減点なのか、なぜそうなるのか、次に似た設問が来たらどう書くのか。この3つを毎回そろえて返します。落ちたときに自分がほしかったものが、それだったからです。
-      </p>
-    </div>
-
-    <ul class="story-facts">
-      <li>英検1級合格（リスニング満点）</li>
-      <li>TOEIC L&amp;R 945／IELTS 7.0</li>
-      <li>偏差値42から早稲田大学に現役合格</li>
-      <li>全国50校舎以上で英検指導／指導した生徒100名以上</li>
-    </ul>
-
-    <a class="note-link" href="https://note.com/eikencoaching" target="_blank" rel="noopener">勉強法の詳しい話はnoteへ →</a>
   </div>
 </section>
 
 
-<!-- ============================================================
-     6. 3ヶ月 合格伴走プログラム（主力）
-============================================================ -->
-<section id="program">
-  <div class="container">
-    <span class="eyebrow">いちばん力を入れているメニュー</span>
+<!-- 4-2. 3ヶ月の合格伴走 -->
+<section id="program" class="sec">
+  <div class="wrap">
     <h2>英検2級・準1級を、3ヶ月1対1で見ます。</h2>
-
-    <p class="prog-lead">
+    <p class="lead">
       参考書は買った。やる気もある。でも「何を・どの順で・どれだけやれば受かるのか」が分からないまま、時間だけが過ぎていく。<br>
       3ヶ月の合格伴走プログラムでは、あなたの現状から合格までを1対1で設計して、<b>添削12回・面談7回（合計450分）・模擬面接3回</b>で最後まで伴走します。担当するのは私ひとりです。
     </p>
 
-    <h3 class="prog-h3">3ヶ月に含むもの</h3>
-    <ul class="inc-list reveal">
+    <h3 class="h-sub" id="price">3ヶ月の合格伴走の料金と定員</h3>
+    <div class="prices">
+      <div class="price">
+        <p class="gr">英検2級 合格伴走</p>
+        <p class="am">¥98,000<small>／3ヶ月</small></p>
+        <ul>
+          <li>分割：<b>¥35,000 × 3回</b>（総額¥105,000）</li>
+          <li>分割は一括より¥7,000高くなります</li>
+        </ul>
+      </div>
+      <div class="price">
+        <p class="gr">英検準1級 合格伴走</p>
+        <p class="am">¥128,000<small>／3ヶ月</small></p>
+        <ul>
+          <li>分割：<b>¥45,000 × 3回</b>（総額¥135,000）</li>
+          <li>分割は一括より¥7,000高くなります</li>
+        </ul>
+      </div>
+    </div>
+    <p class="limit">
+      <b>期間は、初回面談日から12週間後の日か、二次試験日の翌日か、遅いほうまで</b>です（二次対策まで含むため、最長で約17週間になります）。開始日と終了日は契約書面に日付で記載します。<br>
+      お受けできるのは<b>月2〜3名まで</b>です。ひとりで担当しているので、これ以上は見きれません。<br>
+      <b>今月（11月）の受付は、残り2名です。</b>埋まり次第、翌月以降のご案内になります。<br><!-- 残り枠は毎月ここを更新 -->
+      3ヶ月の伴走は英検2級・準1級が対象です。
+    </p>
+
+    <h3 class="h-sub">3ヶ月に含むもの</h3>
+    <ul class="inc">
       <li>
         <b>現状診断と、3ヶ月の逆算プラン設計</b>
         <span>初回面談（90分）でスコアの内訳から弱点を特定して、合格までの週次計画を作ります。</span>
@@ -2179,210 +1299,55 @@
       </li>
     </ul>
 
-    <details class="acc">
+    <details class="more">
       <summary>申し込んだあとの、ある1週間</summary>
-    <ul class="week">
-      <li>
-        <span class="when">週のはじめ</span>
-        <span class="what">その週の課題を書いて、LINEで送ります（英作文または要約を1本）。</span>
-      </li>
-      <li>
-        <span class="when">送ってから2日以内</span>
-        <span class="what">4観点の採点、直した箇所とその理由、書き直した答案例が返ります。</span>
-      </li>
-      <li>
-        <span class="when">平日いつでも</span>
-        <span class="what">分からないところはLINEで質問。回数は決めていません。</span>
-      </li>
-      <li>
-        <span class="when">隔週</span>
-        <span class="what">Zoomで60分（初回だけ90分）。進んだところと詰まったところを見て、計画を直します。</span>
-      </li>
-      <li>
-        <span class="when">週の終わり</span>
-        <span class="what">今週やり切れたかを確認して、来週やることを決めます。</span>
-      </li>
-      <li>
-        <span class="when">必要なとき</span>
-        <span class="what">音読や面接の答えを録音して送れば、発音と言い直し方にコメントが返ります（期間中3回まで）。</span>
-      </li>
-      <li>
-        <span class="when">二次まで</span>
-        <span class="what">模擬面接（60分）を3回。答え方の型と、詰まったときの言い直し方を練習します。</span>
-      </li>
-    </ul>
+      <ul class="week">
+        <li><span class="w">週のはじめ</span><span class="t">その週の課題を書いて、LINEで送ります（英作文または要約を1本）。</span></li>
+        <li><span class="w">送ってから2日以内</span><span class="t">4観点の採点、直した箇所とその理由、書き直した答案例が返ります。</span></li>
+        <li><span class="w">平日いつでも</span><span class="t">分からないところはLINEで質問。回数は決めていません。</span></li>
+        <li><span class="w">隔週</span><span class="t">Zoomで60分（初回だけ90分）。進んだところと詰まったところを見て、計画を直します。</span></li>
+        <li><span class="w">週の終わり</span><span class="t">今週やり切れたかを確認して、来週やることを決めます。</span></li>
+        <li><span class="w">必要なとき</span><span class="t">音読や面接の答えを録音して送れば、発音と言い直し方にコメントが返ります（期間中3回まで）。</span></li>
+        <li><span class="w">二次まで</span><span class="t">模擬面接（60分）を3回。答え方の型と、詰まったときの言い直し方を練習します。</span></li>
+      </ul>
     </details>
 
-    <h3 class="prog-h3">向いている人／向いていない人</h3>
-    <div class="fit reveal">
+    <h3 class="h-sub">向いている人／向いていない人</h3>
+    <div class="fit">
       <div class="ok">
-        <p class="fit-t">向いています</p>
-        <p class="fit-d">独学で不安な人。一度落ちた人。短い期間で上げたい人。保護者の方がお子さんに受けさせるケースもあります。</p>
+        <p class="ft">向いています</p>
+        <p class="fd">独学で不安な人。一度落ちた人。短い期間で上げたい人。保護者の方がお子さんに受けさせるケースもあります。</p>
       </div>
       <div class="ng">
-        <p class="fit-t">向いていません</p>
-        <p class="fit-d">自分のペースだけで気楽にやりたい人。その場合は、単発の添削やnoteのほうが合っています。</p>
+        <p class="ft">向いていません</p>
+        <p class="fd">自分のペースだけで気楽にやりたい人。その場合は、単発の添削やnoteのほうが合っています。</p>
       </div>
     </div>
 
-    <div class="promise reveal">
-      <span class="label">約束すること</span>
+    <div class="note-box">
+      <span class="lb">約束すること</span>
       <p>合格を保証はしません。約束するのは、合格に必要な学習を、毎週一緒に確認して、最後まで進めることです。</p>
       <p><b>含まないもの：</b>リーディング・リスニングの問題演習は含みません（プランの設計と、大問別の測定までを行います）。対面での指導、保護者の方向けの別レポート、英検の受験申込の代行は含みません。スピーキングは模擬面接3回と、音読・録音のチェック3回までが対象で、日常的な発話練習や音読の常時チェックは行いません。</p>
     </div>
 
-    <h3 class="prog-h3" id="price">3ヶ月の合格伴走の料金と定員</h3>
-    <div class="price-grid reveal">
-      <div class="price-card">
-        <p class="grade">英検2級 合格伴走</p>
-        <p class="amount">¥98,000<small>／3ヶ月</small></p>
-        <ul>
-          <li>分割：<b>¥35,000 × 3回</b>（総額¥105,000）</li>
-          <li>分割は一括より¥7,000高くなります</li>
-        </ul>
-      </div>
-      <div class="price-card">
-        <p class="grade">英検準1級 合格伴走</p>
-        <p class="amount">¥128,000<small>／3ヶ月</small></p>
-        <ul>
-          <li>分割：<b>¥45,000 × 3回</b>（総額¥135,000）</li>
-          <li>分割は一括より¥7,000高くなります</li>
-        </ul>
-      </div>
-    </div>
-
-    <p class="limit-note">
-      <b>期間は、初回面談日から12週間後の日か、二次試験日の翌日か、遅いほうまで</b>です（二次対策まで含むため、最長で約17週間になります）。開始日と終了日は契約書面に日付で記載します。<br>
-      お受けできるのは<b>月2〜3名まで</b>です。ひとりで担当しているので、これ以上は見きれません。<br>
-      <b>今月（11月）の受付は、残り2名です。</b>埋まり次第、翌月以降のご案内になります。<br><!-- 残り枠は毎月ここを更新 -->
-      3ヶ月の伴走は英検2級・準1級が対象です。
-    </p>
-
-    <div class="prog-cta">
-      <a class="btn btn-line" href="https://lin.ee/PmShWQY" target="_blank" rel="noopener">LINEで無料診断を受ける（受ける級と試験日を送るだけ）</a>
-      <p class="micro">受ける級と試験日をおうかがいして、3ヶ月で届くか・何をやるかを正直にお伝えします。合わなければ無理にお勧めしません。</p>
+    <div class="cta-in">
+      <a class="btn-line" href="https://lin.ee/PmShWQY" target="_blank" rel="noopener">LINEで無料診断を受ける（受ける級と試験日を送るだけ）</a>
+      <p class="small">受ける級と試験日をおうかがいして、3ヶ月で届くか・何をやるかを正直にお伝えします。合わなければ無理にお勧めしません。</p>
     </div>
   </div>
 </section>
 
 
-
-
-
-
-<!-- ============================================================
-     6.6 二次直前2週間パック（2026年度第2回・二次11/8・11/15）
-     外すときは hero-niji のリンクとメニューの #niji も消す
-     niji-pack-start / niji-pack-end で囲んである。
-     11/13の受付終了時は、この目印でセクションごと外す。
-============================================================ -->
-<!-- niji-pack-start -->
-<section id="niji">
-  <div class="container">
-    <span class="eyebrow">11/8・11/15の二次試験</span>
-    <h2>英検二次試験の直前パック</h2>
-
-    <p class="prog-lead">
-      二次試験はA日程が11月8日、B日程が11月15日です。<br>
-      試験までの期間だけ、一緒に練習するパックです。
-    </p>
-
-    <h3 class="prog-h3">含むもの</h3>
-    <ul class="inc-list reveal">
-      <li>
-        <b>模擬面接 60分 × 2回（Zoom）</b>
-        <span>入室から退室まで、本番と同じ流れで止めずに通します。そのあとで詰まった箇所を巻き戻して、言い方を作り直します。使うのは過去問と、当方で作成した模擬カードです。模擬カードは級ごとに5セット用意しています。1回目と2回目は別のセットを使います。</span>
-      </li>
-      <li>
-        <b>面接フレーズ集</b>
-        <span>答えの出だし、言葉に詰まったときの言い換え、意見を組み立てる順番をまとめてお渡しします。暗記するためのものではなく、黙る時間を減らすためのものです。</span>
-      </li>
-      <li>
-        <b>期間中のLINE相談</b>
-        <span>お申し込みから試験の前日まで、回数の上限は設けていません。返信は原則24時間以内です。深夜にいただいた分は翌朝になります。</span>
-      </li>
-    </ul>
-
-    <h3 class="prog-h3">二次直前パックの料金と定員</h3>
-    <div class="price-grid reveal">
-      <div class="price-card">
-        <p class="grade">英検2級 二次直前2週間パック</p>
-        <p class="amount">¥9,800<small>／模擬面接2回</small></p>
-        <ul>
-          <li>税込・一括のみ</li>
-          <li>お申し込みは11月13日まで（A日程の方は11月6日まで）</li>
-        </ul>
-      </div>
-      <div class="price-card">
-        <p class="grade">英検準1級 二次直前2週間パック</p>
-        <p class="amount">¥12,800<small>／模擬面接2回</small></p>
-        <ul>
-          <li>税込・一括のみ</li>
-          <li>お申し込みは11月13日まで（A日程の方は11月6日まで）</li>
-        </ul>
-      </div>
-    </div>
-
-    <p class="limit-note">
-      面接対策の単品は1回 英検2級 ¥5,500／準1級 ¥6,800 です。このパックは単品2回より<b>2級で¥1,200、準1級で¥800安く</b>、そこに面接フレーズ集と期間中のLINE相談が付きます。<br>
-      お受けできるのは<b>2名まで</b>です。60分の模擬面接をお一人2回、二次までに日程を入れられるのが、この人数までだからです。
-    </p>
-
-    <div class="promise reveal">
-      <span class="label">先にお伝えしておきます</span>
-      <p>受験日はA日程が11月8日、B日程が11月15日です。満21歳以上（2005年4月1日以前生まれ）の方がA日程、満20歳以下（2005年4月2日以降生まれ）の方がB日程になります。ご自身の日程は受験票でご確認ください。</p>
-      <p>模擬面接では、過去問と当方が作成した模擬カードを使います。次の本番に出る問題をお渡しするものではありません。</p>
-      <p>合格を保証するものではありません。試験までに決められるのは、答え方の型と、詰まったときの切り抜け方と、入室から退室までの段取りです。一次試験（筆記・リスニング）の対策は含みません。</p>
-    </div>
-
-    <div class="prog-cta">
-      <a class="btn btn-line" href="https://lin.ee/PmShWQY" target="_blank" rel="noopener">LINEで申し込む・相談する</a>
-      <p class="micro">今の状況をうかがって、このパックが必要ないと判断すればそうお伝えします。お申し込みはLINEでご相談いただいたあと、個別に決済リンクをお送りします。</p>
-    </div>
-  </div>
-</section>
-<!-- niji-pack-end -->
-
-<!-- ============================================================
-     8. 迷ったら無料枠
-============================================================ -->
-<section id="free">
-  <div class="container">
-    <span class="eyebrow">無料でできるところまで</span>
-    <h2>無料の合格スターターキットと診断</h2>
-    <p class="lead">買う前に、無料のものだけ使ってもかまいません。LINEを追加すると次の2つが受け取れます。</p>
-
-    <ul class="free-list">
-      <li>
-        <b>合格スターターキット（2級版・準1級版のPDF）</b>
-        <span>英作文の型、言い換え早見表、接続詞10選、書き終わりのチェックリストをまとめたものです。準1級版には要約の型も入っています。</span>
-      </li>
-      <li>
-        <b>無料診断：「受ける級と試験日」を送れば、何から始めるべきかをお返しします</b>
-        <span>優先順位を無料でお答えします。3ヶ月のプログラムが合わないと判断したら、その場でお伝えします。</span>
-      </li>
-    </ul>
-
-    <div class="center">
-      <a class="btn btn-line" href="https://lin.ee/PmShWQY" target="_blank" rel="noopener">LINEで無料診断を受ける</a>
-      <p class="micro">タップするとLINEが開きます。友だち追加だけでスターターキットも受け取れます。ブロックはいつでもできます。</p>
-    </div>
-  </div>
-</section>
-
-
-<!-- ============================================================
-     10. FAQ
-============================================================ -->
-<section id="materials" class="band-light">
-  <div class="container">
-    <span class="eyebrow">自分で進めたい人へ</span>
+<!-- 4-3. 教材 -->
+<section id="materials" class="sec band">
+  <div class="wrap">
     <h2>英検の教材</h2>
-    <ul class="mat-list">
+    <p class="lead">自分で進めたい人へ。</p>
+    <ul class="books">
       <li>
         <b>英検®2級ライティング 書いて身につく要約と意見論述30題</b>
         <p>要約と意見論述を30題、書いて練習する問題集です。</p>
-        <div class="mat-links">
+        <div class="bl">
           <a href="https://www.amazon.co.jp/dp/B0HPYDGXGP" target="_blank" rel="noopener">紙の本（Amazon）</a>
           <a href="https://www.amazon.co.jp/dp/B0HPY9S586" target="_blank" rel="noopener">Kindle（Amazon）</a>
         </div>
@@ -2390,7 +1355,7 @@
       <li>
         <b>英検2級・準1級 2次試験（面接）完全攻略ガイド</b>
         <p>面接の答え方のテンプレート集です。黙りそうな場面の言い方と、本番1週間前の練習スケジュールも入っています。</p>
-        <div class="mat-links">
+        <div class="bl">
           <a href="https://note.com/eikencoaching/n/nd302c2572f63" target="_blank" rel="noopener">noteで読む（¥2,980）</a>
         </div>
       </li>
@@ -2399,101 +1364,148 @@
 </section>
 
 
-<section id="follow">
-  <div class="container">
-    <span class="eyebrow">SNSとnote</span>
-    <h2>試験の直前情報も発信しています</h2>
-    <div class="sns-row">
-      <a href="https://x.com/eikencoach" target="_blank" rel="noopener">X</a>
-      <a href="https://www.threads.com/@eikencoaching" target="_blank" rel="noopener">Threads</a>
-      <a href="https://www.instagram.com/eikencoaching/" target="_blank" rel="noopener">Instagram</a>
-      <a href="https://note.com/eikencoaching" target="_blank" rel="noopener">note</a>
-    </div>
+<!-- 5. 進め方 -->
+<section id="flow" class="sec">
+  <div class="wrap">
+    <h2>やることは4つだけです。</h2>
+    <p class="lead">申し込みから返却まで。</p>
+    <ol class="steps">
+      <li><span class="n">1</span><p class="t">購入する</p><p class="d">上のボタンからStripeの決済ページへ。カード・Apple Pay・PayPayに対応しています。</p></li>
+      <li><span class="n">2</span><p class="t">LINEを友だち追加する</p><p class="d">支払いが終わると友だち追加ページに移動します。以降の連絡はLINEで行います。</p></li>
+      <li><span class="n">3</span><p class="t">答案を送る</p><p class="d">手書きの答案は写真で、打ち込んだものはテキストのまま送ってください。清書は不要です。</p></li>
+      <li><span class="n">4</span><p class="t">原則2日以内に返却</p><p class="d">観点ごとの採点、直した箇所と理由、書き直した答案例をつけて返します。</p></li>
+    </ol>
   </div>
 </section>
 
 
-<section id="faq" class="band-light">
-  <div class="container">
-    <span class="eyebrow">よくある質問</span>
-    <h2>申し込む前に確認しておきたいこと</h2>
+<!-- 6. 実績・人 -->
+<section id="coach" class="sec band">
+  <div class="wrap">
+    <div class="results" id="results">
+      <div class="result">
+        <span class="lb">合格実績（2026年）</span>
+        <span class="hd">中学1年生の受講生が、英検準1級に合格しました。</span>
+        <span class="sc">4回チケットで添削を受講。成績表の意見論述は、内容 4/4・構成 3/4・語彙 3/4・文法 2/4 でした。</span>
+        <span class="nt">保護者の方の了承を得て掲載しています。</span>
+      </div>
+      <div class="result">
+        <span class="lb">一次試験の合格実績（2026年）</span>
+        <span class="hd">中学2年生の受講生が、英検2級の一次試験に合格しました。</span>
+        <span class="sc">添削を受講。前回→今回のライティングは、要約 0/16 → 12/16・意見論述 10/16 → 12/16 でした。</span>
+        <span class="nt">保護者の方の了承を得て掲載しています。</span>
+      </div>
+    </div>
 
+    <h2>英検対策コーチについて</h2>
+    <div class="story-h">
+      <img src="assets/coach.webp" width="560" height="560" alt="英検対策コーチのイラスト" loading="lazy" decoding="async">
+      <div>
+        <h3>私も、落ちた側からはじめました。</h3>
+        <p class="nm">英検対策コーチ</p>
+      </div>
+    </div>
+
+    <div class="story">
+      <p>高校生のころ、模試の偏差値は42でした。英語は特に苦手で、長文を読んでも二段落目で何の話か分からなくなる。それでも<strong>現役で早稲田大学に入りました</strong>。やったことは単純で、間違えた問題を「なぜ間違えたか」まで毎回分解して、同じ理由で二度落とさないようにしただけです。</p>
+      <p>その後、塾の仕事に就きました。<strong>全国50校舎以上で英検指導に関わり、これまでに100名以上の生徒を担当しています</strong>。教える側になってから気づいたのは、英作文でつまずく生徒はほぼ全員、同じ場所で同じ引かれ方をしているということでした。</p>
+      <p>自分でも英検1級を受けました。<strong>一次で落ちました。CSE 1948</strong>。合格ラインまであと少し、という点数です。こたえたのは点数そのものより、スコア表を見ても次に何を直せばいいのか自分では分からなかったことでした。採点の理由が見えないと、次の一手が決まりません。</p>
+      <p>そこで、自分の答案を人に見てもらい、書き方を作り直しました。<strong>次の受験で CSE 2030、一次合格です</strong>。発表の日、先に結果を確認して「受かった」と送ってくれたのは、当時指導してくれた人でした。実物が次の2枚です。落ちたときのスコアと、合格を知らせてくれたLINEです。</p>
+    </div>
+
+    <div class="scores">
+      <figure>
+        <img src="assets/eiken1_1948_crop.jpg" width="900" height="447" alt="英検1級一次試験のスコア（CSE 1948・不合格時）の実物" loading="lazy" decoding="async">
+        <figcaption>一次 不合格／CSE 1948</figcaption>
+      </figure>
+      <figure class="pass">
+        <img src="assets/eiken1_2030_crop.jpg" width="421" height="489" alt="合格発表の日に当時の指導者から届いたLINE（英検1級一次 CSE 2030・合格）" loading="lazy" decoding="async">
+        <figcaption>一次 合格／CSE 2030（指導してくれた人からのLINE）</figcaption>
+      </figure>
+    </div>
+
+    <div class="story">
+      <p>だから添削では「ここが間違い」で終わらせません。何点分の減点なのか、なぜそうなるのか、次に似た設問が来たらどう書くのか。この3つを毎回そろえて返します。落ちたときに自分がほしかったものが、それだったからです。</p>
+    </div>
+
+    <ul class="facts">
+      <li>英検1級合格（リスニング満点）</li>
+      <li>TOEIC L&amp;R 945／IELTS 7.0</li>
+      <li>偏差値42から早稲田大学に現役合格</li>
+      <li>全国50校舎以上で英検指導／指導した生徒100名以上</li>
+    </ul>
+
+    <a class="text-link" href="https://note.com/eikencoaching" target="_blank" rel="noopener">勉強法の詳しい話はnoteへ</a>
+  </div>
+</section>
+
+
+<!-- 7. よくある質問 -->
+<section id="faq" class="sec">
+  <div class="wrap">
+    <h2>申し込む前に確認しておきたいこと</h2>
+    <p class="lead">よくある質問</p>
     <div class="faq">
       <details>
         <summary>1回だけ頼むこともできますか。</summary>
         <div class="a">できます。添削は1回から頼めます。4回チケットは都度購入なので、続ける義務はありません。</div>
       </details>
-
       <details>
         <summary>クレジットカードを持っていません。</summary>
         <div class="a">PayPayとApple Payも使えます。購入ボタンから進み、決済ページで支払い方法を選んでください。</div>
       </details>
-
       <details>
         <summary>3ヶ月のプログラムが自分に合わなかったらどうなりますか。</summary>
         <div class="a">合うかどうかは、申し込む前の無料診断で判断します。受ける級と試験日をおうかがいして、3ヶ月で届くか・何をやるかを正直にお伝えし、合わない・今は必要ないと判断した場合は無理にお勧めしません。始まったあとも、隔週の学習相談で進み方を確認して、合わないやり方が出てきたらその場で計画を修正します。</div>
       </details>
-
       <details>
         <summary>プログラムの定員はどれくらいですか。</summary>
         <div class="a">ひとりで担当しているため、お受けできるのは月2〜3名までです。埋まっている場合は、次にお受けできる時期を<a href="https://lin.ee/PmShWQY" target="_blank" rel="noopener">LINE</a>でお伝えします。</div>
       </details>
-
       <details>
         <summary>プログラムは分割で払えますか。手数料はかかりますか。</summary>
         <div class="a">3ヶ月一括のほか、3回に分けてのお支払いもできます。英検2級は¥35,000×3回（合計¥105,000）、準1級は¥45,000×3回（合計¥135,000）で、分割の場合は事務手数料分として一括より¥7,000高くなります。お支払いの方法は無料診断のときにご案内します。</div>
       </details>
-
       <details>
         <summary>プログラムを途中でやめた場合、返金はありますか。</summary>
         <div class="a">開始前（初回面談の前日まで）のキャンセルは全額返金します。開始後に途中で終了する場合は、まだ始まっていない月の分を月割りで返金します（実施済みの月・着手済みの添削は対象外です）。回数割り（受けた添削・面談の回数で計算する方法）のほうが返金が多くなる場合は、そちらを採ります。<b>2つの計算方法のうち、返金が多いほうを必ず採用します。</b>分割払いの場合は、以降のお支払いを停止します。<a href="https://lin.ee/PmShWQY" target="_blank" rel="noopener">LINE</a>でご連絡いただくだけで、理由はおうかがいしません。</div>
       </details>
-
       <details>
         <summary>試験まで3ヶ月を切っています。逆に、半年以上あります。</summary>
         <div class="a">どちらでも大丈夫です。3ヶ月は標準の設計期間で、開始時期と中身はあなたの試験日から逆算して決めます。無料診断で残り日数をおうかがいした上で、短縮したプランや、開始を遅らせる提案をすることもあります。まずは<a href="https://lin.ee/PmShWQY" target="_blank" rel="noopener">LINE</a>で受ける級と試験日を送ってください。</div>
       </details>
-
       <details>
         <summary>顔出しや対面は必要ですか。</summary>
         <div class="a">ライティング添削は顔出し不要です。答案の写真かテキストをLINEで送っていただくだけで完結します。面接対策と受験コンサルティングはZoomまたはGoogle Meetを使いますが、顔出しは任意です。カメラをオフにして音声だけでも受けられます。</div>
       </details>
-
       <details>
         <summary>添削の返却はどれくらいかかりますか。</summary>
         <div class="a">原則として、ご提出から2日以内に返却します。試験直前期や大型連休の前後は遅れることがありますが、その場合は事前にお伝えします。</div>
       </details>
-
       <details>
         <summary>質問やメッセージへの返信はどれくらいで届きますか。</summary>
         <div class="a">LINEでいただいた質問には、当日から翌日までを目安に返信しています。深夜のご連絡は翌日以降の返信になります。単発の添削では、その答案に関する確認の質問を2往復までお受けします。4回チケットは添削に関する質問の回数に制限を設けていません。</div>
       </details>
-
       <details>
         <summary>何級まで対応していますか。</summary>
         <div class="a">英検2級と準1級は、添削・面接対策・3ヶ月の伴走のすべてに対応しています。大学入試で英検のスコアを使う高校生・大学生の方が中心です。英検準2級は、Eメールと英作文（意見論述）の添削だけをお受けしています（1回¥2,000・4回チケット¥7,000）。英検準2級プラスは、要約と英作文（意見論述）の添削だけをお受けしています（1回¥2,200・4回チケット¥7,700）。英検1級は、英作文（意見論述）と要約の添削だけをお受けしています（1回¥5,500・4回チケット¥18,000）。それ以外の級については個別にご相談ください。</div>
       </details>
-
       <details>
         <summary>申し込みから返却までの流れを教えてください。</summary>
         <div class="a">(1) 購入ボタンから決済 →(2) 決済後に表示されるページからLINEを友だち追加 →(3) LINEに答案の写真またはテキストを送付 →(4) 原則2日以内に、添削済みの答案とコメントをLINEで返却、という流れです。</div>
       </details>
-
       <details>
         <summary>4回チケットは自動で更新されますか。</summary>
         <div class="a">更新されません。毎月払う契約ではなく、4回ぶんの都度購入です。有効期限は購入日から3ヶ月で、使い切れなかった分の払い戻しは行っておりません。次も使いたいときだけ、もう一度お買い求めください。</div>
       </details>
-
       <details>
         <summary>キャンセルはできますか。</summary>
         <div class="a">答案をお送りいただく前であればキャンセルできます。<a href="https://lin.ee/PmShWQY" target="_blank" rel="noopener">LINE</a>からご連絡ください。添削に着手したあとのキャンセルは対応が難しい場合がありますので、あらかじめご了承ください。</div>
       </details>
-
       <details>
         <summary>塾に通っていますが利用できますか。</summary>
         <div class="a">問題ありません。塾のカリキュラムは大学受験の文法・長文が中心で、英検の作文まで手が回らないことが多いためです。塾の勉強と並行して使う前提で設計しています。</div>
       </details>
-
       <details>
         <summary>Zoomを使ったことがないのですが大丈夫でしょうか。</summary>
         <div class="a">当日は送られたリンクを開くだけです。他の受講者と同席することはありません。初めての方には事前に接続テストのご案内をしますので、その時点で確認できます。Google Meetでの実施にも変更できます。</div>
@@ -2503,49 +1515,68 @@
 </section>
 
 
-<!-- ============================================================
-     11. 最終CTA
-============================================================ -->
-<section id="last">
-  <div class="container">
-    <h2>まずは、受ける級と試験日だけ送ってください。</h2>
-    <p class="sub">
-      3ヶ月で届くのか、何から手をつけるのか。正直にお答えします。<br>
-      まず無料診断とスターターキットだけでも大丈夫です。
-    </p>
-
-    <a class="btn btn-line" href="https://lin.ee/PmShWQY" target="_blank" rel="noopener">LINEで無料診断を受ける</a>
-    <p class="micro">タップするとLINEが開きます。友だち追加だけでスターターキットも受け取れます。</p>
-
-    <br>
-    <a class="last-sub-link" href="#startsmall">料金を見る →</a>
+<!-- 8. 申し込み（無料診断とスターターキット） -->
+<section id="free" class="sec">
+  <div class="wrap wide">
+    <div class="free-grid">
+      <div id="last">
+        <h2>まずは、受ける級と試験日だけ送ってください。</h2>
+        <p class="sub">3ヶ月で届くのか、何から手をつけるのか。正直にお答えします。<br>まず無料診断とスターターキットだけでも大丈夫です。</p>
+        <a class="btn-line" href="https://lin.ee/PmShWQY" target="_blank" rel="noopener">LINEで無料診断を受ける</a>
+        <p class="small" style="margin-top:8px;">タップするとLINEが開きます。友だち追加だけでスターターキットも受け取れます。ブロックはいつでもできます。</p>
+        <a class="text-link" href="#startsmall">料金を見る</a>
+      </div>
+      <div>
+        <h3 style="margin-bottom:6px;">無料の合格スターターキットと診断</h3>
+        <p class="small" style="margin-bottom:12px;">買う前に、無料のものだけ使ってもかまいません。LINEを追加すると次の2つが受け取れます。</p>
+        <ul class="kit">
+          <li>
+            <b>合格スターターキット（2級版・準1級版のPDF）</b>
+            <span>英作文の型、言い換え早見表、接続詞10選、書き終わりのチェックリストをまとめたものです。準1級版には要約の型も入っています。</span>
+          </li>
+          <li>
+            <b>無料診断：「受ける級と試験日」を送れば、何から始めるべきかをお返しします</b>
+            <span>優先順位を無料でお答えします。3ヶ月のプログラムが合わないと判断したら、その場でお伝えします。</span>
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
 </section>
 
 
-<!-- ============================================================
-     12. Footer
-============================================================ -->
+<section id="follow" class="sec band" style="padding:36px 0;">
+  <div class="wrap wide">
+    <h3>試験の直前情報も発信しています</h3>
+    <div class="sns">
+      <a href="https://x.com/eikencoach" target="_blank" rel="noopener">X</a>
+      <a href="https://www.threads.com/@eikencoaching" target="_blank" rel="noopener">Threads</a>
+      <a href="https://www.instagram.com/eikencoaching/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://note.com/eikencoaching" target="_blank" rel="noopener">note</a>
+    </div>
+  </div>
+</section>
+
+
 <footer>
-  <p class="f-logo">英検<span>対策</span>コーチ</p>
-  <p>英検2級・準1級の合格コーチング（添削・面接・学習計画）／英検準2級・準2級プラス・1級のライティング添削</p>
-  <p class="f-links">
-    <a href="/tokushoho.html">特定商取引法に基づく表示</a>
-    <a href="/privacy.html">プライバシーポリシー</a>
-    <a href="https://note.com/eikencoaching" target="_blank" rel="noopener">note</a>
-    <a href="https://x.com/eikencoach" target="_blank" rel="noopener">X</a>
-    <a href="https://www.threads.com/@eikencoaching" target="_blank" rel="noopener">Threads</a>
-    <a href="https://www.instagram.com/eikencoaching/" target="_blank" rel="noopener">Instagram</a>
-    <a href="https://lin.ee/PmShWQY" target="_blank" rel="noopener">LINE</a>
-  </p>
-  <p class="f-tm">英検®は公益財団法人日本英語検定協会の登録商標です。このサイトは協会の承認や推奨を受けたものではありません。</p>
-  <p class="f-copy">&copy; 2026 英検対策コーチ</p>
+  <div class="wrap wide">
+    <p class="f-logo">英検対策コーチ</p>
+    <p>英検2級・準1級の合格コーチング（添削・面接・学習計画）／英検準2級・準2級プラス・1級のライティング添削</p>
+    <p class="f-links">
+      <a href="/tokushoho.html">特定商取引法に基づく表示</a>
+      <a href="/privacy.html">プライバシーポリシー</a>
+      <a href="https://note.com/eikencoaching" target="_blank" rel="noopener">note</a>
+      <a href="https://x.com/eikencoach" target="_blank" rel="noopener">X</a>
+      <a href="https://www.threads.com/@eikencoaching" target="_blank" rel="noopener">Threads</a>
+      <a href="https://www.instagram.com/eikencoaching/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://lin.ee/PmShWQY" target="_blank" rel="noopener">LINE</a>
+    </p>
+    <p>英検®は公益財団法人日本英語検定協会の登録商標です。このサイトは協会の承認や推奨を受けたものではありません。</p>
+    <p class="f-copy">&copy; 2026 英検対策コーチ</p>
+  </div>
 </footer>
 
 
-<!-- ============================================================
-     13. モバイル追従CTA
-============================================================ -->
 <div class="sticky" id="stickyCta">
   <div class="sticky-row">
     <a class="sticky-sub" href="#startsmall">料金を見る</a>
@@ -2555,50 +1586,11 @@
 
 
 <script>
-  // 左上メニュー
-  (function () {
-    var btn = document.getElementById('menuBtn'), panel = document.getElementById('siteMenu'),
-        shade = document.getElementById('menuShade'), close = document.getElementById('menuClose');
-    function set(open) {
-      panel.classList.toggle('open', open);
-      shade.classList.toggle('open', open);
-      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-    }
-    btn.addEventListener('click', function () { set(true); });
-    close.addEventListener('click', function () { set(false); });
-    shade.addEventListener('click', function () { set(false); });
-    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') set(false); });
-    panel.addEventListener('click', function (e) { if (e.target.closest('a')) set(false); });
-  })();
-
-  // 表示アニメーション（要素が見えたらクラスを付けるだけ）
-  (function () {
-    var items = document.querySelectorAll('.reveal');
-    if (!items.length) return;
-
-    if (!('IntersectionObserver' in window)) {
-      for (var i = 0; i < items.length; i++) items[i].classList.add('shown');
-      return;
-    }
-
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (e.isIntersecting) {
-          e.target.classList.add('shown');
-          io.unobserve(e.target);
-        }
-      });
-    }, { rootMargin: '0px 0px -8% 0px' });
-
-    items.forEach(function (el) { io.observe(el); });
-  })();
-
   // 追従CTA（ファーストビューを過ぎたら出す）
   (function () {
     var bar = document.getElementById('stickyCta');
     var hero = document.getElementById('hero');
     if (!bar || !hero) return;
-
     function check() {
       if (hero.getBoundingClientRect().bottom < 0) {
         bar.classList.add('on');
@@ -2606,7 +1598,6 @@
         bar.classList.remove('on');
       }
     }
-
     check();
     window.addEventListener('scroll', check, { passive: true });
     window.addEventListener('resize', check, { passive: true });
